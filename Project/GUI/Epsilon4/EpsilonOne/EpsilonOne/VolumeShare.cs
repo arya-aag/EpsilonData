@@ -10,12 +10,11 @@ using System.Runtime.Serialization;
 namespace EpsilonOne
 {
     [DataContract]
-    public class Point
+    public class VolumeShare
     {
         [DataMember]
-        public double yCoordinate { get; private set; }
+        public string type_ { get; private set; }
         [DataMember]
-        public int date { get; private set; }
-
+        public long volume { get; private set; }
     }
 }

@@ -27,6 +27,10 @@ namespace EpsilonOne
     /// </summary>
     public partial class StockDetailsWindow : Window
     {
+
+        App appXaml = (App)Application.Current;
+
+
         public StockDetailsWindow()
         {
             InitializeComponent();
@@ -51,14 +55,14 @@ namespace EpsilonOne
         {
             DataContractJsonSerializer DCJS = new DataContractJsonSerializer(typeof(List<string>));
 
-            //string getURL = "http://10.87.231.72:8080/MarketDataAnalysisToolWeb/rest/FirstFunction/allTickers";
-            //WebClient getWC = new WebClient();
-            //Stream getStream = getWC.OpenRead(getURL);
-            //allTickers = (List<string>)DCJS.ReadObject(getStream);
+            string getURL = appXaml.ipRest+"FirstFunction/allTickers";
+            WebClient getWC = new WebClient();
+            Stream getStream = getWC.OpenRead(getURL);
+            allTickers = (List<string>)DCJS.ReadObject(getStream);
 
-            string fileName = @"jsondump/allTickers.txt";
-            StreamReader reader = new StreamReader(fileName);
-            allTickers = (List<string>)DCJS.ReadObject(reader.BaseStream);
+            //string fileName = @"jsondump/allTickers.txt";
+            //StreamReader reader = new StreamReader(fileName);
+            //allTickers = (List<string>)DCJS.ReadObject(reader.BaseStream);
 
             foreach (string ticker in allTickers)
                 lstTickers.Items.Add(ticker);
@@ -66,22 +70,38 @@ namespace EpsilonOne
 
         private void ShowStockDetails(object sender, SelectionChangedEventArgs e)
         {
-            string getURL = "";
+            appXaml.ticker1 = (string)lstTickers.SelectedItem;
+
+            string getURL = appXaml.ipRest+"FirstFunction/stockInfo/"+appXaml.ticker1;
             WebClient getWC = new WebClient();
             Stream getStream = getWC.OpenRead(getURL);
             DataContractJsonSerializer DCJS = new DataContractJsonSerializer(typeof(MarketStockDetails));
             MarketStockDetails allDetails = (MarketStockDetails)DCJS.ReadObject(getStream);
 
-            lblTickerName.Content = allDetails.getStockInfoMarket[0].id.ticker;
-            lblOpen.Content = allDetails.getStockInfoMarket[0].open;
-            lblClose.Content = allDetails.getStockInfoMarket[0].close;
-            lblDayHigh.Content = allDetails.getStockInfoMarket[0].high;
-            lblDayLow.Content = allDetails.getStockInfoMarket[0].low;
-            lblVolume.Content = allDetails.getStockInfoMarket[0].volume;
-            lbl52High.Content = allDetails.get52WeekHigh;
-            lbl52Low.Content = allDetails.get52WeekLow;
+            lblTickerName.Content = appXaml.ticker1;
+            lblOpen.Content = "Open value: " + allDetails.marketIndicators.open.ToString();
+            lblClose.Content = "Close value: " + allDetails.marketIndicators.close.ToString();
+            lblDayHigh.Content = "High: " + allDetails.marketIndicators.high.ToString();
+            lblDayLow.Content = "Low: " + allDetails.marketIndicators.low.ToString();
+            lblVolume.Content = "Volume: " + allDetails.marketIndicators.volume.ToString();
+            lbl52High.Content = "52 week high: " + allDetails.get52WeekHigh.ToString();
+            lbl52Low.Content = "52 week low: " + allDetails.get52WeekLow.ToString();
+            lblRiskName.Content = "Risk value: "+allDetails.risk.ToString();
+            riskValue = allDetails.risk;
+
+            ShowRiskRectangle();
         }
-        
+        private double riskValue;
+
+        private void ShowRiskRectangle()
+        {
+            double riskNew = riskValue * 18 * 100000*1.5;
+            rectRisk.Width = riskNew*10 ; //  REMOVE THIS HARD CODED SHIZ
+            if (riskNew < 3.5) { rectRisk.Fill = new SolidColorBrush(System.Windows.Media.Colors.Green); }
+            else if (riskNew < 7) { rectRisk.Fill = new SolidColorBrush(System.Windows.Media.Colors.Orange); }
+            else { rectRisk.Fill = new SolidColorBrush(System.Windows.Media.Colors.DarkRed); }
+        }
+
         private void SearchTickers(object sender, TextChangedEventArgs e)
         {
             string input = txtSearch.Text;
@@ -107,8 +127,27 @@ namespace EpsilonOne
 
         private void ShowGraphWindow(object sender, RoutedEventArgs e)
         {
+            appXaml.ticker1 = (string)lstTickers.SelectedItem;
+
             GraphWindow graphWindow = new GraphWindow();
             graphWindow.Show();
         }
+
+        private void ShowPiePlot(object sender, RoutedEventArgs e)
+        {
+            SectoralPerformanceByVolumeWindow pieWindow = new SectoralPerformanceByVolumeWindow();
+            Boolean? result = pieWindow.ShowDialog();
+            //
+        }
+
+        //private void FocusSearch(object sender, RoutedEventArgs e)
+        //{
+        //    lblTextSearch.Opacity = 0;
+        //}
+
+        //private void LostSearchFocus(object sender, RoutedEventArgs e)
+        //{
+        //    lblTextSearch.Opacity = 1;
+        //}
     }
 }

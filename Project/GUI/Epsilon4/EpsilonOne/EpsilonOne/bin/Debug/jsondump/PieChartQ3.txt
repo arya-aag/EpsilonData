@@ -1,0 +1,1 @@
+[{"type_":"Banking","volume":616304685},{"type_":"Beverage","volume":756860527},{"type_":"Energy","volume":387263431},{"type_":"Pharma","volume":367859342}]

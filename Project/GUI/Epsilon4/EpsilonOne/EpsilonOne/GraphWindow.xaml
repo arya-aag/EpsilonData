@@ -6,18 +6,34 @@
         xmlns:local="clr-namespace:EpsilonOne"
         xmlns:chartingToolkit="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit"
         mc:Ignorable="d"
-        Title="GraphWindow" Height="540" Width="840" WindowStartupLocation="CenterScreen">
+        Title="GraphWindow" Height="540" Width="840" WindowStartupLocation="CenterScreen" Loaded="PopulateOnWindowsLoaded">
     <Canvas Margin="12">
-        <chartingToolkit:Chart  Name="chtWindow" Title="Stock Values vs Time" Width="556" Canvas.Left="242" Canvas.Top="10" Height="425"/>
-        <DatePicker HorizontalAlignment="Center" VerticalAlignment="Center" Canvas.Left="10" Canvas.Top="60" Width="180" Height="24"/>
-        <Button x:Name="btnOkay" Content="Add Another Stock to Compare" HorizontalAlignment="Left" VerticalAlignment="Top" Width="280" Click="OkayClick" Height="36" Canvas.Left="518" Canvas.Top="440"/>
-        <Button x:Name="btnCancel" Content="Update Plot" HorizontalAlignment="Left" VerticalAlignment="Top" Width="270" Click="CancelClick" Canvas.Left="242" Canvas.Top="440" Height="36"/>
-        <Label x:Name="label" Content="Choose Start Date" Canvas.Left="10" Canvas.Top="60" Width="148" Height="24"/>
-        <Label x:Name="label1" Content="Change Graph Parameters" Canvas.Left="10" Canvas.Top="10" Width="218" BorderBrush="#7F000000" BorderThickness="0,0,0,1"/>
-        <DatePicker HorizontalAlignment="Center" VerticalAlignment="Center" Canvas.Left="10" Canvas.Top="89" Width="180" Height="24"/>
-        <Label x:Name="label_Copy" Content="Choose End Date" Canvas.Left="10" Canvas.Top="89" Width="148" Height="24"/>
-        <ComboBox x:Name="comboBox" Canvas.Left="10" Canvas.Top="158" Width="180" Height="28"/>
-        <Label x:Name="label2" Content="Choose Indicator" Canvas.Left="10" Canvas.Top="132" Width="180"/>
+        <chartingToolkit:Chart  Name="chtWindow" Title="Stock Values vs Time" Width="556" Canvas.Left="242" Canvas.Top="45" Height="431"/>
+        <Button x:Name="btnOkay" Content="Add Another Stock to Compare" HorizontalAlignment="Left" VerticalAlignment="Top" Width="218" Height="36" Canvas.Left="10" Canvas.Top="413"/>
+        <Button x:Name="btnUpdatePlot" Content="Update Plot" HorizontalAlignment="Left" VerticalAlignment="Top" Width="218" Canvas.Left="10" Canvas.Top="372" Height="36" Click="UpdatePlot"/>
+        <Label x:Name="label1" Content="Choose Quarter:" Canvas.Left="10" Canvas.Top="10" Width="218" BorderBrush="#7F000000" BorderThickness="0,0,0,1" HorizontalContentAlignment="Right"/>
+
+        <GroupBox x:Name="groupBox" Header="Choose Time Interval Manually" Canvas.Left="10" Canvas.Top="67" Width="218" Height="144">
+            <StackPanel>
+                <Label x:Name="lblToDate" Content="From:" Canvas.Left="10" Canvas.Top="10" BorderBrush="#7F000000" BorderThickness="0" Margin="10,2,13,0"/>
+                <DatePicker x:Name="datStartDate" HorizontalAlignment="Center" VerticalAlignment="Center" Width="180" Height="28" DisplayDateEnd="2010-11-05" DisplayDateStart="2009-08-21" Margin="13,-2,13,0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" DisplayDate="2009-08-21"/>
+                <Label x:Name="lblFromDate" Content="To:" Canvas.Left="10" Canvas.Top="10" BorderBrush="#7F000000" BorderThickness="0" Margin="13,0"/>
+                <DatePicker x:Name="datEndDate" HorizontalAlignment="Center" VerticalAlignment="Center" Width="180" Height="28" Margin="13,-2,13,0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" DisplayDateStart="2009-08-21" DisplayDate="2009-08-21" DisplayDateEnd="2010-11-05"/>
+            </StackPanel>
+
+        </GroupBox>
+        <GroupBox x:Name="grpTypeOfValue" Header="Choose Stock Indicators" Canvas.Left="10" Canvas.Top="237" Width="218" Height="70">
+            <StackPanel>
+                <ComboBox x:Name="cmbStockIndicator" Canvas.Left="10" Canvas.Top="182" Width="180" Height="28" Margin="0,10,0,0" SelectedIndex="0"/>
+            </StackPanel>
+
+        </GroupBox>
+        <Button x:Name="btn92" Content="2009-10 Q2" Canvas.Left="239" Canvas.Top="9" Width="75" Height="27" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="Set09Q2"/>
+        <Button x:Name="btn93" Content="2009-10 Q3" Canvas.Left="319" Canvas.Top="9" Width="75" Height="27" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="Set09Q3"/>
+        <Button x:Name="btn94" Content="2009-10 Q4" Canvas.Left="399" Canvas.Top="9" Width="75" Height="27" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="Set09Q4"/>
+        <Button x:Name="btn101" Content="2010-11 Q1" Canvas.Left="479" Canvas.Top="9" Width="75" Height="27" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="Set10Q1"/>
+        <Button x:Name="btn102" Content="2010-11 Q2" Canvas.Left="559" Canvas.Top="9" Width="75" Height="27" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="Set10Q2"/>
+        <Button x:Name="btn103" Content="2010-11 Q3" Canvas.Left="639" Canvas.Top="10" Width="75" Height="27" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="Set10Q3"/>
 
     </Canvas>
 </Window>

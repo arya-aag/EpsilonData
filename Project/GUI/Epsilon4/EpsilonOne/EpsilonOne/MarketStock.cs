@@ -12,8 +12,8 @@ namespace EpsilonOne
     [DataContract]
     public class MarketStock
     {
-        [DataMember]
-        public MarketPK id { get; private set; }
+        //[DataMember]
+        //public MarketPK id { get; private set; }
         [DataMember]
         public Decimal close { get; private set; }
         [DataMember]

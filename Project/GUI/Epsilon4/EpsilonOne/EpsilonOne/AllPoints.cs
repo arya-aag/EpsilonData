@@ -14,11 +14,11 @@ namespace EpsilonOne
     {
         [DataMember]
         public List<Point> stockCloseValueList { get; private set; }
-        [DataMember]
-        public string startDate { get; private set; }
-        [DataMember]
-        public string endDate { get; private set; }
-        [DataMember]
-        public string ticker { get; private set; }
+        //[DataMember]
+        //public string startDate { get; private set; }
+        //[DataMember]
+        //public string endDate { get; private set; }
+        //[DataMember]
+        //public string ticker { get; private set; }
     }
 }

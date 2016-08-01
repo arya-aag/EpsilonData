@@ -13,12 +13,14 @@ namespace EpsilonOne
     public class MarketStockDetails
     {
         [DataMember]
-        public List<MarketStock> getStockInfoMarket { get; private set; }
-        [DataMember]
-        public string getStockType { get; private set; }
+        public MarketStock marketIndicators{ get; private set; }
+        //[DataMember]
+        //public string getStockType { get; private set; }
         [DataMember]
         public Decimal get52WeekHigh { get; private set; }
         [DataMember]
         public Decimal get52WeekLow { get; private set; }
+        [DataMember]
+        public double risk { get; private set; }
     }
 }
