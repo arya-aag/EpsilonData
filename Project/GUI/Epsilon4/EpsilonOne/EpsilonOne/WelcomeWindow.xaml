@@ -5,37 +5,39 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EpsilonOne"
         mc:Ignorable="d"
-        Title="Epsilon Data Market Analysis" Height="320" Width="540" WindowStartupLocation="CenterScreen">
-    <Canvas Background="White">
+        Title="Epsilon Data Market Analysis" Height="320" Width="540" WindowStartupLocation="CenterScreen" WindowState="Maximized" HorizontalAlignment="Center" VerticalAlignment="Center">
+    <Canvas>
+        
+    <Canvas Background="White" HorizontalAlignment="Center" VerticalAlignment="Center">
         <Label x:Name="lblAppName" Content="Epsilon Data" Canvas.Left="50" Canvas.Top="10" Width="149" Height="48" VerticalContentAlignment="Center" FontFamily="Slabo 27px" FontSize="24" Foreground="#FF494949"/>
         <Button x:Name="btnStockDetails" Content="View Individual Stock Details" Canvas.Left="172" Canvas.Top="244" Width="187" Height="36" Click="ShowStockDetailsWindow"/>
-        <Image x:Name="imgEpsilon" Height="48" Canvas.Left="10" Canvas.Top="10" Width="48" Source="images/EpsilonData.png"/>
-        <Image x:Name="imgCiti" Height="48" Canvas.Left="474" Canvas.Top="10" Width="48" Source="images/citi.png"/>
+        <Image x:Name="imgEpsilon" Height="48" Canvas.Left="10" Canvas.Top="10" Width="48" Source="C:\Users\Grad114\Desktop\EpsilonData\Project\GUI\Epsilon4\EpsilonOne\images\EpsilonData.png"/>
+        <Image x:Name="imgCiti" Height="48" Canvas.Left="474" Canvas.Top="10" Width="48" Source="C:\Users\Grad114\Desktop\EpsilonData\Project\GUI\Epsilon4\EpsilonOne\images\citi.png"/>
         <GroupBox x:Name="grpGainers" Header="Today's Top Market Gainers" Canvas.Left="30" Canvas.Top="77" Height="150" Width="228">
             <StackPanel HorizontalAlignment="Left" Height="128" VerticalAlignment="Top" Width="218" Margin="12,0,-2,0">
-                <Label x:Name="lblMovers1" Content="79.54    MIL (Beverage)" Margin="0"/>
-                <Label x:Name="lblMovers2" Content="65.92    MBI (Banking)"/>
-                <Label x:Name="lblMovers3" Content="59.00    AAPL (Banking)"/>
-                <Label x:Name="lblMovers4" Content="57.52    GOOG (Banking)"/>
-                <Label x:Name="lblMovers5" Content="46.92    PM (Energy)"/>
+                <Label x:Name="lblMovers1" Content="05.47%    PFG (Banking)" Margin="0"/>
+                <Label x:Name="lblMovers2" Content="05.24%    BJS (Banking)"/>
+                <Label x:Name="lblMovers3" Content="05.03%    IPG (Pharma)"/>
+                <Label x:Name="lblMovers4" Content="05.01%    DNR (Energy)"/>
+                <Label x:Name="lblMovers5" Content="04.97%    MAS (Banking)"/>
             </StackPanel>
         </GroupBox>
-        <Image x:Name="img1" Height="12" Canvas.Left="40" Canvas.Top="100" Width="12" Source="images/green.png"/>
-        <Image x:Name="img2" Height="12" Canvas.Left="40" Canvas.Top="125" Width="12" Source="images/green.png"/>
-        <Image x:Name="img3" Height="12" Canvas.Left="40" Canvas.Top="152" Width="12" Source="images/green.png"/>
-        <Image x:Name="img4" Height="12" Canvas.Left="40" Canvas.Top="178" Width="12" Source="images/green.png"/>
-        <Image x:Name="img5" Height="12" Canvas.Left="40" Canvas.Top="204" Width="12" Source="images/green.png"/>
+        <Image x:Name="img1" Height="12" Canvas.Left="40" Canvas.Top="100" Width="12" Source="C:\Users\Grad114\Desktop\EpsilonData\Project\GUI\Epsilon4\EpsilonOne\images\green.png"/>
+        <Image x:Name="img2" Height="12" Canvas.Left="40" Canvas.Top="125" Width="12" Source="C:\Users\Grad114\Desktop\EpsilonData\Project\GUI\Epsilon4\EpsilonOne\images\green.png"/>
+        <Image x:Name="img3" Height="12" Canvas.Left="40" Canvas.Top="152" Width="12" Source="C:\Users\Grad114\Desktop\EpsilonData\Project\GUI\Epsilon4\EpsilonOne\images\green.png"/>
+        <Image x:Name="img4" Height="12" Canvas.Left="40" Canvas.Top="178" Width="12" Source="C:\Users\Grad114\Desktop\EpsilonData\Project\GUI\Epsilon4\EpsilonOne\images\green.png"/>
+        <Image x:Name="img5" Height="12" Canvas.Left="40" Canvas.Top="204" Width="12" Source="C:\Users\Grad114\Desktop\EpsilonData\Project\GUI\Epsilon4\EpsilonOne\images\green.png"/>
 
         <GroupBox x:Name="grpLosers" Header="Today's Top Market Losers" Canvas.Left="274" Canvas.Top="77" Height="150" Width="228">
             <StackPanel HorizontalAlignment="Left" Height="128" VerticalAlignment="Top" Width="218" Margin="15,-1,-2,0">
-                <Label x:Name="lblMovers6" Content="31.33    APCVZ (Beverage)"/>
-                <Label x:Name="lblMovers7" Content="31.33    APCVZ (Beverage)"/>
-                <Label x:Name="lblMovers8" Content="31.33    APCVZ (Beverage)"/>
-                <Label x:Name="lblMovers9" Content="31.33    APCVZ (Beverage)"/>
-                <Label x:Name="lblMovers10" Content="31.33    APCVZ (Beverage)"/>
+                <Label x:Name="lblMovers6" Content="04.73%    ETFC (Banking)"/>
+                <Label x:Name="lblMovers7" Content="04.61%    THC (Energy)"/>
+                <Label x:Name="lblMovers8" Content="04.56%    AIG (Pharma)"/>
+                <Label x:Name="lblMovers9" Content="04.25%    INTU (Pharma)"/>
+                <Label x:Name="lblMovers10" Content="03.30%    WPO (Pharma)"/>
             </StackPanel>
         </GroupBox>
-        <Image x:Name="img6" Height="12" Canvas.Left="286" Canvas.Top="100" Width="12" Source="images/red.png" RenderTransformOrigin="0.5,0.5">
+        <Image x:Name="img6" Height="12" Canvas.Left="286" Canvas.Top="100" Width="12" Source="C:\Users\Grad114\Desktop\EpsilonData\Project\GUI\Epsilon4\EpsilonOne\images\red.png" RenderTransformOrigin="0.5,0.5">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -45,7 +47,7 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Image x:Name="img7" Height="12" Canvas.Left="286" Canvas.Top="125" Width="12" Source="images/red.png" RenderTransformOrigin="0.5,0.5">
+        <Image x:Name="img7" Height="12" Canvas.Left="286" Canvas.Top="125" Width="12" Source="C:\Users\Grad114\Desktop\EpsilonData\Project\GUI\Epsilon4\EpsilonOne\images\red.png" RenderTransformOrigin="0.5,0.5">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -55,7 +57,7 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Image x:Name="img8" Height="12" Canvas.Left="286" Canvas.Top="152" Width="12" Source="images/red.png" RenderTransformOrigin="0.5,0.5">
+        <Image x:Name="img8" Height="12" Canvas.Left="286" Canvas.Top="152" Width="12" Source="C:\Users\Grad114\Desktop\EpsilonData\Project\GUI\Epsilon4\EpsilonOne\images\red.png" RenderTransformOrigin="0.5,0.5">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -65,7 +67,7 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Image x:Name="img9" Height="12" Canvas.Left="286" Canvas.Top="178" Width="12" Source="images/red.png" RenderTransformOrigin="0.5,0.5">
+        <Image x:Name="img9" Height="12" Canvas.Left="286" Canvas.Top="178" Width="12" Source="C:\Users\Grad114\Desktop\EpsilonData\Project\GUI\Epsilon4\EpsilonOne\images\red.png" RenderTransformOrigin="0.5,0.5">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -75,7 +77,7 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Image x:Name="img10" Height="12" Canvas.Left="286" Canvas.Top="204" Width="12" Source="images/red.png" RenderTransformOrigin="0.5,0.5">
+        <Image x:Name="img10" Height="12" Canvas.Left="286" Canvas.Top="204" Width="12" Source="C:\Users\Grad114\Desktop\EpsilonData\Project\GUI\Epsilon4\EpsilonOne\images\red.png" RenderTransformOrigin="0.5,0.5">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -87,5 +89,6 @@
         </Image>
 
 
+    </Canvas>
     </Canvas>
 </Window>

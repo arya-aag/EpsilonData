@@ -72,37 +72,43 @@ namespace EpsilonOne
         {
             appXaml.ticker1 = (string)lstTickers.SelectedItem;
 
-            string getURL = appXaml.ipRest+"FirstFunction/stockInfo/"+appXaml.ticker1;
-            WebClient getWC = new WebClient();
-            Stream getStream = getWC.OpenRead(getURL);
-            DataContractJsonSerializer DCJS = new DataContractJsonSerializer(typeof(MarketStockDetails));
-            MarketStockDetails allDetails = (MarketStockDetails)DCJS.ReadObject(getStream);
+            if (appXaml.ticker1 == null)
+            {
+            }
+            else
+            {
+                string getURL = appXaml.ipRest+"FirstFunction/stockInfo/"+appXaml.ticker1;
+                WebClient getWC = new WebClient();
+                Stream getStream = getWC.OpenRead(getURL);
+                DataContractJsonSerializer DCJS = new DataContractJsonSerializer(typeof(MarketStockDetails));
+                MarketStockDetails allDetails = (MarketStockDetails)DCJS.ReadObject(getStream);
 
-            lblTickerName.Content = appXaml.ticker1;
-            lblOpen.Content = "            Open Value: " + allDetails.marketIndicators.open.ToString();
-            lblClose.Content = "            Close Value: " + allDetails.marketIndicators.close.ToString();
-            lblDayHigh.Content = "                Day High: " + allDetails.marketIndicators.high.ToString();
-            lblDayLow.Content = "                 Day Low: " + allDetails.marketIndicators.low.ToString();
-            lblVolume.Content = "                  Volume: " + allDetails.marketIndicators.volume.ToString();
-            lbl52High.Content = "        52 Week High: " + allDetails.get52WeekHigh.ToString();
-            lbl52Low.Content = "         52 Week Low: " + allDetails.get52WeekLow.ToString();
+                lblTickerName.Content = appXaml.ticker1;
+                lblOpen.Content = "            Open Value: " + allDetails.marketIndicators.open.ToString();
+                lblClose.Content = "            Close Value: " + allDetails.marketIndicators.close.ToString();
+                lblDayHigh.Content = "                Day High: " + allDetails.marketIndicators.high.ToString();
+                lblDayLow.Content = "                 Day Low: " + allDetails.marketIndicators.low.ToString();
+                lblVolume.Content = "                  Volume: " + allDetails.marketIndicators.volume.ToString();
+                lbl52High.Content = "        52 Week High: " + allDetails.get52WeekHigh.ToString();
+                lbl52Low.Content = "         52 Week Low: " + allDetails.get52WeekLow.ToString();
             
-            //honest risk
-            riskValue = (allDetails.risk);
-            // hard coded random risk
-            Random rnd = new Random();
-            double risk1000 = rnd.Next(1001);
-            riskValue = risk1000 / 100.0;
+                //honest risk
+                riskValue = (allDetails.risk);
+                // hard coded random risk
+                Random rnd = new Random();
+                double risk1000 = rnd.Next(1001);
+                riskValue = risk1000 / 100.0;
 
-            lblRiskName.Content = "              Risk Meter: " + riskValue;
+                lblRiskName.Content = "              Risk Meter: " + riskValue;
 
-            ShowRiskRectangle();
+                ShowRiskRectangle();
+            }
         }
         private double riskValue;
 
         private void ShowRiskRectangle()
         {
-            rectRisk.Width = riskValue*1.15 ;
+            rectRisk.Width = riskValue*11.5 ;
             if (riskValue < 3.5) { rectRisk.Fill = new SolidColorBrush(System.Windows.Media.Colors.Green); }
             else if (riskValue < 7) { rectRisk.Fill = new SolidColorBrush(System.Windows.Media.Colors.Orange); }
             else { rectRisk.Fill = new SolidColorBrush(System.Windows.Media.Colors.Red); }
@@ -126,7 +132,6 @@ namespace EpsilonOne
                 }
                 catch
                 {
-
                 }
             }
         }

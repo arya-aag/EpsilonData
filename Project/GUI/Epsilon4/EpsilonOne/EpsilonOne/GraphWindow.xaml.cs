@@ -70,11 +70,9 @@ namespace EpsilonOne
         private void SetTimeWindow()
         {
             datStartDate.SelectedDate = new DateTime(2009,8,21);
-            datEndDate.SelectedDate = new DateTime(2009, 11, 5);
+            datEndDate.SelectedDate = new DateTime(2010, 11, 5);
         }
-
         
-
         //private void Test(object sender, RoutedEventArgs e)
         //{
         //    string getURL = appXaml.ipRest+"FirstFunction";
@@ -171,10 +169,11 @@ namespace EpsilonOne
             DataContractJsonSerializer DCJS = new DataContractJsonSerializer(typeof(AllPoints));
             AllPoints allPoints = (AllPoints)DCJS.ReadObject(getStream);
 
-            CreateKeyValuePairsFromPoints(allPoints);
+            List<KeyValuePair<int, double>> pointsToPlot = new List<KeyValuePair<int, double>>();
+            pointsToPlot = CreateKeyValuePairsFromPoints(allPoints);
 
             lineSeries1.Title = appXaml.ticker1;
-            lineSeries1.ItemsSource = appXaml.pointsToPlot1;
+            lineSeries1.ItemsSource = pointsToPlot;
             lineSeries1.DependentValuePath = "Value";
             lineSeries1.IndependentValuePath = "Key";
             chtWindow.Title =appXaml.ticker1;
@@ -214,6 +213,10 @@ namespace EpsilonOne
             URL += appendDate((DateTime)datStartDate.SelectedDate);
             URL += "/";
             URL += appendDate((DateTime)datEndDate.SelectedDate);
+            URL += "/";
+
+            if (cmbMovingAvg.SelectedIndex == 3) { URL += "simple"; }
+            MessageBox.Show(URL);
 
             return URL;
         }
@@ -223,16 +226,17 @@ namespace EpsilonOne
             return ""+date.Day.ToString()+"-"+ date.Month.ToString()+"-"+ date.Year.ToString();
         }
 
-        private void CreateKeyValuePairsFromPoints(AllPoints allPoints)
+        private List<KeyValuePair<int, double>> CreateKeyValuePairsFromPoints(AllPoints allPoints)
         {
-            //appXaml.pointsToPlot1 = new List<KeyValuePair<int, double>>();
+            List<KeyValuePair<int, double>> newPoints = new List<KeyValuePair<int, double>>();
             foreach (Point point in allPoints.stockCloseValueList)
             {
-                appXaml.pointsToPlot1.Add(new KeyValuePair<int, double>
+                newPoints.Add(new KeyValuePair<int, double>
                     (point.date, point.yCoordinate));
             }
-            //return appXaml.pointsToPlot1;
+            return newPoints;
         }
+
         private void UpdatePlot(object sender, RoutedEventArgs e)
         {
             Boolean negativeTime = 
@@ -242,27 +246,6 @@ namespace EpsilonOne
             {
                 chtWindow.Series.Clear();
                 DrawGraphs();
-                /*
-                string getURL = appXaml.ipFF + appXaml.ticker1 + "/close/21-08-2009/05-11-2010";
-                WebClient getWC = new WebClient();
-                Stream getStream = getWC.OpenRead(getURL);
-                DataContractJsonSerializer DCJS = new DataContractJsonSerializer(typeof(AllPoints));
-                AllPoints allPoints = (AllPoints)DCJS.ReadObject(getStream);
-
-                CreateKeyValuePairsFromPoints(allPoints);
-
-                //LineSeries lineSeries = new LineSeries();
-                lineSeries1.Title = appXaml.ticker1;
-                lineSeries1.ItemsSource = appXaml.pointsToPlot1;
-                lineSeries1.DependentValuePath = "Value";
-                lineSeries1.IndependentValuePath = "Key";
-                chtWindow.Series.Add(lineSeries1);
-                //chtWindow.Series.Remove(lineSeries);
-
-
-                //chtWindow.Series.Remove(lineSeries1);
-                //try { chtWindow.Series.Remove(lineSeries2); } catch { }
-                */
             }
             else
             {

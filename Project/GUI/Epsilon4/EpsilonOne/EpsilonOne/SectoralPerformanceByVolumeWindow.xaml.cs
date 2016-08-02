@@ -27,8 +27,7 @@ namespace EpsilonOne
     public partial class SectoralPerformanceByVolumeWindow : Window
     {
         App appXaml = (App)Application.Current;
-
-
+        
         public SectoralPerformanceByVolumeWindow()
         {
             InitializeComponent();
@@ -52,24 +51,27 @@ namespace EpsilonOne
             DataContractJsonSerializer DCJS = new DataContractJsonSerializer(typeof(List<VolumeShare>));
             List<VolumeShare> piePlotDetails = (List<VolumeShare>)DCJS.ReadObject(getStream);
 
-            CreateKeyValuePairsFromVolumes(piePlotDetails);
+            List<KeyValuePair<string, long>> pointsToPiePlot = new List<KeyValuePair<string, long>>();
+            pointsToPiePlot = CreateKeyValuePairsFromVolumes(piePlotDetails);
 
             PieSeries pieSeries = new PieSeries();
-            pieSeries.ItemsSource = appXaml.pointsToPiePlot;
+            pieSeries.ItemsSource = null;
+            pieSeries.ItemsSource = pointsToPiePlot;
             pieSeries.DependentValuePath = "Value";
             pieSeries.IndependentValuePath = "Key";
             chtPieChart.Title = "Sectoral Performance By Volume for "+appXaml.pieQuarter;
             chtPieChart.Series.Add(pieSeries);
         }
 
-        private void CreateKeyValuePairsFromVolumes(List<VolumeShare> listOfVolShares)
+        private List<KeyValuePair<string, long>> CreateKeyValuePairsFromVolumes(List<VolumeShare> listOfVolShares)
         {
-            //appXaml.pointsToPiePlot = new List<KeyValuePair<string, long>>();
+            List<KeyValuePair<string, long>> piePoints = new List<KeyValuePair<string, long>>();
             foreach (VolumeShare volShare in listOfVolShares)
             {
-                appXaml.pointsToPiePlot.Add(new KeyValuePair<string, long>
+                piePoints.Add(new KeyValuePair<string, long>
                     (volShare.type_, volShare.volume));
             }
+            return piePoints;
         }
 
         private void UpdatePiePlot(object sender, SelectionChangedEventArgs e)

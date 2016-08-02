@@ -25,7 +25,7 @@ namespace EpsilonOne
         public int numOfGraphs = 0;
 
         //pie plot
-        public List<KeyValuePair<string, long>> pointsToPiePlot = new List<KeyValuePair<string, long>>();
+        //public List<KeyValuePair<string, long>> pointsToPiePlot = new List<KeyValuePair<string, long>>();
         public string pieQuarter = "Q2";
 
     }

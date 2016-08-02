@@ -11,7 +11,7 @@
         <ListBox x:Name="lstTickers" HorizontalAlignment="Left" Height="291" VerticalAlignment="Top" Width="200" Background="White" Canvas.Left="10" Canvas.Top="70" SelectionChanged="ShowStockDetails" SelectedIndex="0"/>
         <TextBox x:Name="txtSearch" HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Canvas.Left="10" Canvas.Top="40" TextChanged="SearchTickers" VerticalContentAlignment="Center" Panel.ZIndex="1" Background="{x:Null}"/>
         <!--<Label x:Name="lblTextSearch" Content="Search" Canvas.Left="10" Canvas.Top="40" Height="30" Width="200" Background="White" VerticalContentAlignment="Center" Foreground="#BF000000" HorizontalContentAlignment="Right"/>-->
-        <Image x:Name="image" Height="24" Canvas.Left="183" Canvas.Top="43" Width="24" Source="images/iconSearch.png" Stretch="Fill" Panel.ZIndex="5"/>
+        <Image x:Name="image" Height="24" Canvas.Left="183" Canvas.Top="43" Width="24" Source="C:\Users\Grad114\Desktop\EpsilonData\Project\GUI\Epsilon4\EpsilonOne\images\iconSearch.png" Stretch="Fill" Panel.ZIndex="5"/>
 
         <!--<ComboBox x:Name="cmbTimePeriod" VerticalContentAlignment="Center" Canvas.Left="650" Canvas.Top="6" Width="159" Height="28" SelectedIndex="0"/>-->
         <!--<Label x:Name="lblTimePeriod" Content="Select Time Period:" Canvas.Left="517" Canvas.Top="6" Height="28" Width="128"/>-->

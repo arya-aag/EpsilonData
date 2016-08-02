@@ -18,7 +18,7 @@
                 <Label x:Name="lblToDate" Content="From:" Canvas.Left="10" Canvas.Top="10" BorderBrush="#7F000000" BorderThickness="0" Margin="10,2,13,0"/>
                 <DatePicker x:Name="datStartDate" HorizontalAlignment="Center" VerticalAlignment="Center" Width="180" Height="28" DisplayDateEnd="2010-11-05" DisplayDateStart="2009-08-21" Margin="13,-2,13,0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" DisplayDate="2009-08-21"/>
                 <Label x:Name="lblFromDate" Content="To:" Canvas.Left="10" Canvas.Top="10" BorderBrush="#7F000000" BorderThickness="0" Margin="13,0"/>
-                <DatePicker x:Name="datEndDate" HorizontalAlignment="Center" VerticalAlignment="Center" Width="180" Height="28" Margin="13,-2,13,0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" DisplayDateStart="2009-08-21" DisplayDate="2009-11-05" DisplayDateEnd="2010-11-05"/>
+                <DatePicker x:Name="datEndDate" HorizontalAlignment="Center" VerticalAlignment="Center" Width="180" Height="28" Margin="13,-2,13,0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" DisplayDateStart="2009-08-21" DisplayDate="2010-11-05" DisplayDateEnd="2010-11-05"/>
             </StackPanel>
 
         </GroupBox>
