@@ -1,0 +1,1 @@
+{"stockCloseValueList":[{"date":100000,"yCoordinate":0.3690019993912373}]}

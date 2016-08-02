@@ -59,7 +59,7 @@ namespace EpsilonOne
             pieSeries.ItemsSource = pointsToPiePlot;
             pieSeries.DependentValuePath = "Value";
             pieSeries.IndependentValuePath = "Key";
-            chtPieChart.Title = "Sectoral Performance By Volume for "+appXaml.pieQuarter;
+            chtPieChart.Title = "Sectoral Trade Volume for " + appXaml.pieQuarter;
             chtPieChart.Series.Add(pieSeries);
         }
 

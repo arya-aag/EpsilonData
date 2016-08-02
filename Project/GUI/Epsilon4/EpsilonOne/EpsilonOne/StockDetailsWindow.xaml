@@ -5,18 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EpsilonOne"
         mc:Ignorable="d"
-        Title="Epsilon Data Analysis" FontFamily="Montserrat" Height="480" Width="540" WindowStartupLocation="CenterScreen" Loaded="PopulateTasks" Background="White" ResizeMode="NoResize">
-    <Canvas Margin="20">
-        <Label x:Name="label1_Copy" Content="List of Stocks" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="200" Background="#FFDEDEDE" Canvas.Left="10" Canvas.Top="10"/>
-        <ListBox x:Name="lstTickers" HorizontalAlignment="Left" Height="291" VerticalAlignment="Top" Width="200" Background="White" Canvas.Left="10" Canvas.Top="70" SelectionChanged="ShowStockDetails" SelectedIndex="0"/>
-        <TextBox x:Name="txtSearch" HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Canvas.Left="10" Canvas.Top="40" TextChanged="SearchTickers" VerticalContentAlignment="Center" Panel.ZIndex="1" Background="{x:Null}"/>
+        Title="Epsilon Data Analysis" FontFamily="Montserrat" Height="740" Width="1366" 
+        WindowStartupLocation="CenterScreen" Loaded="PopulateTasks" WindowState="Maximized"
+        Icon="C:\Users\Grad114\Desktop\EpsilonData\Project\GUI\Epsilon4\EpsilonOne\images\EpsilonData.png">
+    <Window.Background>
+        <ImageBrush ImageSource="C:\Users\Grad114\Desktop\EpsilonData\Project\GUI\Epsilon4\EpsilonOne\images\bigdata2.jpg"/>
+    </Window.Background>
+    <Canvas>
+        <Rectangle Fill="#FFF4F4F5" Height="72" Canvas.Left="10" Stroke="Black" Canvas.Top="10" Width="1338" RadiusX="23"/>
+        <Image x:Name="imgEpsilon" Height="62" Canvas.Left="15" Canvas.Top="14" Width="62" Source="C:\Users\Grad114\Desktop\EpsilonData\Project\GUI\Epsilon4\EpsilonOne\images\EpsilonData.png"/>
+        <Label x:Name="lblAppName" Content="Epsilon Market Data Analysis Tool" Canvas.Left="72" Canvas.Top="21" Width="475" Height="48" VerticalContentAlignment="Center" FontFamily="Slabo 27px" FontSize="26.667" Foreground="#FF494949"/>
+        <Image x:Name="imgSNP" Height="152" Canvas.Left="1095" Width="152" Source="C:\Users\Grad114\Desktop\EpsilonData\Project\GUI\Epsilon4\EpsilonOne\images\SNP500.png" Canvas.Top="-28"/>
+        <Image x:Name="imgCiti" Height="60" Canvas.Left="1271" Canvas.Top="16" Width="60" Source="C:\Users\Grad114\Desktop\EpsilonData\Project\GUI\Epsilon4\EpsilonOne\images\citi.png"/>
+
+        <Label x:Name="label1_Copy" Content="List of Stocks" HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="511" Background="{x:Null}" Canvas.Left="78" Canvas.Top="154" Margin="0" Padding="10,5,5,5" VerticalContentAlignment="Center" Foreground="White" BorderBrush="#FF34FFBF" BorderThickness="0,0,0,2" FontSize="18.667"/>
+        <ListBox x:Name="lstTickers" HorizontalAlignment="Left" Height="291" VerticalAlignment="Top" Width="200" Background="White" Canvas.Left="115" Canvas.Top="286" SelectionChanged="ShowStockDetails" SelectedIndex="0"/>
+        <TextBox x:Name="txtSearch" HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Canvas.Left="115" Canvas.Top="256" TextChanged="SearchTickers" VerticalContentAlignment="Center" Panel.ZIndex="1" Background="White"/>
         <!--<Label x:Name="lblTextSearch" Content="Search" Canvas.Left="10" Canvas.Top="40" Height="30" Width="200" Background="White" VerticalContentAlignment="Center" Foreground="#BF000000" HorizontalContentAlignment="Right"/>-->
-        <Image x:Name="image" Height="24" Canvas.Left="183" Canvas.Top="43" Width="24" Source="C:\Users\Grad114\Desktop\EpsilonData\Project\GUI\Epsilon4\EpsilonOne\images\iconSearch.png" Stretch="Fill" Panel.ZIndex="5"/>
+        <Image x:Name="image" Height="24" Canvas.Left="288" Canvas.Top="259" Width="24" Source="C:\Users\Grad114\Desktop\EpsilonData\Project\GUI\Epsilon4\EpsilonOne\images\iconSearch.png" Stretch="Fill" Panel.ZIndex="5"/>
 
         <!--<ComboBox x:Name="cmbTimePeriod" VerticalContentAlignment="Center" Canvas.Left="650" Canvas.Top="6" Width="159" Height="28" SelectedIndex="0"/>-->
         <!--<Label x:Name="lblTimePeriod" Content="Select Time Period:" Canvas.Left="517" Canvas.Top="6" Height="28" Width="128"/>-->
         <!--<Button x:Name="btnPlot" Content="PLOT!" Canvas.Left="1087" Canvas.Top="5" Width="75" Height="28" Background="#FF5FE289" Click="DrawGraphs"/>-->
-        <GroupBox x:Name="grpDetails" Header="Stock Details" Canvas.Left="228" Canvas.Top="10" Width="256" Height="351">
+        <GroupBox x:Name="grpDetails" Header="" Canvas.Left="333" Canvas.Top="226" Width="256" Height="351" Background="#D8FFFFFF" BorderBrush="{x:Null}" Foreground="{x:Null}">
             <StackPanel Margin="0,0,0,0">
                 <Label HorizontalContentAlignment="Right" x:Name="lblTickerName" Content="[TICKER]" Canvas.Left="517" Canvas.Top="6" Height="36" Margin="10,10,118,0" FontSize="21.333"/>
                 <Label HorizontalContentAlignment="Left" x:Name="lblOpen" Content="            Open Value:" Canvas.Left="517" Canvas.Top="6" Height="28" Margin="10,12,10,0"/>
@@ -32,8 +43,8 @@
                 </Label>
             </StackPanel>
         </GroupBox>
-        <Button x:Name="btnPlot" Content="View Trends For This Stock" Canvas.Left="228" Canvas.Top="366" Width="256" Height="36" Click="ShowGraphWindow"/>
-        <Button x:Name="btnPiePlot" Content="Sectoral Performance by Vol." Canvas.Left="10" Canvas.Top="366" Width="200" Height="36" Click="ShowPiePlot"/>
+        <Button x:Name="btnPlot" Content="View Trends For This Stock" Canvas.Left="333" Canvas.Top="582" Width="256" Height="36" Click="ShowGraphWindow"/>
+        <Button x:Name="btnPiePlot" Content="Sectoral Performance by Vol." Canvas.Left="991" Canvas.Top="243" Width="200" Height="36" Click="ShowPiePlot"/>
 
     </Canvas>
 </Window>

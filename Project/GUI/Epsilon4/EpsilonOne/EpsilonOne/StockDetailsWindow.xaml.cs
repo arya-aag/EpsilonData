@@ -55,7 +55,7 @@ namespace EpsilonOne
         {
             DataContractJsonSerializer DCJS = new DataContractJsonSerializer(typeof(List<string>));
 
-            string getURL = appXaml.ipRest+"FirstFunction/allTickers";
+            string getURL = appXaml.ipFF+"allTickers";
             WebClient getWC = new WebClient();
             Stream getStream = getWC.OpenRead(getURL);
             allTickers = (List<string>)DCJS.ReadObject(getStream);
@@ -140,8 +140,15 @@ namespace EpsilonOne
         {
             appXaml.ticker1 = (string)lstTickers.SelectedItem;
 
-            GraphWindow graphWindow = new GraphWindow();
-            Boolean? resultGraph = graphWindow.ShowDialog();
+            if (appXaml.ticker1 == null)
+            {
+                MessageBox.Show("Please select a ticker.");
+            }
+            else
+            {
+                GraphWindow graphWindow = new GraphWindow();
+                Boolean? resultGraph = graphWindow.ShowDialog();
+            }
         }
 
         private void ShowPiePlot(object sender, RoutedEventArgs e)

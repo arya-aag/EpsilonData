@@ -215,8 +215,8 @@ namespace EpsilonOne
             URL += appendDate((DateTime)datEndDate.SelectedDate);
             URL += "/";
 
-            if (cmbMovingAvg.SelectedIndex == 3) { URL += "simple"; }
-            MessageBox.Show(URL);
+            if (cmbMovingAvg.SelectedIndex == 3) { URL += "simple/0"; }
+            //MessageBox.Show(URL);
 
             return URL;
         }

@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:EpsilonOne"
         xmlns:chartingToolkit="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit"
         mc:Ignorable="d"
-        Title="Sectoral Performance by Volume" Height="360" Width="360" WindowStartupLocation="CenterScreen">
+        Title="Sectoral Trade Volume" Height="360" Width="360" WindowStartupLocation="CenterScreen"
+        Icon="C:\Users\Grad114\Desktop\EpsilonData\Project\GUI\Epsilon4\EpsilonOne\images\EpsilonData.png">
     <Grid>
         <chartingToolkit:Chart  Name="chtPieChart" Title="" Canvas.Left="242" Canvas.Top="45" Margin="0,0,0,41"/>
         <Button x:Name="btnCloseWindow" Content="Exit Graph" HorizontalAlignment="Left" Margin="267,294,0,0" VerticalAlignment="Top" Width="75" Height="26" Click="ExitGraph"/>

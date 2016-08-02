@@ -6,7 +6,9 @@
         xmlns:local="clr-namespace:EpsilonOne"
         xmlns:chartingToolkit="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit"
         mc:Ignorable="d"
-        Title="GraphWindow" Height="540" Width="840" WindowStartupLocation="CenterScreen" Loaded="PopulateOnWindowsLoaded">
+        Title="GraphWindow" Height="540" Width="840" WindowStartupLocation="CenterScreen" 
+        Loaded="PopulateOnWindowsLoaded" WindowState="Maximized"
+        Icon="C:\Users\Grad114\Desktop\EpsilonData\Project\GUI\Epsilon4\EpsilonOne\images\EpsilonData.png">
     <Canvas Margin="12">
         <chartingToolkit:Chart  Name="chtWindow" Title="" Width="556" Canvas.Left="242" Canvas.Top="45" Height="431"/>
         <!--<Button x:Name="btnOkay" Content="Add Another Stock to Compare" HorizontalAlignment="Left" VerticalAlignment="Top" Width="218" Height="36" Canvas.Left="10" Canvas.Top="450"/>-->

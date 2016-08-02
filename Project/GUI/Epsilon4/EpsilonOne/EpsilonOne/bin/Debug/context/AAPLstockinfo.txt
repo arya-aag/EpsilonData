@@ -1,0 +1,1 @@
+{"marketIndicators":{"close":317.13,"high":319.57,"low":316.75,"open":317.99,"volume":12901800},"get52WeekHigh":319.57,"get52WeekLow":167.1,"risk":0.0}
