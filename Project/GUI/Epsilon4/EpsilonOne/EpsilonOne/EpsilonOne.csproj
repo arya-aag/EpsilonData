@@ -66,18 +66,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="SectoralPerformanceByVolumeWindow.xaml.cs">
-      <DependentUpon>SectoralPerformanceByVolumeWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="VolumeShare.cs" />
     <Compile Include="WelcomeWindow.xaml.cs">
       <DependentUpon>WelcomeWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="GraphWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="SectoralPerformanceByVolumeWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

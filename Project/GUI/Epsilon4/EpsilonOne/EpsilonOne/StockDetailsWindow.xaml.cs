@@ -41,6 +41,7 @@ namespace EpsilonOne
         private void PopulateTasks(object sender, RoutedEventArgs e)
         {
             //PopulateTimePeriod();
+            DrawPiePlot();
             PopulateTickers();
         }
 
@@ -56,11 +57,11 @@ namespace EpsilonOne
             DataContractJsonSerializer DCJS = new DataContractJsonSerializer(typeof(List<string>));
 
             string getURL = appXaml.ipFF+"allTickers";
-            WebClient getWC = new WebClient();
-            Stream getStream = getWC.OpenRead(getURL);
-            allTickers = (List<string>)DCJS.ReadObject(getStream);
+             WebClient getWC = new WebClient();
+             Stream getStream = getWC.OpenRead(getURL);
+             allTickers = (List<string>)DCJS.ReadObject(getStream);
 
-            //string fileName = @"jsondump/allTickers.txt";
+            //string fileName = @"context/allTickers.txt";
             //StreamReader reader = new StreamReader(fileName);
             //allTickers = (List<string>)DCJS.ReadObject(reader.BaseStream);
 
@@ -77,20 +78,25 @@ namespace EpsilonOne
             }
             else
             {
+                DataContractJsonSerializer DCJS = new DataContractJsonSerializer(typeof(MarketStockDetails));
+
                 string getURL = appXaml.ipRest+"FirstFunction/stockInfo/"+appXaml.ticker1;
                 WebClient getWC = new WebClient();
                 Stream getStream = getWC.OpenRead(getURL);
-                DataContractJsonSerializer DCJS = new DataContractJsonSerializer(typeof(MarketStockDetails));
                 MarketStockDetails allDetails = (MarketStockDetails)DCJS.ReadObject(getStream);
+                
+                //string fileName = @"context/AAPLstockinfo.txt";
+                //StreamReader reader = new StreamReader(fileName);
+                //MarketStockDetails allDetails = (MarketStockDetails)DCJS.ReadObject(reader.BaseStream);
 
                 lblTickerName.Content = appXaml.ticker1;
-                lblOpen.Content = "            Open Value: " + allDetails.marketIndicators.open.ToString();
-                lblClose.Content = "            Close Value: " + allDetails.marketIndicators.close.ToString();
-                lblDayHigh.Content = "                Day High: " + allDetails.marketIndicators.high.ToString();
-                lblDayLow.Content = "                 Day Low: " + allDetails.marketIndicators.low.ToString();
+                lblOpen.Content = "            Open Value: " + allDetails.marketIndicators.open.ToString() +" $";
+                lblClose.Content = "            Close Value: " + allDetails.marketIndicators.close.ToString() + " $";
+                lblDayHigh.Content = "                Day High: " + allDetails.marketIndicators.high.ToString() + " $";
+                lblDayLow.Content = "                 Day Low: " + allDetails.marketIndicators.low.ToString() + " $";
                 lblVolume.Content = "                  Volume: " + allDetails.marketIndicators.volume.ToString();
-                lbl52High.Content = "        52 Week High: " + allDetails.get52WeekHigh.ToString();
-                lbl52Low.Content = "         52 Week Low: " + allDetails.get52WeekLow.ToString();
+                lbl52High.Content = "        52 Week High: " + allDetails.get52WeekHigh.ToString() + " $";
+                lbl52Low.Content = "         52 Week Low: " + allDetails.get52WeekLow.ToString() + " $";
             
                 //honest risk
                 riskValue = (allDetails.risk);
@@ -104,6 +110,7 @@ namespace EpsilonOne
                 ShowRiskRectangle();
             }
         }
+
         private double riskValue;
 
         private void ShowRiskRectangle()
@@ -147,14 +154,133 @@ namespace EpsilonOne
             else
             {
                 GraphWindow graphWindow = new GraphWindow();
-                Boolean? resultGraph = graphWindow.ShowDialog();
+                //Boolean? resultGraph = graphWindow.ShowDialog();
+                graphWindow.Show();
+                this.Close();
             }
         }
 
-        private void ShowPiePlot(object sender, RoutedEventArgs e)
+// PIE PLOT STUFF STARTS HERE ========================================================================================
+
+        //private void ShowPiePlot(object sender, RoutedEventArgs e)
+        //{
+        //    SectoralPerformanceByVolumeWindow pieWindow = new SectoralPerformanceByVolumeWindow();
+        //    Boolean? result = pieWindow.ShowDialog();
+        //}
+
+        private void DrawPiePlot()
         {
-            SectoralPerformanceByVolumeWindow pieWindow = new SectoralPerformanceByVolumeWindow();
-            Boolean? result = pieWindow.ShowDialog();
+            DataContractJsonSerializer DCJS = new DataContractJsonSerializer(typeof(List<VolumeShare>));
+
+            string getURL = appXaml.ipFF + "volume/" + appXaml.pieQuarter;
+            WebClient getWC = new WebClient();
+            Stream getStream = getWC.OpenRead(getURL);
+            List<VolumeShare> piePlotDetails = (List<VolumeShare>)DCJS.ReadObject(getStream);
+
+            //string fileName = @"context/pieQuarter.txt";
+            //StreamReader reader = new StreamReader(fileName);
+            //List<VolumeShare> piePlotDetails = (List<VolumeShare>)DCJS.ReadObject(reader.BaseStream);
+
+            List<KeyValuePair<string, long>> pointsToPiePlot = new List<KeyValuePair<string, long>>();
+            pointsToPiePlot = CreateKeyValuePairsFromVolumes(piePlotDetails);
+
+            PieSeries pieSeries = new PieSeries();
+            pieSeries.ItemsSource = null;
+            pieSeries.ItemsSource = pointsToPiePlot;
+            pieSeries.DependentValuePath = "Value";
+            pieSeries.IndependentValuePath = "Key";
+
+            long[] vols = new long[4];
+            int i = 0;
+            foreach (VolumeShare vs in piePlotDetails)
+            {
+                vols[i++] = vs.volume;
+            }
+            double[] percs = new double[4];
+            percs = CalculatePercentages(vols);
+
+            UpdatePiePlotTitle(percs);
+            chtPieChart.Title = piePlotTitle;
+
+            chtPieChart.Series.Add(pieSeries);
+        }
+
+        private double[] CalculatePercentages(long[] vols)
+        {
+            double[] percs = new double[4];
+            long sumOfVols = vols.Sum();
+            for (int i = 0; i < 4; i++)
+            {
+                percs[i] = ((double)vols[i] / (double)sumOfVols)*100;
+                percs[i] = Math.Round(percs[i], 2);
+            }
+            return percs;
+        }
+
+        private void UpdatePiePlot()
+        {
+            chtPieChart.Series.Clear();
+            DrawPiePlot();
+        }
+
+        private List<KeyValuePair<string, long>> CreateKeyValuePairsFromVolumes(List<VolumeShare> listOfVolShares)
+        {
+            List<KeyValuePair<string, long>> piePoints = new List<KeyValuePair<string, long>>();
+            foreach (VolumeShare volShare in listOfVolShares)
+            {
+                piePoints.Add(new KeyValuePair<string, long>
+                    (volShare.type_, volShare.volume));
+            }
+            return piePoints;
+        }
+
+        string piePlotTitle = "";
+
+        private void UpdatePiePlotTitle(double[] percs)
+        {
+            piePlotTitle = string.Format
+                ("Banking: {0}%, Beverage: {1}%, \nEnergy: {2}%, Pharma: {3}%",percs[0],percs[1],percs[2],percs[3]);
+        }
+
+        private void ShowQ2Volume(object sender, RoutedEventArgs e)
+        {
+            ClearQuarterBolds();
+            btnQ2.FontWeight = FontWeights.Bold;
+            btnQ2.Foreground = Brushes.Turquoise;
+            appXaml.pieQuarter = "Q2";
+            UpdatePiePlot();
+        }
+        private void ShowQ3Volume(object sender, RoutedEventArgs e)
+        {
+            ClearQuarterBolds();
+            btnQ3.FontWeight = FontWeights.Bold;
+            btnQ3.Foreground = Brushes.Turquoise;
+            appXaml.pieQuarter = "Q3";
+            UpdatePiePlot();
+        }
+        private void ShowQ4Volume(object sender, RoutedEventArgs e)
+        {
+            ClearQuarterBolds();
+            btnQ4.FontWeight = FontWeights.Bold;
+            btnQ4.Foreground = Brushes.Turquoise;
+            appXaml.pieQuarter = "Q4";
+            UpdatePiePlot();
+        }
+        private void ClearQuarterBolds()
+        {
+            List<Button> listOfButtons = new List<Button>() { btnQ2,btnQ3,btnQ4};
+            foreach (Button btn in listOfButtons)
+            {
+                btn.FontWeight = FontWeights.Normal;
+                btn.Foreground = Brushes.White;
+            }
+        }
+
+        private void GoToWelcome(object sender, RoutedEventArgs e)
+        {
+            WelcomeWindow ww = new WelcomeWindow();
+            ww.Show();
+            this.Close();
         }
     }
 }

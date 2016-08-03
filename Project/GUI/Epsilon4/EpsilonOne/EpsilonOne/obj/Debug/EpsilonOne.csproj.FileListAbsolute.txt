@@ -122,3 +122,44 @@ C:\Users\Grad114\Desktop\EpsilonData\Project\GUI\Epsilon4\EpsilonOne\EpsilonOne\
 C:\Users\Grad114\Desktop\EpsilonData\Project\GUI\Epsilon4\EpsilonOne\EpsilonOne\obj\Debug\EpsilonOne.csproj.GenerateResource.Cache
 C:\Users\Grad114\Desktop\EpsilonData\Project\GUI\Epsilon4\EpsilonOne\EpsilonOne\obj\Debug\EpsilonOne.exe
 C:\Users\Grad114\Desktop\EpsilonData\Project\GUI\Epsilon4\EpsilonOne\EpsilonOne\obj\Debug\EpsilonOne.pdb
+C:\Users\Arti Kumari\Desktop\GUI_UPDATED\Epsilon4\EpsilonOne\EpsilonOne\bin\Debug\EpsilonOne.exe.config
+C:\Users\Arti Kumari\Desktop\GUI_UPDATED\Epsilon4\EpsilonOne\EpsilonOne\obj\Debug\EpsilonOne.exe
+C:\Users\Arti Kumari\Desktop\GUI_UPDATED\Epsilon4\EpsilonOne\EpsilonOne\obj\Debug\EpsilonOne.pdb
+C:\Users\Arti Kumari\Desktop\GUI\Epsilon4\EpsilonOne\EpsilonOne\bin\Debug\EpsilonOne.exe.config
+C:\Users\Arti Kumari\Desktop\GUI\Epsilon4\EpsilonOne\EpsilonOne\bin\Debug\EpsilonOne.exe
+C:\Users\Arti Kumari\Desktop\GUI\Epsilon4\EpsilonOne\EpsilonOne\bin\Debug\EpsilonOne.pdb
+C:\Users\Arti Kumari\Desktop\GUI\Epsilon4\EpsilonOne\EpsilonOne\obj\Debug\GraphWindow.g.cs
+C:\Users\Arti Kumari\Desktop\GUI\Epsilon4\EpsilonOne\EpsilonOne\obj\Debug\StockDetailsWindow.g.cs
+C:\Users\Arti Kumari\Desktop\GUI\Epsilon4\EpsilonOne\EpsilonOne\obj\Debug\WelcomeWindow.g.cs
+C:\Users\Arti Kumari\Desktop\GUI\Epsilon4\EpsilonOne\EpsilonOne\obj\Debug\App.g.cs
+C:\Users\Arti Kumari\Desktop\GUI\Epsilon4\EpsilonOne\EpsilonOne\obj\Debug\EpsilonOne_MarkupCompile.cache
+C:\Users\Arti Kumari\Desktop\GUI\Epsilon4\EpsilonOne\EpsilonOne\obj\Debug\EpsilonOne_MarkupCompile.lref
+C:\Users\Arti Kumari\Desktop\GUI\Epsilon4\EpsilonOne\EpsilonOne\obj\Debug\App.baml
+C:\Users\Arti Kumari\Desktop\GUI\Epsilon4\EpsilonOne\EpsilonOne\obj\Debug\GraphWindow.baml
+C:\Users\Arti Kumari\Desktop\GUI\Epsilon4\EpsilonOne\EpsilonOne\obj\Debug\StockDetailsWindow.baml
+C:\Users\Arti Kumari\Desktop\GUI\Epsilon4\EpsilonOne\EpsilonOne\obj\Debug\WelcomeWindow.baml
+C:\Users\Arti Kumari\Desktop\GUI\Epsilon4\EpsilonOne\EpsilonOne\obj\Debug\EpsilonOne.g.resources
+C:\Users\Arti Kumari\Desktop\GUI\Epsilon4\EpsilonOne\EpsilonOne\obj\Debug\EpsilonOne.Properties.Resources.resources
+C:\Users\Arti Kumari\Desktop\GUI\Epsilon4\EpsilonOne\EpsilonOne\obj\Debug\EpsilonOne.csproj.GenerateResource.Cache
+C:\Users\Arti Kumari\Desktop\GUI\Epsilon4\EpsilonOne\EpsilonOne\obj\Debug\EpsilonOne.exe
+C:\Users\Arti Kumari\Desktop\GUI\Epsilon4\EpsilonOne\EpsilonOne\obj\Debug\EpsilonOne.pdb
+C:\Users\Arti Kumari\Desktop\GUI\Epsilon4\EpsilonOne\EpsilonOne\obj\Debug\EpsilonOne.csprojResolveAssemblyReference.cache
+C:\Users\Grad114\Desktop\ARYA.AG\GUI_BAK2\Epsilon4\EpsilonOne\EpsilonOne\bin\Debug\EpsilonOne.exe.config
+C:\Users\Grad114\Desktop\ARYA.AG\GUI_BAK2\Epsilon4\EpsilonOne\EpsilonOne\bin\Debug\EpsilonOne.exe
+C:\Users\Grad114\Desktop\ARYA.AG\GUI_BAK2\Epsilon4\EpsilonOne\EpsilonOne\bin\Debug\EpsilonOne.pdb
+C:\Users\Grad114\Desktop\ARYA.AG\GUI_BAK2\Epsilon4\EpsilonOne\EpsilonOne\obj\Debug\EpsilonOne.csprojResolveAssemblyReference.cache
+C:\Users\Grad114\Desktop\ARYA.AG\GUI_BAK2\Epsilon4\EpsilonOne\EpsilonOne\obj\Debug\GraphWindow.g.cs
+C:\Users\Grad114\Desktop\ARYA.AG\GUI_BAK2\Epsilon4\EpsilonOne\EpsilonOne\obj\Debug\StockDetailsWindow.g.cs
+C:\Users\Grad114\Desktop\ARYA.AG\GUI_BAK2\Epsilon4\EpsilonOne\EpsilonOne\obj\Debug\WelcomeWindow.g.cs
+C:\Users\Grad114\Desktop\ARYA.AG\GUI_BAK2\Epsilon4\EpsilonOne\EpsilonOne\obj\Debug\App.g.cs
+C:\Users\Grad114\Desktop\ARYA.AG\GUI_BAK2\Epsilon4\EpsilonOne\EpsilonOne\obj\Debug\EpsilonOne_MarkupCompile.cache
+C:\Users\Grad114\Desktop\ARYA.AG\GUI_BAK2\Epsilon4\EpsilonOne\EpsilonOne\obj\Debug\EpsilonOne_MarkupCompile.lref
+C:\Users\Grad114\Desktop\ARYA.AG\GUI_BAK2\Epsilon4\EpsilonOne\EpsilonOne\obj\Debug\App.baml
+C:\Users\Grad114\Desktop\ARYA.AG\GUI_BAK2\Epsilon4\EpsilonOne\EpsilonOne\obj\Debug\GraphWindow.baml
+C:\Users\Grad114\Desktop\ARYA.AG\GUI_BAK2\Epsilon4\EpsilonOne\EpsilonOne\obj\Debug\StockDetailsWindow.baml
+C:\Users\Grad114\Desktop\ARYA.AG\GUI_BAK2\Epsilon4\EpsilonOne\EpsilonOne\obj\Debug\WelcomeWindow.baml
+C:\Users\Grad114\Desktop\ARYA.AG\GUI_BAK2\Epsilon4\EpsilonOne\EpsilonOne\obj\Debug\EpsilonOne.g.resources
+C:\Users\Grad114\Desktop\ARYA.AG\GUI_BAK2\Epsilon4\EpsilonOne\EpsilonOne\obj\Debug\EpsilonOne.Properties.Resources.resources
+C:\Users\Grad114\Desktop\ARYA.AG\GUI_BAK2\Epsilon4\EpsilonOne\EpsilonOne\obj\Debug\EpsilonOne.csproj.GenerateResource.Cache
+C:\Users\Grad114\Desktop\ARYA.AG\GUI_BAK2\Epsilon4\EpsilonOne\EpsilonOne\obj\Debug\EpsilonOne.exe
+C:\Users\Grad114\Desktop\ARYA.AG\GUI_BAK2\Epsilon4\EpsilonOne\EpsilonOne\obj\Debug\EpsilonOne.pdb

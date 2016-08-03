@@ -29,7 +29,6 @@ namespace EpsilonOne
 
         AllPoints pointsToDraw = new AllPoints();
         //List<KeyValuePair<int, double>> pointsToPlot = new List<KeyValuePair<int, double>>();
-
         LineSeries lineSeries1 = new LineSeries();
         LineSeries lineSeries2 = new LineSeries();
 
@@ -45,6 +44,7 @@ namespace EpsilonOne
             PopulateMovingAverageDropdown();
             SetTimeWindow();
             DrawGraphs();
+
         }
 
         private void PopulateStockIndicatorDropdown()
@@ -96,14 +96,16 @@ namespace EpsilonOne
             foreach (Button btn in listButtons)
             {
                 btn.FontWeight = FontWeights.Normal;
-                btn.Foreground = Brushes.Black;
+                btn.Foreground = Brushes.White;
+                btn.BorderBrush = Brushes.Transparent;
             }
         }
 
         private void HighlightQuarter(Button btn)
         {
             btn.FontWeight = FontWeights.Bold;
-            btn.Foreground = Brushes.Blue;
+            btn.Foreground = Brushes.Turquoise;
+            btn.BorderBrush = Brushes.White;
         }
 
         private void Set09Q2(object sender, RoutedEventArgs e)
@@ -111,6 +113,7 @@ namespace EpsilonOne
             ClearQuarterBolds();
             HighlightQuarter(btn92);
             SetDates(new DateTime(2009, 8, 21), new DateTime(2009, 9, 30));
+            UpdatePlots();
         }
 
         private void Set09Q3(object sender, RoutedEventArgs e)
@@ -118,6 +121,7 @@ namespace EpsilonOne
             ClearQuarterBolds();
             HighlightQuarter(btn93);
             SetDates(new DateTime(2009, 10, 1), new DateTime(2009, 12, 31));
+            UpdatePlots();
         }
 
         private void Set09Q4(object sender, RoutedEventArgs e)
@@ -125,6 +129,7 @@ namespace EpsilonOne
             ClearQuarterBolds();
             HighlightQuarter(btn94);
             SetDates(new DateTime(2010, 1, 1), new DateTime(2010, 3, 31));
+            UpdatePlots();
         }
 
         private void Set10Q1(object sender, RoutedEventArgs e)
@@ -132,6 +137,7 @@ namespace EpsilonOne
             ClearQuarterBolds();
             HighlightQuarter(btn101);
             SetDates(new DateTime(2010, 4, 1), new DateTime(2010, 6, 30));
+            UpdatePlots();
         }
 
         private void Set10Q2(object sender, RoutedEventArgs e)
@@ -139,6 +145,7 @@ namespace EpsilonOne
             ClearQuarterBolds();
             HighlightQuarter(btn102);
             SetDates(new DateTime(2010, 7, 1), new DateTime(2010, 9, 30));
+            UpdatePlots();
         }
 
         private void Set10Q3(object sender, RoutedEventArgs e)
@@ -146,6 +153,7 @@ namespace EpsilonOne
             ClearQuarterBolds();
             HighlightQuarter(btn103);
             SetDates(new DateTime(2009, 10, 1), new DateTime(2010, 11, 5));
+            UpdatePlots();
         }
 
         private Boolean CheckNegativeTime(DateTime startDate, DateTime endDate)
@@ -160,14 +168,25 @@ namespace EpsilonOne
             }
         }
 
+        string fileLocation = "";
+
         private void DrawGraphs()
         {
-            string getURL =  SetURL();
+            UpdateYAxis();
 
+            DataContractJsonSerializer DCJS = new DataContractJsonSerializer(typeof(AllPoints));
+
+            string getURL =  SetURL();
             WebClient getWC = new WebClient();
             Stream getStream = getWC.OpenRead(getURL);
-            DataContractJsonSerializer DCJS = new DataContractJsonSerializer(typeof(AllPoints));
             AllPoints allPoints = (AllPoints)DCJS.ReadObject(getStream);
+
+            //fileLocation = SetLocation();
+            //string fileName = 
+            //    @"C:\Users\Arti Kumari\Desktop\GUI\Epsilon4\EpsilonOne\EpsilonOne\bin\Debug\context\"+fileLocation;
+            //StreamReader reader = new StreamReader(fileName);
+            //AllPoints allPoints = 
+            //    (AllPoints)DCJS.ReadObject(reader.BaseStream);
 
             List<KeyValuePair<int, double>> pointsToPlot = new List<KeyValuePair<int, double>>();
             pointsToPlot = CreateKeyValuePairsFromPoints(allPoints);
@@ -176,8 +195,19 @@ namespace EpsilonOne
             lineSeries1.ItemsSource = pointsToPlot;
             lineSeries1.DependentValuePath = "Value";
             lineSeries1.IndependentValuePath = "Key";
-            chtWindow.Title =appXaml.ticker1;
+            chtWindow.Title = appXaml.ticker1;
             chtWindow.Series.Add(lineSeries1);
+        }
+        private string SetLocation()
+        {
+            string URL="";
+
+            if (cmbMovingAvg.SelectedIndex == 1) { URL += "simpleavg.txt"; }
+            else if (cmbMovingAvg.SelectedIndex == 2) { URL += "simpleavg.txt"; }
+            else if (cmbMovingAvg.SelectedIndex == 3) { URL += "devFromSimlpleAvg.txt"; }
+            else { URL += "closeprice.txt"; }
+
+            return URL;
         }
 
         private string SetURL()
@@ -239,8 +269,13 @@ namespace EpsilonOne
 
         private void UpdatePlot(object sender, RoutedEventArgs e)
         {
-            Boolean negativeTime = 
-                CheckNegativeTime((DateTime)datStartDate.SelectedDate,(DateTime)datEndDate.SelectedDate);
+            UpdatePlots();
+        }
+
+        private void UpdatePlots()
+        {
+            Boolean negativeTime =
+                CheckNegativeTime((DateTime)datStartDate.SelectedDate, (DateTime)datEndDate.SelectedDate);
 
             if (!negativeTime)
             {
@@ -252,5 +287,44 @@ namespace EpsilonOne
                 MessageBox.Show("The Start Date lies after the End Date. Please choose again.");
             }
         }
+
+
+        private void UpdateYAxis()
+        {
+            string YAxis = "";
+            if (cmbMovingAvg.SelectedIndex == 1) { YAxis += "Simple Moving Avg. of "; }
+            else if (cmbMovingAvg.SelectedIndex == 2) { YAxis += "Exponential Moving Avg. of "; }
+            else if (cmbMovingAvg.SelectedIndex == 3) { YAxis += "Deviation from Simple Moving Avg. of "; }
+            else { }
+
+            switch (cmbStockIndicator.SelectedIndex)
+            {
+                case 0:
+                    YAxis += "Open value";
+                    break;
+                case 1:
+                    YAxis += "Close value";
+                    break;
+                case 2:
+                    YAxis += "Day high";
+                    break;
+                case 3:
+                    YAxis += "Day low";
+                    break;
+                case 4:
+                    YAxis += "Volume traded";
+                    break;
+            }
+            txtblkYAxis.Text = YAxis;
+        }
+
+        private void GoToStockDetails(object sender, RoutedEventArgs e)
+        {
+            StockDetailsWindow sdw = new StockDetailsWindow();
+            sdw.Show();
+            this.Close();
+        }
+        
+        
     }
 }

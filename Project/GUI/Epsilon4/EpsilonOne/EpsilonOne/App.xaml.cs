@@ -14,8 +14,8 @@ namespace EpsilonOne
     public partial class App : Application
     {
         //global
-        public string ipRest = "http://10.87.238.241:8080/MarketDataAnalysisToolWeb/rest/";
-        public string ipFF = "http://10.87.238.241:8080/MarketDataAnalysisToolWeb/rest/FirstFunction/";
+        public string ipRest = "http://10.87.231.77:8080/MarketDataAnalysisToolWeb/rest/";
+        public string ipFF = "http://10.87.231.77:8080/MarketDataAnalysisToolWeb/rest/FirstFunction/";
 
         //graph window
         public List<KeyValuePair<int, double>> pointsToPlot1 = new List<KeyValuePair<int, double>>();
