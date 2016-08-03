@@ -18,7 +18,6 @@ using System.IO;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Json;
 using System.Windows.Controls.DataVisualization.Charting;
-using System.Text.RegularExpressions;
 
 namespace EpsilonOne
 {
@@ -105,7 +104,7 @@ namespace EpsilonOne
                 double risk1000 = rnd.Next(1001);
                 riskValue = risk1000 / 100.0;
 
-                lblRiskName.Content = "              Risk Meter: " + riskValue;
+                lblRiskName.Content = "      Volatility Meter: " + riskValue;
 
                 ShowRiskRectangle();
             }

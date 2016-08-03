@@ -31,7 +31,7 @@
             </TextBox.Background>
         </TextBox>
         <!--<Label x:Name="lblTextSearch" Content="Search" Canvas.Left="10" Canvas.Top="40" Height="30" Width="200" Background="White" VerticalContentAlignment="Center" Foreground="#BF000000" HorizontalContentAlignment="Right"/>-->
-        <Image x:Name="image" Height="24" Canvas.Left="929" Canvas.Top="237" Width="24" Source="C:\Users\Arti Kumari\Desktop\GUI\Epsilon4\EpsilonOne\images\iconSearch.png" Stretch="Fill" Panel.ZIndex="5"/>
+        <Image x:Name="image" Height="24" Canvas.Left="929" Canvas.Top="237" Width="24" Source="C:\Users\Grad114\Desktop\EpsilonData\Project\GUI\Epsilon4\EpsilonOne\images\iconSearch.png" Stretch="Fill" Panel.ZIndex="5"/>
 
         <!--<ComboBox x:Name="cmbTimePeriod" VerticalContentAlignment="Center" Canvas.Left="650" Canvas.Top="6" Width="159" Height="28" SelectedIndex="0"/>-->
         <!--<Label x:Name="lblTimePeriod" Content="Select Time Period:" Canvas.Left="517" Canvas.Top="6" Height="28" Width="128"/>-->
@@ -49,7 +49,7 @@
                 <Label HorizontalContentAlignment="Left" x:Name="lblVolume" Content="                  Volume:" Canvas.Left="517" Canvas.Top="6" Height="28" Margin="10,0"/>
                 <Label HorizontalContentAlignment="Left" x:Name="lbl52High" Content="        52 Week High:" Canvas.Left="517" Canvas.Top="6" Height="28" Margin="10,12,10,0"/>
                 <Label HorizontalContentAlignment="Left" x:Name="lbl52Low" Content="         52 Week Low:" Height="28" Margin="10,0"/>
-                <Label HorizontalContentAlignment="Left" x:Name="lblRiskName" Content="              Risk Meter: fffff" Height="28" Margin="10,0"/>
+                <Label HorizontalContentAlignment="Left" x:Name="lblRiskName" Content="      Volatility Meter: " Height="28" Margin="10,0"/>
                 <Label HorizontalContentAlignment="Left" x:Name="lblRisk" Height="28" Margin="10,0">
                     <Rectangle x:Name="rectRisk" Width="0" Height="18" Fill="White" Margin="108,-10,0,0" MaxWidth="115" />
                 </Label>

@@ -147,7 +147,6 @@ C:\Users\Arti Kumari\Desktop\GUI\Epsilon4\EpsilonOne\EpsilonOne\obj\Debug\Epsilo
 C:\Users\Grad114\Desktop\ARYA.AG\GUI_BAK2\Epsilon4\EpsilonOne\EpsilonOne\bin\Debug\EpsilonOne.exe.config
 C:\Users\Grad114\Desktop\ARYA.AG\GUI_BAK2\Epsilon4\EpsilonOne\EpsilonOne\bin\Debug\EpsilonOne.exe
 C:\Users\Grad114\Desktop\ARYA.AG\GUI_BAK2\Epsilon4\EpsilonOne\EpsilonOne\bin\Debug\EpsilonOne.pdb
-C:\Users\Grad114\Desktop\ARYA.AG\GUI_BAK2\Epsilon4\EpsilonOne\EpsilonOne\obj\Debug\EpsilonOne.csprojResolveAssemblyReference.cache
 C:\Users\Grad114\Desktop\ARYA.AG\GUI_BAK2\Epsilon4\EpsilonOne\EpsilonOne\obj\Debug\GraphWindow.g.cs
 C:\Users\Grad114\Desktop\ARYA.AG\GUI_BAK2\Epsilon4\EpsilonOne\EpsilonOne\obj\Debug\StockDetailsWindow.g.cs
 C:\Users\Grad114\Desktop\ARYA.AG\GUI_BAK2\Epsilon4\EpsilonOne\EpsilonOne\obj\Debug\WelcomeWindow.g.cs
@@ -163,3 +162,4 @@ C:\Users\Grad114\Desktop\ARYA.AG\GUI_BAK2\Epsilon4\EpsilonOne\EpsilonOne\obj\Deb
 C:\Users\Grad114\Desktop\ARYA.AG\GUI_BAK2\Epsilon4\EpsilonOne\EpsilonOne\obj\Debug\EpsilonOne.csproj.GenerateResource.Cache
 C:\Users\Grad114\Desktop\ARYA.AG\GUI_BAK2\Epsilon4\EpsilonOne\EpsilonOne\obj\Debug\EpsilonOne.exe
 C:\Users\Grad114\Desktop\ARYA.AG\GUI_BAK2\Epsilon4\EpsilonOne\EpsilonOne\obj\Debug\EpsilonOne.pdb
+C:\Users\Grad114\Desktop\ARYA.AG\GUI_BAK2\Epsilon4\EpsilonOne\EpsilonOne\obj\Debug\EpsilonOne.csprojResolveAssemblyReference.cache

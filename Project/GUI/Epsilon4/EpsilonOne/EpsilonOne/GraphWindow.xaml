@@ -37,13 +37,13 @@
         </chartingToolkit:Chart>
         <!--<Button x:Name="btnOkay" Content="Add Another Stock to Compare" HorizontalAlignment="Left" VerticalAlignment="Top" Width="218" Height="36" Canvas.Left="10" Canvas.Top="450"/>-->
         <Button x:Name="btnUpdatePlot" Content="Update Plot" HorizontalAlignment="Left" VerticalAlignment="Top" Width="218" Canvas.Left="1051" Canvas.Top="522" Height="36" Click="UpdatePlot"/>
-        <Label x:Name="label1" Content="Choose Quarter:" Canvas.Left="380" Canvas.Top="111" Width="598" BorderBrush="#FF87FFF9" BorderThickness="0,0,0,1" Foreground="White" Height="30"/>
-        <Button x:Name="btn92" Content="2009-10 Q2" Canvas.Left="503" Canvas.Top="110" Width="75" Height="27" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="Set09Q2" Foreground="White"/>
-        <Button x:Name="btn93" Content="2009-10 Q3" Canvas.Left="583" Canvas.Top="110" Width="75" Height="27" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="Set09Q3" Foreground="White"/>
-        <Button x:Name="btn94" Content="2009-10 Q4" Canvas.Left="663" Canvas.Top="110" Width="75" Height="27" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="Set09Q4" Foreground="White"/>
-        <Button x:Name="btn101" Content="2010-11 Q1" Canvas.Left="743" Canvas.Top="110" Width="75" Height="27" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="Set10Q1" Foreground="White"/>
-        <Button x:Name="btn102" Content="2010-11 Q2" Canvas.Left="823" Canvas.Top="110" Width="75" Height="27" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="Set10Q2" Foreground="White"/>
-        <Button x:Name="btn103" Content="2010-11 Q3" Canvas.Left="903" Canvas.Top="111" Width="75" Height="27" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="Set10Q3" Foreground="White"/>
+        <Label x:Name="label1" Content="Choose Quarter:" Canvas.Left="399" Canvas.Top="111" Width="556" BorderBrush="#FF87FFF9" BorderThickness="0,0,0,1" Foreground="White" Height="30"/>
+        <Button x:Name="btn92" Content="2009-10 Q2" Canvas.Left="541" Canvas.Top="110" Width="75" Height="27" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="Set09Q2" Foreground="White"/>
+        <Button x:Name="btn93" Content="2009-10 Q3" Canvas.Left="621" Canvas.Top="110" Width="75" Height="27" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="Set09Q3" Foreground="White"/>
+        <Button x:Name="btn94" Content="2009-10 Q4" Canvas.Left="701" Canvas.Top="110" Width="75" Height="27" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="Set09Q4" Foreground="White"/>
+        <Button x:Name="btn101" Content="2010-11 Q1" Canvas.Left="781" Canvas.Top="110" Width="75" Height="27" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="Set10Q1" Foreground="White"/>
+        <Button x:Name="btn102" Content="2010-11 Q2" Canvas.Left="861" Canvas.Top="110" Width="75" Height="27" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="Set10Q2" Foreground="White"/>
+        <!--<Button x:Name="btn103" Content="2010-11 Q3" Canvas.Left="903" Canvas.Top="111" Width="75" Height="27" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="Set10Q3" Foreground="White"/>-->
         <ComboBox x:Name="cmbMovingAvg" Width="180" Height="28" SelectedIndex="0" Canvas.Left="1068" Canvas.Top="460"/>
         <ComboBox x:Name="cmbStockIndicator" Canvas.Left="1068" Canvas.Top="401" Width="180" Height="28" SelectedIndex="1"/>
         <DatePicker x:Name="datStartDate" HorizontalAlignment="Center" VerticalAlignment="Center" Width="130" Height="28" DisplayDateEnd="2010-11-05" DisplayDateStart="2009-08-21" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" DisplayDate="2009-08-21" Canvas.Left="1068" Canvas.Top="231" BorderBrush="{x:Null}"/>
@@ -52,12 +52,21 @@
         <Label x:Name="label_Copy" Content="End Date" Canvas.Left="1068" Canvas.Top="263" Foreground="White" Width="130"/>
         <Label x:Name="label_Copy1" Content="Select Indicator" Canvas.Left="1068" Canvas.Top="375" Foreground="White" Width="130"/>
         <Label x:Name="label_Copy2" Content="Select Average" Canvas.Left="1068" Canvas.Top="434" Foreground="White" Width="130"/>
-        <Label x:Name="label_Copy3" Content="Selected Stock" Canvas.Left="90" Canvas.Top="205" Foreground="White" Width="130"/>
-        <Label x:Name="lblTicker1" Content="AAPL" Canvas.Left="90" Canvas.Top="231" Foreground="White" Width="130" Height="32" FontSize="22" Padding="5,0"/>
-        <Label x:Name="label_Copy6" Content="X Axis Label" Canvas.Left="90" Canvas.Top="323" Foreground="White" Width="130"/>
-        <Label x:Name="lblTicker1_Copy2" Content="# of days from start" Canvas.Left="90" Canvas.Top="349" Foreground="White" Width="220" Height="32" FontSize="20" Padding="5,0"/>
-        <Label x:Name="label_Copy7" Content="Y Axis Label" Canvas.Left="90" Canvas.Top="403" Foreground="White" Width="130"/>
-        <TextBlock x:Name="txtblkYAxis" Canvas.Left="90" TextWrapping="Wrap" Text="" Canvas.Top="434" Height="111" Width="220" FontSize="20" Foreground="White"/>
+        <Label x:Name="label_Copy3" Content="Selected Stock" Canvas.Left="90" Canvas.Top="343" Foreground="White" Width="130"/>
+        <Label x:Name="lblTicker1" Content="AAPL" Canvas.Left="90" Canvas.Top="369" Foreground="White" Width="130" Height="32" FontSize="22" Padding="5,0"/>
+        <!--<Label x:Name="label_Copy6" Content="X Axis Label" Canvas.Left="90" Canvas.Top="323" Foreground="White" Width="130"/>-->
+        <Label x:Name="lblTicker1_Copy2" Content="No. of days from first date" Canvas.Left="592" Canvas.Top="594" Foreground="White" Width="249" Height="32" FontSize="16" Padding="5,0" RenderTransformOrigin="0.5,0.5"/>
+        <!--<Label x:Name="label_Copy7" Content="Y Axis Label" Canvas.Left="90" Canvas.Top="403" Foreground="White" Width="130"/>-->
+        <TextBlock x:Name="txtblkYAxis" Canvas.Left="190" TextWrapping="Wrap" Text="" Canvas.Top="336" Height="35" Width="380" FontSize="16" Foreground="White" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>
+        </TextBlock>
         <Button x:Name="btnBack" Content="Previous" Canvas.Left="10" Canvas.Top="663" Width="60" Height="36" BorderBrush="White" Background="{x:Null}" Foreground="White" Click="GoToStockDetails"/>
 
 

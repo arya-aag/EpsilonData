@@ -36,6 +36,7 @@ namespace EpsilonOne
         public GraphWindow()
         {
             InitializeComponent();
+            lblTicker1.Content = appXaml.ticker1;
         }
 
         private void PopulateOnWindowsLoaded(object sender, RoutedEventArgs e)
@@ -60,7 +61,7 @@ namespace EpsilonOne
         private void PopulateMovingAverageDropdown()
         {
             List<string> movingAvgList = new List<string>() {"None",
-                "Simple Moving Average", "Exponential Moving Average", "Deviation from Simple Moving Avg." };
+                "7 Day Moving Average", "Exponential Moving Average", "Deviation from Simple Moving Avg." };
             foreach (string str in movingAvgList)
             {
                 cmbMovingAvg.Items.Add(str);
@@ -92,7 +93,7 @@ namespace EpsilonOne
 
         private void ClearQuarterBolds()
         {
-            List<Button> listButtons = new List<Button>() { btn92, btn93, btn94, btn101, btn102, btn103 };
+            List<Button> listButtons = new List<Button>() { btn92, btn93, btn94, btn101, btn102};
             foreach (Button btn in listButtons)
             {
                 btn.FontWeight = FontWeights.Normal;
@@ -148,13 +149,13 @@ namespace EpsilonOne
             UpdatePlots();
         }
 
-        private void Set10Q3(object sender, RoutedEventArgs e)
+        /*private void Set10Q3(object sender, RoutedEventArgs e)
         {
             ClearQuarterBolds();
             HighlightQuarter(btn103);
-            SetDates(new DateTime(2009, 10, 1), new DateTime(2010, 11, 5));
+            SetDates(new DateTime(2010, 10, 1), new DateTime(2010, 11, 5));
             UpdatePlots();
-        }
+        }*/
 
         private Boolean CheckNegativeTime(DateTime startDate, DateTime endDate)
         {

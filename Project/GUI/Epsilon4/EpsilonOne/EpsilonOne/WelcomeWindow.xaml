@@ -120,6 +120,7 @@
         <TextBlock x:Name="textBlock" Canvas.Left="122" TextWrapping="Wrap" Canvas.Top="229" Height="102" Width="472"
                    Text="A market data analysis tool to help you draw useful insights from historical data (from SnP 500 index) in an intuitive manner." Foreground="#FFFECE0B" FontSize="18" 
                    />
+        <Label x:Name="label2_Copy" Content="New York Stock Exchange" Canvas.Left="110" Canvas.Top="336" Height="90" Width="484" VerticalContentAlignment="Bottom" Foreground="White" FontSize="21.333" HorizontalContentAlignment="Center"/>
 
 
 
