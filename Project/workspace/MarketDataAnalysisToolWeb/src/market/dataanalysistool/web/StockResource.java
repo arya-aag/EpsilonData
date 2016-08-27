@@ -13,6 +13,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import org.json.*;
 
@@ -57,12 +58,24 @@ public class StockResource {
 	}
 	
 	@POST
-    @Path("/post")
+    //@Path("/post")
     @Consumes("text/plain")
     public Response postStrMsg(String msg) {
-        String output = "POST:Jersey say : " + msg;
-        bean.setSample(msg);
-        return Response.status(200).entity(output).build();
+		JSONObject ob = new JSONObject(msg);
+		//String output = "POST:Jersey say : " + msg;
+        System.out.println(ob);
+        return Response.status(200).entity("").build();
+    }
+	
+	@POST
+    @Path("/post")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response postJsonMsg(JSONObject msg) throws JSONException{
+        //bean.setSample(msg);
+		//System.out.println(msg.getString("name"));
+		
+		
+        return Response.status(200).entity(msg.toString()).build();
     }
 	
 //	@POST

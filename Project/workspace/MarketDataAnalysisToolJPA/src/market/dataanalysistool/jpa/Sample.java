@@ -17,6 +17,10 @@ public class Sample implements Serializable{
 	private long serialNo;
 	private String sample;
 	
+	public long getSerialNo() {
+		return serialNo;
+	}
+	
 	public String getSample() {
 		return sample;
 	}
