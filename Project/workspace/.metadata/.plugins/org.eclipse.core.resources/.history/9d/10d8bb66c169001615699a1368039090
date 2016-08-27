@@ -1,0 +1,27 @@
+import javax.enterprise.context.RequestScoped;
+import javax.naming.Context;
+import javax.ws.rs.Consumes;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+
+/**
+ * 
+ */
+
+/**
+ * @author Grad80
+ *
+ */
+@RequestScoped
+@Path("/product")
+@Produces({ "application/xml", "application/json" })
+@Consumes({ "application/xml", "application/json" })
+public class ProductResource {
+	OnlineRetailerBeanLocal bean;
+	Context context;
+	
+	public ProductResource() {
+		context = new InitialContext();
+		bean = context.lookup("java:app/StudentOnlineRetailerEJB/OnlineRetailerBean!student.onlineretailer.ejb.OnlineRetailerBeanLocal")
+	}
+}

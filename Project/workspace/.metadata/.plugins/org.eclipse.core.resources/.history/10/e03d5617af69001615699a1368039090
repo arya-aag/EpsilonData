@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="StudentSessionBeans">
+        <wb-resource deploy-path="/" source-path="/EarContent" tag="defaultRootSource"/>
+        <dependent-module archiveName="StudentSessionBeansEJB.jar" deploy-path="/" handle="module:/resource/StudentSessionBeansEJB/StudentSessionBeansEJB">
+            <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="StudentSessionBeansEJBClient.jar" deploy-path="/" handle="module:/resource/StudentSessionBeansEJBClient/StudentSessionBeansEJBClient">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="StudentSessionBeansAppClient.jar" deploy-path="/" handle="module:/resource/StudentSessionBeansAppClient/StudentSessionBeansAppClient">
+            <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="TakeawayJPA.jar" deploy-path="/lib" handle="module:/resource/TakeawayJPA/TakeawayJPA">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+    </wb-module>
+</project-modules>

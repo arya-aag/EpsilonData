@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="StudentOnlineRetailer">
+        <wb-resource deploy-path="/" source-path="/EarContent" tag="defaultRootSource"/>
+        <dependent-module archiveName="StudentOnlineRetailerEJB.jar" deploy-path="/" handle="module:/resource/StudentOnlineRetailerEJB/StudentOnlineRetailerEJB">
+            <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="StudentOnlineRetailerEJBClient.jar" deploy-path="/" handle="module:/resource/StudentOnlineRetailerEJBClient/StudentOnlineRetailerEJBClient">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="StudentOnlineRetailerJPA.jar" deploy-path="/lib" handle="module:/resource/StudentOnlineRetailerJPA/StudentOnlineRetailerJPA">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="StudentOnlineRetailerAppClient.jar" deploy-path="/" handle="module:/resource/StudentOnlineRetailerAppClient/StudentOnlineRetailerAppClient">
+            <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="StudentOnlineRetailerWeb.war" deploy-path="/" handle="module:/resource/StudentOnlineRetailerWeb/StudentOnlineRetailerWeb">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+    </wb-module>
+</project-modules>

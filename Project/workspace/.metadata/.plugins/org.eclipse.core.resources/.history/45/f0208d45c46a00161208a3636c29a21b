@@ -1,0 +1,18 @@
+package market.dataanalysistool.ejb;
+
+import javax.ejb.Stateless;
+
+/**
+ * Session Bean implementation class StockData
+ */
+@Stateless
+public class StockData implements StockDataRemote, StockDataLocal {
+
+    /**
+     * Default constructor. 
+     */
+    public StockData() {
+        // TODO Auto-generated constructor stub
+    }
+
+}

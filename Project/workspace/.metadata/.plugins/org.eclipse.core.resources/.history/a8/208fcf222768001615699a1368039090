@@ -1,0 +1,105 @@
+import java.util.Properties;
+import java.util.Scanner;
+
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+
+import student.takeawayordering.ejb.MenuForOrderRemote;
+
+public class Main {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Properties prop = new Properties();
+		prop.put(Context.INITIAL_CONTEXT_FACTORY, org.jboss.naming.remote.client.InitialContextFactory.class.getName()); 
+		prop.put(Context.URL_PKG_PREFIXES, "org.jboss.ejb.client.naming");
+		prop.put(Context.PROVIDER_URL, "http-remoting://localhost:8080");
+		prop.put("jboss.naming.client.ejb.context", true);
+
+		// Create the JNDI InitialContext.
+		Context context = null;
+		try {
+			context = new InitialContext(prop);
+		} catch (NamingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		// Formulate the full JNDI name for the Diary session bean.
+		String appName     = "TakeawayOrderingBean";
+		String moduleName  = "TakeawayOrderingEJB";
+		String beanName    = "MenuForOrder";
+		String packageName = "student.takeawayordering.ejb";
+		String className   = "MenuForOrderRemote";
+
+		// Look-up the Diary bean.
+		String fullJndiName = String.format("%s/%s/%s!%s.%s", appName, moduleName, beanName, packageName, className);
+		MenuForOrderRemote diary = null;
+		try {
+			diary = (MenuForOrderRemote) context.lookup(fullJndiName);
+		} catch (NamingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println(diary);
+		doThings(diary);
+
+	}
+
+	private static void doThings(MenuForOrderRemote diary) {
+		// TODO Auto-generated method stub
+		diary.init();
+		String flag = "y";
+		Scanner sc = new Scanner(System.in);
+		String menu[] = diary.displayMenu();
+		System.out.println("The menu:");
+		int i =1;
+		for (String x : menu) {
+			System.out.println(i+". "+x);
+			i++;
+		}
+		do {
+			System.out.print("Enter a dish number: ");
+			int o = Integer.parseInt(sc.nextLine());
+			String order;
+			if (o >0 && o<menu.length) {
+				order = menu[o-1];
+			}
+			else if (o == -1)
+				break;
+			else {
+				System.out.println("Enter a valid number from the menu, please try again");
+				continue;
+			}
+			System.out.print("Enter quantity : ");
+			int q = Integer.parseInt(sc.nextLine());
+				
+			diary.addToCart(order, q);
+				
+			System.out.print("Anything to remove? ");
+			order = sc.nextLine();
+			if (diary.isInCart(order) != null) {
+				System.out.print("Enter quantity to discard. Currently in cart : " + diary.isInCart(order)+ " : ");
+				diary.removeFromCart(order,Integer.parseInt(sc.nextLine()));
+			}
+			
+			System.out.println("Your cart : ");
+			System.out.println(diary.displayCart());
+			
+			System.out.print("Want to continue? ");
+			flag = sc.nextLine();
+		}while(flag.equals("y"));
+		
+		System.out.println("You are in swag! Free food for you all! Your total order :");
+		diary.displayCart();
+		sc.close();
+	}
+	
+	/* (non-Java-doc)
+	 * @see java.lang.Object#Object()
+	 */
+	public Main() {
+		super();
+	}
+
+}

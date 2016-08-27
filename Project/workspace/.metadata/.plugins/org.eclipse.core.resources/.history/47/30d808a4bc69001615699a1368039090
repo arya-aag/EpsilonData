@@ -1,0 +1,82 @@
+/**
+ * 
+ */
+package student.onlineretailer.jpa;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+import javax.persistence.Table;
+
+/**
+ * @author Grad80
+ *
+ */
+@Entity
+@Table(name = "Products")
+public class Product {
+	
+	private long ProductID = -1;
+	private long CategoryID;
+	private String ProductName;
+	private double UnitPrice;
+	private int UnitsInStock;
+	private int ReorderLevel;
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	public long getProductID() {
+		return ProductID;
+	}
+	public void setProductID(long productID) {
+		ProductID = productID;
+	}
+	
+	@ManyToOne
+	@JoinColumn(name="CategoryID")
+	public long getCategoryID() {
+		return CategoryID;
+	}
+	public void setCategoryID(long categoryID) {
+		CategoryID = categoryID;
+	}
+	
+	
+	public double getUnitPrice() {
+		return UnitPrice;
+	}
+	public void setUnitPrice(double unitPrice) {
+		UnitPrice = unitPrice;
+	}
+	public int getReorderLevel() {
+		return ReorderLevel;
+	}
+	public void setReorderLevel(int reorderLevel) {
+		ReorderLevel = reorderLevel;
+	}
+	public int getUnitsInStock() {
+		return UnitsInStock;
+	}
+	public void setUnitsInStock(int unitsInStock) {
+		UnitsInStock = unitsInStock;
+	}
+	public String getProductName() {
+		return ProductName;
+	}
+	public void setProductName(String productName) {
+		ProductName = productName;
+	}
+	
+	public void setProductParameters(long categoryID,long productID,String productName,double unitPrice, int reorderLevel, int unitsInStock) {
+		setCategoryID(categoryID);
+		setProductID(productID);
+		setProductName(productName);
+		setUnitPrice(unitPrice);
+		setReorderLevel(reorderLevel);
+		setUnitsInStock(unitsInStock);
+	}
+}

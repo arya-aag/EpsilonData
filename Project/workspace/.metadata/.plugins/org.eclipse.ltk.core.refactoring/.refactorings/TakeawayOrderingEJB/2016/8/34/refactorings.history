@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete element from project &apos;TakeawayOrderingEJB&apos;&#x0D;&#x0A;- Original project: &apos;TakeawayOrderingEJB&apos;&#x0D;&#x0A;- Original element: &apos;TakeawayOrderingEJB/ejbModule/student.takewayordering.ejb&apos;" description="Delete element" element1="/ejbModule&lt;student.takewayordering.ejb" element2="/ejbModule&lt;student.takewayordering" element3="/ejbModule&lt;student" elements="3" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1471594947195" subPackages="false" version="1.0"/>
+</session>

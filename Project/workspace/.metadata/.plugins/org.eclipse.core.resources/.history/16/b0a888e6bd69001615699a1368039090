@@ -1,0 +1,18 @@
+package student.onlineretailer.ejb;
+
+import javax.ejb.Stateless;
+
+/**
+ * Session Bean implementation class OnlineRetailerBean
+ */
+@Stateless
+public class OnlineRetailerBean implements OnlineRetailerBeanRemote, OnlineRetailerBeanLocal {
+
+    /**
+     * Default constructor. 
+     */
+    public OnlineRetailerBean() {
+        // TODO Auto-generated constructor stub
+    }
+
+}

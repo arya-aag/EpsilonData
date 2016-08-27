@@ -1,0 +1,8 @@
+package student.onlineretailer.ejb;
+
+import javax.ejb.Remote;
+
+@Remote
+public interface OnlineRetailerBeanRemote {
+
+}

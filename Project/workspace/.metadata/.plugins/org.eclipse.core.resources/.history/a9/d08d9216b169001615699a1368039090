@@ -1,0 +1,72 @@
+package student.takeawayordering.ejb;
+
+import java.util.HashMap;
+import java.util.Map;
+import javax.ejb.Local;
+import javax.ejb.Remote;
+import javax.ejb.Stateful;
+
+/**
+ * Session Bean implementation class MenuForOrder
+ */
+@Stateful
+@Local(MenuForOrderLocal.class)
+@Remote(MenuForOrderRemote.class)
+public class MenuForOrder implements MenuForOrderRemote, MenuForOrderLocal {
+
+    /**
+     * Default constructor. 
+     */
+	
+	private Map<String,Integer> cart;
+	private String[] Menu = {"Rice","Dal","Dosa","Idli","Vada","Cake"};
+	@Override
+	public void init() {
+		// TODO Auto-generated method stub
+		cart = new HashMap<Orders,Integer>();
+	}
+	
+	@Override
+	public void addToCart(Order order,int number) {
+		// TODO Auto-generated method stub
+		
+		//to check if the cart already contains this item
+		//to put it into the order
+		cart.put(order, cart.get(order)+number);
+	}
+	
+	@Override
+	public Integer isInCart(String order) {
+		return cart.get(order);
+	}
+	
+	@Override
+	public void removeFromCart(String order, int number) {
+		// TODO Auto-generated method stub
+		
+		//to check if the cart doesn't contain this item
+		if (cart.get(order) == null) {
+			return;
+		}
+		else if (cart.get(order) <=number) {
+			cart.remove(order);
+		}
+		else {
+			cart.put(order, cart.get(order) - number);
+		}
+	}
+	
+	@Override
+	public Map<String,Integer> displayCart() {
+		// TODO Auto-generated method stub
+		return cart;
+	}
+	
+	@Override
+	public String[] displayMenu() {
+		// TODO Auto-generated method stub
+		return Menu;
+		
+	}    
+    
+}

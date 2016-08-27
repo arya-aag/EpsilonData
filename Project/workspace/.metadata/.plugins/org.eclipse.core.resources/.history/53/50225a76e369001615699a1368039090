@@ -1,0 +1,47 @@
+import java.util.List;
+
+import javax.enterprise.context.RequestScoped;
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.ws.rs.Consumes;
+import javax.ws.rs.DefaultValue;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
+
+import student.onlineretailer.ejb.OnlineRetailerBeanLocal;
+import student.onlineretailer.jpa.Product;
+
+/**
+ * @author Grad80
+ *
+ */
+@RequestScoped
+@Path("/product")
+@Produces({"application/xml", "application/json"})
+@Consumes({"application/xml", "application/json"})
+public class ProductResource {
+	OnlineRetailerBeanLocal bean;
+	Context context;
+	
+	public ProductResource() {
+		try {
+			context = new InitialContext();
+			bean = (OnlineRetailerBeanLocal)context.lookup("java:app/StudentOnlineRetailerEJB/OnlineRetailerBean!student.onlineretailer.ejb.OnlineRetailerBeanLocal");
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@GET
+	@Produces("application/json")
+	public List<Product> getAllProducts(@QueryParam("filter") @DefaultValue("") String filter) {
+		if (filter.equals("")){
+			return bean.getAllProducts();
+		}
+		return bean.getProductsByName(filter);
+	}
+	
+}

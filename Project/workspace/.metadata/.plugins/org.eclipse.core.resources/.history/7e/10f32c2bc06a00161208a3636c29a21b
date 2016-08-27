@@ -1,0 +1,18 @@
+package market.dataanalysistool.jpa;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="sample")
+public class Sample {
+	@Id
+	private long serialNo;
+	private String sample;
+	
+	public Sample() {
+		
+	}
+	
+	
+}

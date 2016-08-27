@@ -1,0 +1,1557 @@
+!SESSION 2016-08-26 18:13:08.717 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_91
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.jboss.tools.openshift.cdk.server 4 0 2016-08-26 18:13:11.525
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.jboss.tools.openshift.cdk.server [1155]
+  Unresolved requirement: Require-Bundle: org.jboss.tools.openshift.common.ui; bundle-version="3.1.0"
+    -> Bundle-SymbolicName: org.jboss.tools.openshift.common.ui; bundle-version="3.1.0.Final-v20160414-0041-B272"; singleton:="true"
+       org.jboss.tools.openshift.common.ui [1158]
+         Unresolved requirement: Require-Bundle: org.jboss.tools.openshift.egit.ui; bundle-version="[3.0.0,4.0.0)"
+           -> Bundle-SymbolicName: org.jboss.tools.openshift.egit.ui; bundle-version="3.1.0.Final-v20160414-0041-B272"; singleton:="true"
+              org.jboss.tools.openshift.egit.ui [1161]
+                Unresolved requirement: Require-Bundle: org.eclipse.egit.ui; bundle-version="2.0.0"
+                  -> Bundle-SymbolicName: org.eclipse.egit.ui; bundle-version="4.4.1.201607150455-r"; singleton:="true"
+                     org.eclipse.egit.ui [1228]
+                       No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.jboss.tools.openshift.ui; bundle-version="3.1.0"
+    -> Bundle-SymbolicName: org.jboss.tools.openshift.ui; bundle-version="3.1.0.Final-v20160414-0041-B272"; singleton:="true"
+       org.jboss.tools.openshift.ui [1165]
+         Unresolved requirement: Require-Bundle: org.jboss.tools.openshift.egit.ui; bundle-version="3.0.0"
+           -> Bundle-SymbolicName: org.jboss.tools.openshift.egit.ui; bundle-version="3.1.0.Final-v20160414-0041-B272"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.jboss.tools.openshift.common.ui; bundle-version="[3.0.0,4.0.0)"
+           -> Bundle-SymbolicName: org.jboss.tools.openshift.common.ui; bundle-version="3.1.0.Final-v20160414-0041-B272"; singleton:="true"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"] because it is exposed to package 'org.eclipse.jgit.transport' from resources org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"] and org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.3.1.201605051710-r"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"]
+    import: (&(osgi.wiring.package=org.eclipse.jgit.transport)(&(version>=4.4.1)(!(version>=4.5.0))))
+     |
+    export: osgi.wiring.package: org.eclipse.jgit.transport
+  org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"]
+
+Chain 2:
+  org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.jgit)(&(bundle-version>=4.3.0)(!(bundle-version>=4.4.0))))
+     |
+    provide: osgi.wiring.bundle: org.eclipse.jgit
+  org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.3.1.201605051710-r"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.jboss.tools.openshift.common.ui 4 0 2016-08-26 18:13:11.645
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.jboss.tools.openshift.common.ui [1158]
+  Unresolved requirement: Require-Bundle: org.jboss.tools.openshift.egit.ui; bundle-version="[3.0.0,4.0.0)"
+    -> Bundle-SymbolicName: org.jboss.tools.openshift.egit.ui; bundle-version="3.1.0.Final-v20160414-0041-B272"; singleton:="true"
+       org.jboss.tools.openshift.egit.ui [1161]
+         Unresolved requirement: Require-Bundle: org.eclipse.egit.ui; bundle-version="2.0.0"
+           -> Bundle-SymbolicName: org.eclipse.egit.ui; bundle-version="4.4.1.201607150455-r"; singleton:="true"
+              org.eclipse.egit.ui [1228]
+                No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"] because it is exposed to package 'org.eclipse.jgit.transport' from resources org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"] and org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.3.1.201605051710-r"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"]
+    import: (&(osgi.wiring.package=org.eclipse.jgit.transport)(&(version>=4.4.1)(!(version>=4.5.0))))
+     |
+    export: osgi.wiring.package: org.eclipse.jgit.transport
+  org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"]
+
+Chain 2:
+  org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.jgit)(&(bundle-version>=4.3.0)(!(bundle-version>=4.4.0))))
+     |
+    provide: osgi.wiring.bundle: org.eclipse.jgit
+  org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.3.1.201605051710-r"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.jboss.tools.openshift.egit.ui 4 0 2016-08-26 18:13:11.697
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.jboss.tools.openshift.egit.ui [1161]
+  Unresolved requirement: Require-Bundle: org.eclipse.egit.ui; bundle-version="2.0.0"
+    -> Bundle-SymbolicName: org.eclipse.egit.ui; bundle-version="4.4.1.201607150455-r"; singleton:="true"
+       org.eclipse.egit.ui [1228]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"] because it is exposed to package 'org.eclipse.jgit.transport' from resources org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"] and org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.3.1.201605051710-r"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"]
+    import: (&(osgi.wiring.package=org.eclipse.jgit.transport)(&(version>=4.4.1)(!(version>=4.5.0))))
+     |
+    export: osgi.wiring.package: org.eclipse.jgit.transport
+  org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"]
+
+Chain 2:
+  org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.jgit)(&(bundle-version>=4.3.0)(!(bundle-version>=4.4.0))))
+     |
+    provide: osgi.wiring.bundle: org.eclipse.jgit
+  org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.3.1.201605051710-r"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.jboss.tools.openshift.express.ui 4 0 2016-08-26 18:13:11.843
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.jboss.tools.openshift.express.ui [1164]
+  Unresolved requirement: Require-Bundle: org.eclipse.egit.ui; bundle-version="3.0.0"
+    -> Bundle-SymbolicName: org.eclipse.egit.ui; bundle-version="4.4.1.201607150455-r"; singleton:="true"
+       org.eclipse.egit.ui [1228]
+         No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.jboss.tools.openshift.common.ui; bundle-version="[3.0.0,4.0.0)"
+    -> Bundle-SymbolicName: org.jboss.tools.openshift.common.ui; bundle-version="3.1.0.Final-v20160414-0041-B272"; singleton:="true"
+       org.jboss.tools.openshift.common.ui [1158]
+         Unresolved requirement: Require-Bundle: org.jboss.tools.openshift.egit.ui; bundle-version="[3.0.0,4.0.0)"
+           -> Bundle-SymbolicName: org.jboss.tools.openshift.egit.ui; bundle-version="3.1.0.Final-v20160414-0041-B272"; singleton:="true"
+              org.jboss.tools.openshift.egit.ui [1161]
+                Unresolved requirement: Require-Bundle: org.eclipse.egit.ui; bundle-version="2.0.0"
+                  -> Bundle-SymbolicName: org.eclipse.egit.ui; bundle-version="4.4.1.201607150455-r"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.jboss.tools.openshift.egit.ui; bundle-version="[3.0.0,4.0.0)"
+    -> Bundle-SymbolicName: org.jboss.tools.openshift.egit.ui; bundle-version="3.1.0.Final-v20160414-0041-B272"; singleton:="true"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"] because it is exposed to package 'org.eclipse.jgit.transport' from resources org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"] and org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.3.1.201605051710-r"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"]
+    import: (&(osgi.wiring.package=org.eclipse.jgit.transport)(&(version>=4.4.1)(!(version>=4.5.0))))
+     |
+    export: osgi.wiring.package: org.eclipse.jgit.transport
+  org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"]
+
+Chain 2:
+  org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.jgit)(&(bundle-version>=4.3.0)(!(bundle-version>=4.4.0))))
+     |
+    provide: osgi.wiring.bundle: org.eclipse.jgit
+  org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.3.1.201605051710-r"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.jboss.tools.openshift.ui 4 0 2016-08-26 18:13:12.003
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.jboss.tools.openshift.ui [1165]
+  Unresolved requirement: Require-Bundle: org.jboss.tools.openshift.egit.ui; bundle-version="3.0.0"
+    -> Bundle-SymbolicName: org.jboss.tools.openshift.egit.ui; bundle-version="3.1.0.Final-v20160414-0041-B272"; singleton:="true"
+       org.jboss.tools.openshift.egit.ui [1161]
+         Unresolved requirement: Require-Bundle: org.eclipse.egit.ui; bundle-version="2.0.0"
+           -> Bundle-SymbolicName: org.eclipse.egit.ui; bundle-version="4.4.1.201607150455-r"; singleton:="true"
+              org.eclipse.egit.ui [1228]
+                No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.jboss.tools.openshift.common.ui; bundle-version="[3.0.0,4.0.0)"
+    -> Bundle-SymbolicName: org.jboss.tools.openshift.common.ui; bundle-version="3.1.0.Final-v20160414-0041-B272"; singleton:="true"
+       org.jboss.tools.openshift.common.ui [1158]
+         Unresolved requirement: Require-Bundle: org.jboss.tools.openshift.egit.ui; bundle-version="[3.0.0,4.0.0)"
+           -> Bundle-SymbolicName: org.jboss.tools.openshift.egit.ui; bundle-version="3.1.0.Final-v20160414-0041-B272"; singleton:="true"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"] because it is exposed to package 'org.eclipse.jgit.transport' from resources org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"] and org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.3.1.201605051710-r"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"]
+    import: (&(osgi.wiring.package=org.eclipse.jgit.transport)(&(version>=4.4.1)(!(version>=4.5.0))))
+     |
+    export: osgi.wiring.package: org.eclipse.jgit.transport
+  org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"]
+
+Chain 2:
+  org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.jgit)(&(bundle-version>=4.3.0)(!(bundle-version>=4.4.0))))
+     |
+    provide: osgi.wiring.bundle: org.eclipse.jgit
+  org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.3.1.201605051710-r"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.egit.gitflow.ui 4 0 2016-08-26 18:13:12.085
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.egit.gitflow.ui [1226]
+  Unresolved requirement: Import-Package: org.eclipse.egit.ui.internal.rebase; version="[4.4.1,4.5.0)"
+    -> Export-Package: org.eclipse.egit.ui.internal.rebase; bundle-symbolic-name="org.eclipse.egit.ui"; bundle-version="4.4.1.201607150455-r"; version="4.4.1"; x-friends:="org.eclipse.egit.gitflow.ui"
+       org.eclipse.egit.ui [1228]
+         No resolution report for the bundle.  Unresolved requirement: Import-Package: org.eclipse.egit.ui.internal.repository.tree; version="[4.4.1,4.5.0)"
+    -> Export-Package: org.eclipse.egit.ui.internal.repository.tree; bundle-symbolic-name="org.eclipse.egit.ui"; bundle-version="4.4.1.201607150455-r"; version="4.4.1"; x-friends:="org.eclipse.egit.gitflow.ui"
+  Unresolved requirement: Import-Package: org.eclipse.egit.ui; version="[4.4.1,4.5.0)"
+    -> Export-Package: org.eclipse.egit.ui; bundle-symbolic-name="org.eclipse.egit.ui"; bundle-version="4.4.1.201607150455-r"; version="4.4.1"; x-friends:="org.eclipse.egit.mylyn.ui,org.eclipse.egit.gitflow.ui"
+  Unresolved requirement: Import-Package: org.eclipse.egit.ui.internal.commit; version="[4.4.1,4.5.0)"
+    -> Export-Package: org.eclipse.egit.ui.internal.commit; bundle-symbolic-name="org.eclipse.egit.ui"; bundle-version="4.4.1.201607150455-r"; version="4.4.1"; x-friends:="org.eclipse.egit.mylyn.ui,org.eclipse.egit.gitflow.ui"
+  Unresolved requirement: Import-Package: org.eclipse.egit.ui.internal.selection; version="[4.4.1,4.5.0)"
+    -> Export-Package: org.eclipse.egit.ui.internal.selection; bundle-symbolic-name="org.eclipse.egit.ui"; bundle-version="4.4.1.201607150455-r"; version="4.4.1"; x-friends:="org.eclipse.egit.gitflow.ui"
+  Unresolved requirement: Import-Package: org.eclipse.egit.ui.internal.history; version="[4.4.1,4.5.0)"
+    -> Export-Package: org.eclipse.egit.ui.internal.history; bundle-symbolic-name="org.eclipse.egit.ui"; bundle-version="4.4.1.201607150455-r"; version="4.4.1"; x-internal:="true"
+  Unresolved requirement: Import-Package: org.eclipse.egit.ui.internal; version="[4.4.1,4.5.0)"
+    -> Export-Package: org.eclipse.egit.ui.internal; bundle-symbolic-name="org.eclipse.egit.ui"; bundle-version="4.4.1.201607150455-r"; version="4.4.1"; x-friends:="org.eclipse.egit.import,org.eclipse.egit.gitflow.ui"
+  Unresolved requirement: Import-Package: org.eclipse.egit.ui.internal.operations; version="[4.4.1,4.5.0)"
+    -> Export-Package: org.eclipse.egit.ui.internal.operations; bundle-symbolic-name="org.eclipse.egit.ui"; bundle-version="4.4.1.201607150455-r"; version="4.4.1"; x-friends:="org.eclipse.egit.gitflow.ui"
+  Unresolved requirement: Import-Package: org.eclipse.egit.ui.internal.branch; version="[4.4.1,4.5.0)"
+    -> Export-Package: org.eclipse.egit.ui.internal.branch; bundle-symbolic-name="org.eclipse.egit.ui"; bundle-version="4.4.1.201607150455-r"; version="4.4.1"; x-friends:="org.eclipse.egit.gitflow.ui"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"] because it is exposed to package 'org.eclipse.jgit.transport' from resources org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"] and org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.3.1.201605051710-r"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"]
+    import: (&(osgi.wiring.package=org.eclipse.jgit.transport)(&(version>=4.4.1)(!(version>=4.5.0))))
+     |
+    export: osgi.wiring.package: org.eclipse.jgit.transport
+  org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"]
+
+Chain 2:
+  org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.jgit)(&(bundle-version>=4.3.0)(!(bundle-version>=4.4.0))))
+     |
+    provide: osgi.wiring.bundle: org.eclipse.jgit
+  org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.3.1.201605051710-r"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.egit.mylyn.ui 4 0 2016-08-26 18:13:12.207
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.egit.mylyn.ui [1227]
+  Unresolved requirement: Import-Package: org.eclipse.egit.ui.internal.commit; version="[4.4.1,4.5.0)"
+    -> Export-Package: org.eclipse.egit.ui.internal.commit; bundle-symbolic-name="org.eclipse.egit.ui"; bundle-version="4.4.1.201607150455-r"; version="4.4.1"; x-friends:="org.eclipse.egit.mylyn.ui,org.eclipse.egit.gitflow.ui"
+       org.eclipse.egit.ui [1228]
+         No resolution report for the bundle.  Unresolved requirement: Import-Package: org.eclipse.egit.ui.internal.synchronize.model; version="[4.4.1,4.5.0)"
+    -> Export-Package: org.eclipse.egit.ui.internal.synchronize.model; bundle-symbolic-name="org.eclipse.egit.ui"; bundle-version="4.4.1.201607150455-r"; version="4.4.1"; x-friends:="org.eclipse.egit.mylyn.ui"
+  Unresolved requirement: Import-Package: org.eclipse.egit.ui; version="[4.4.1,4.5.0)"
+    -> Export-Package: org.eclipse.egit.ui; bundle-symbolic-name="org.eclipse.egit.ui"; bundle-version="4.4.1.201607150455-r"; version="4.4.1"; x-friends:="org.eclipse.egit.mylyn.ui,org.eclipse.egit.gitflow.ui"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"] because it is exposed to package 'org.eclipse.jgit.transport' from resources org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"] and org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.3.1.201605051710-r"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"]
+    import: (&(osgi.wiring.package=org.eclipse.jgit.transport)(&(version>=4.4.1)(!(version>=4.5.0))))
+     |
+    export: osgi.wiring.package: org.eclipse.jgit.transport
+  org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"]
+
+Chain 2:
+  org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.jgit)(&(bundle-version>=4.3.0)(!(bundle-version>=4.4.0))))
+     |
+    provide: osgi.wiring.bundle: org.eclipse.jgit
+  org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.3.1.201605051710-r"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.egit.ui 4 0 2016-08-26 18:13:12.269
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.egit.ui [1228]
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"] because it is exposed to package 'org.eclipse.jgit.transport' from resources org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"] and org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.3.1.201605051710-r"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"]
+    import: (&(osgi.wiring.package=org.eclipse.jgit.transport)(&(version>=4.4.1)(!(version>=4.5.0))))
+     |
+    export: osgi.wiring.package: org.eclipse.jgit.transport
+  org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"]
+
+Chain 2:
+  org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.jgit)(&(bundle-version>=4.3.0)(!(bundle-version>=4.4.0))))
+     |
+    provide: osgi.wiring.bundle: org.eclipse.jgit
+  org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.3.1.201605051710-r"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+!SESSION 2016-08-27 11:50:12.108 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_91
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Framework arguments:  -product org.eclipse.epp.package.jee.product -product org.eclipse.epp.package.jee.product -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product -product org.eclipse.epp.package.jee.product -data C:\Users\Grad80\Desktop\EpsilonData\Project\JAVA -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.jboss.tools.openshift.cdk.server 4 0 2016-08-27 11:50:14.515
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.jboss.tools.openshift.cdk.server [1155]
+  Unresolved requirement: Require-Bundle: org.jboss.tools.openshift.ui; bundle-version="3.1.0"
+    -> Bundle-SymbolicName: org.jboss.tools.openshift.ui; bundle-version="3.1.0.Final-v20160414-0041-B272"; singleton:="true"
+       org.jboss.tools.openshift.ui [1165]
+         Unresolved requirement: Require-Bundle: org.jboss.tools.openshift.common.ui; bundle-version="[3.0.0,4.0.0)"
+           -> Bundle-SymbolicName: org.jboss.tools.openshift.common.ui; bundle-version="3.1.0.Final-v20160414-0041-B272"; singleton:="true"
+              org.jboss.tools.openshift.common.ui [1158]
+                Unresolved requirement: Require-Bundle: org.jboss.tools.openshift.egit.ui; bundle-version="[3.0.0,4.0.0)"
+                  -> Bundle-SymbolicName: org.jboss.tools.openshift.egit.ui; bundle-version="3.1.0.Final-v20160414-0041-B272"; singleton:="true"
+                     org.jboss.tools.openshift.egit.ui [1161]
+                       Unresolved requirement: Require-Bundle: org.eclipse.egit.ui; bundle-version="2.0.0"
+                         -> Bundle-SymbolicName: org.eclipse.egit.ui; bundle-version="4.4.1.201607150455-r"; singleton:="true"
+                            org.eclipse.egit.ui [1228]
+                              No resolution report for the bundle.         Unresolved requirement: Require-Bundle: org.jboss.tools.openshift.egit.ui; bundle-version="3.0.0"
+           -> Bundle-SymbolicName: org.jboss.tools.openshift.egit.ui; bundle-version="3.1.0.Final-v20160414-0041-B272"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.jboss.tools.openshift.common.ui; bundle-version="3.1.0"
+    -> Bundle-SymbolicName: org.jboss.tools.openshift.common.ui; bundle-version="3.1.0.Final-v20160414-0041-B272"; singleton:="true"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"] because it is exposed to package 'org.eclipse.jgit.transport' from resources org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"] and org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.3.1.201605051710-r"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"]
+    import: (&(osgi.wiring.package=org.eclipse.jgit.transport)(&(version>=4.4.1)(!(version>=4.5.0))))
+     |
+    export: osgi.wiring.package: org.eclipse.jgit.transport
+  org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"]
+
+Chain 2:
+  org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.jgit)(&(bundle-version>=4.3.0)(!(bundle-version>=4.4.0))))
+     |
+    provide: osgi.wiring.bundle: org.eclipse.jgit
+  org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.3.1.201605051710-r"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.jboss.tools.openshift.common.ui 4 0 2016-08-27 11:50:14.609
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.jboss.tools.openshift.common.ui [1158]
+  Unresolved requirement: Require-Bundle: org.jboss.tools.openshift.egit.ui; bundle-version="[3.0.0,4.0.0)"
+    -> Bundle-SymbolicName: org.jboss.tools.openshift.egit.ui; bundle-version="3.1.0.Final-v20160414-0041-B272"; singleton:="true"
+       org.jboss.tools.openshift.egit.ui [1161]
+         Unresolved requirement: Require-Bundle: org.eclipse.egit.ui; bundle-version="2.0.0"
+           -> Bundle-SymbolicName: org.eclipse.egit.ui; bundle-version="4.4.1.201607150455-r"; singleton:="true"
+              org.eclipse.egit.ui [1228]
+                No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"] because it is exposed to package 'org.eclipse.jgit.transport' from resources org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"] and org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.3.1.201605051710-r"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"]
+    import: (&(osgi.wiring.package=org.eclipse.jgit.transport)(&(version>=4.4.1)(!(version>=4.5.0))))
+     |
+    export: osgi.wiring.package: org.eclipse.jgit.transport
+  org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"]
+
+Chain 2:
+  org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.jgit)(&(bundle-version>=4.3.0)(!(bundle-version>=4.4.0))))
+     |
+    provide: osgi.wiring.bundle: org.eclipse.jgit
+  org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.3.1.201605051710-r"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.jboss.tools.openshift.egit.ui 4 0 2016-08-27 11:50:14.668
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.jboss.tools.openshift.egit.ui [1161]
+  Unresolved requirement: Require-Bundle: org.eclipse.egit.ui; bundle-version="2.0.0"
+    -> Bundle-SymbolicName: org.eclipse.egit.ui; bundle-version="4.4.1.201607150455-r"; singleton:="true"
+       org.eclipse.egit.ui [1228]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"] because it is exposed to package 'org.eclipse.jgit.transport' from resources org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"] and org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.3.1.201605051710-r"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"]
+    import: (&(osgi.wiring.package=org.eclipse.jgit.transport)(&(version>=4.4.1)(!(version>=4.5.0))))
+     |
+    export: osgi.wiring.package: org.eclipse.jgit.transport
+  org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"]
+
+Chain 2:
+  org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.jgit)(&(bundle-version>=4.3.0)(!(bundle-version>=4.4.0))))
+     |
+    provide: osgi.wiring.bundle: org.eclipse.jgit
+  org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.3.1.201605051710-r"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.jboss.tools.openshift.express.ui 4 0 2016-08-27 11:50:14.895
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.jboss.tools.openshift.express.ui [1164]
+  Unresolved requirement: Require-Bundle: org.eclipse.egit.ui; bundle-version="3.0.0"
+    -> Bundle-SymbolicName: org.eclipse.egit.ui; bundle-version="4.4.1.201607150455-r"; singleton:="true"
+       org.eclipse.egit.ui [1228]
+         No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.jboss.tools.openshift.egit.ui; bundle-version="[3.0.0,4.0.0)"
+    -> Bundle-SymbolicName: org.jboss.tools.openshift.egit.ui; bundle-version="3.1.0.Final-v20160414-0041-B272"; singleton:="true"
+       org.jboss.tools.openshift.egit.ui [1161]
+         Unresolved requirement: Require-Bundle: org.eclipse.egit.ui; bundle-version="2.0.0"
+           -> Bundle-SymbolicName: org.eclipse.egit.ui; bundle-version="4.4.1.201607150455-r"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.jboss.tools.openshift.common.ui; bundle-version="[3.0.0,4.0.0)"
+    -> Bundle-SymbolicName: org.jboss.tools.openshift.common.ui; bundle-version="3.1.0.Final-v20160414-0041-B272"; singleton:="true"
+       org.jboss.tools.openshift.common.ui [1158]
+         Unresolved requirement: Require-Bundle: org.jboss.tools.openshift.egit.ui; bundle-version="[3.0.0,4.0.0)"
+           -> Bundle-SymbolicName: org.jboss.tools.openshift.egit.ui; bundle-version="3.1.0.Final-v20160414-0041-B272"; singleton:="true"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"] because it is exposed to package 'org.eclipse.jgit.transport' from resources org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"] and org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.3.1.201605051710-r"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"]
+    import: (&(osgi.wiring.package=org.eclipse.jgit.transport)(&(version>=4.4.1)(!(version>=4.5.0))))
+     |
+    export: osgi.wiring.package: org.eclipse.jgit.transport
+  org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"]
+
+Chain 2:
+  org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.jgit)(&(bundle-version>=4.3.0)(!(bundle-version>=4.4.0))))
+     |
+    provide: osgi.wiring.bundle: org.eclipse.jgit
+  org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.3.1.201605051710-r"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.jboss.tools.openshift.ui 4 0 2016-08-27 11:50:15.092
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.jboss.tools.openshift.ui [1165]
+  Unresolved requirement: Require-Bundle: org.jboss.tools.openshift.common.ui; bundle-version="[3.0.0,4.0.0)"
+    -> Bundle-SymbolicName: org.jboss.tools.openshift.common.ui; bundle-version="3.1.0.Final-v20160414-0041-B272"; singleton:="true"
+       org.jboss.tools.openshift.common.ui [1158]
+         Unresolved requirement: Require-Bundle: org.jboss.tools.openshift.egit.ui; bundle-version="[3.0.0,4.0.0)"
+           -> Bundle-SymbolicName: org.jboss.tools.openshift.egit.ui; bundle-version="3.1.0.Final-v20160414-0041-B272"; singleton:="true"
+              org.jboss.tools.openshift.egit.ui [1161]
+                Unresolved requirement: Require-Bundle: org.eclipse.egit.ui; bundle-version="2.0.0"
+                  -> Bundle-SymbolicName: org.eclipse.egit.ui; bundle-version="4.4.1.201607150455-r"; singleton:="true"
+                     org.eclipse.egit.ui [1228]
+                       No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.jboss.tools.openshift.egit.ui; bundle-version="3.0.0"
+    -> Bundle-SymbolicName: org.jboss.tools.openshift.egit.ui; bundle-version="3.1.0.Final-v20160414-0041-B272"; singleton:="true"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"] because it is exposed to package 'org.eclipse.jgit.transport' from resources org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"] and org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.3.1.201605051710-r"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"]
+    import: (&(osgi.wiring.package=org.eclipse.jgit.transport)(&(version>=4.4.1)(!(version>=4.5.0))))
+     |
+    export: osgi.wiring.package: org.eclipse.jgit.transport
+  org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"]
+
+Chain 2:
+  org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.jgit)(&(bundle-version>=4.3.0)(!(bundle-version>=4.4.0))))
+     |
+    provide: osgi.wiring.bundle: org.eclipse.jgit
+  org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.3.1.201605051710-r"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.egit.gitflow.ui 4 0 2016-08-27 11:50:15.114
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.egit.gitflow.ui [1226]
+  Unresolved requirement: Import-Package: org.eclipse.egit.ui.internal.commit; version="[4.4.1,4.5.0)"
+    -> Export-Package: org.eclipse.egit.ui.internal.commit; bundle-symbolic-name="org.eclipse.egit.ui"; bundle-version="4.4.1.201607150455-r"; version="4.4.1"; x-friends:="org.eclipse.egit.mylyn.ui,org.eclipse.egit.gitflow.ui"
+       org.eclipse.egit.ui [1228]
+         No resolution report for the bundle.  Unresolved requirement: Import-Package: org.eclipse.egit.ui.internal.history; version="[4.4.1,4.5.0)"
+    -> Export-Package: org.eclipse.egit.ui.internal.history; bundle-symbolic-name="org.eclipse.egit.ui"; bundle-version="4.4.1.201607150455-r"; version="4.4.1"; x-internal:="true"
+  Unresolved requirement: Import-Package: org.eclipse.egit.ui.internal.selection; version="[4.4.1,4.5.0)"
+    -> Export-Package: org.eclipse.egit.ui.internal.selection; bundle-symbolic-name="org.eclipse.egit.ui"; bundle-version="4.4.1.201607150455-r"; version="4.4.1"; x-friends:="org.eclipse.egit.gitflow.ui"
+  Unresolved requirement: Import-Package: org.eclipse.egit.ui; version="[4.4.1,4.5.0)"
+    -> Export-Package: org.eclipse.egit.ui; bundle-symbolic-name="org.eclipse.egit.ui"; bundle-version="4.4.1.201607150455-r"; version="4.4.1"; x-friends:="org.eclipse.egit.mylyn.ui,org.eclipse.egit.gitflow.ui"
+  Unresolved requirement: Import-Package: org.eclipse.egit.ui.internal.branch; version="[4.4.1,4.5.0)"
+    -> Export-Package: org.eclipse.egit.ui.internal.branch; bundle-symbolic-name="org.eclipse.egit.ui"; bundle-version="4.4.1.201607150455-r"; version="4.4.1"; x-friends:="org.eclipse.egit.gitflow.ui"
+  Unresolved requirement: Import-Package: org.eclipse.egit.ui.internal; version="[4.4.1,4.5.0)"
+    -> Export-Package: org.eclipse.egit.ui.internal; bundle-symbolic-name="org.eclipse.egit.ui"; bundle-version="4.4.1.201607150455-r"; version="4.4.1"; x-friends:="org.eclipse.egit.import,org.eclipse.egit.gitflow.ui"
+  Unresolved requirement: Import-Package: org.eclipse.egit.ui.internal.repository.tree; version="[4.4.1,4.5.0)"
+    -> Export-Package: org.eclipse.egit.ui.internal.repository.tree; bundle-symbolic-name="org.eclipse.egit.ui"; bundle-version="4.4.1.201607150455-r"; version="4.4.1"; x-friends:="org.eclipse.egit.gitflow.ui"
+  Unresolved requirement: Import-Package: org.eclipse.egit.ui.internal.operations; version="[4.4.1,4.5.0)"
+    -> Export-Package: org.eclipse.egit.ui.internal.operations; bundle-symbolic-name="org.eclipse.egit.ui"; bundle-version="4.4.1.201607150455-r"; version="4.4.1"; x-friends:="org.eclipse.egit.gitflow.ui"
+  Unresolved requirement: Import-Package: org.eclipse.egit.ui.internal.rebase; version="[4.4.1,4.5.0)"
+    -> Export-Package: org.eclipse.egit.ui.internal.rebase; bundle-symbolic-name="org.eclipse.egit.ui"; bundle-version="4.4.1.201607150455-r"; version="4.4.1"; x-friends:="org.eclipse.egit.gitflow.ui"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"] because it is exposed to package 'org.eclipse.jgit.transport' from resources org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"] and org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.3.1.201605051710-r"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"]
+    import: (&(osgi.wiring.package=org.eclipse.jgit.transport)(&(version>=4.4.1)(!(version>=4.5.0))))
+     |
+    export: osgi.wiring.package: org.eclipse.jgit.transport
+  org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"]
+
+Chain 2:
+  org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.jgit)(&(bundle-version>=4.3.0)(!(bundle-version>=4.4.0))))
+     |
+    provide: osgi.wiring.bundle: org.eclipse.jgit
+  org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.3.1.201605051710-r"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.egit.mylyn.ui 4 0 2016-08-27 11:50:15.137
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.egit.mylyn.ui [1227]
+  Unresolved requirement: Import-Package: org.eclipse.egit.ui.internal.commit; version="[4.4.1,4.5.0)"
+    -> Export-Package: org.eclipse.egit.ui.internal.commit; bundle-symbolic-name="org.eclipse.egit.ui"; bundle-version="4.4.1.201607150455-r"; version="4.4.1"; x-friends:="org.eclipse.egit.mylyn.ui,org.eclipse.egit.gitflow.ui"
+       org.eclipse.egit.ui [1228]
+         No resolution report for the bundle.  Unresolved requirement: Import-Package: org.eclipse.egit.ui.internal.synchronize.model; version="[4.4.1,4.5.0)"
+    -> Export-Package: org.eclipse.egit.ui.internal.synchronize.model; bundle-symbolic-name="org.eclipse.egit.ui"; bundle-version="4.4.1.201607150455-r"; version="4.4.1"; x-friends:="org.eclipse.egit.mylyn.ui"
+  Unresolved requirement: Import-Package: org.eclipse.egit.ui; version="[4.4.1,4.5.0)"
+    -> Export-Package: org.eclipse.egit.ui; bundle-symbolic-name="org.eclipse.egit.ui"; bundle-version="4.4.1.201607150455-r"; version="4.4.1"; x-friends:="org.eclipse.egit.mylyn.ui,org.eclipse.egit.gitflow.ui"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"] because it is exposed to package 'org.eclipse.jgit.transport' from resources org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"] and org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.3.1.201605051710-r"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"]
+    import: (&(osgi.wiring.package=org.eclipse.jgit.transport)(&(version>=4.4.1)(!(version>=4.5.0))))
+     |
+    export: osgi.wiring.package: org.eclipse.jgit.transport
+  org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"]
+
+Chain 2:
+  org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.jgit)(&(bundle-version>=4.3.0)(!(bundle-version>=4.4.0))))
+     |
+    provide: osgi.wiring.bundle: org.eclipse.jgit
+  org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.3.1.201605051710-r"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.egit.ui 4 0 2016-08-27 11:50:15.188
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.egit.ui [1228]
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"] because it is exposed to package 'org.eclipse.jgit.transport' from resources org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"] and org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.3.1.201605051710-r"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"]
+    import: (&(osgi.wiring.package=org.eclipse.jgit.transport)(&(version>=4.4.1)(!(version>=4.5.0))))
+     |
+    export: osgi.wiring.package: org.eclipse.jgit.transport
+  org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"]
+
+Chain 2:
+  org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.jgit)(&(bundle-version>=4.3.0)(!(bundle-version>=4.4.0))))
+     |
+    provide: osgi.wiring.bundle: org.eclipse.jgit
+  org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.3.1.201605051710-r"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.wst.server.discovery 1 0 2016-08-27 11:51:38.002
+!MESSAGE cacheFile=file:/C:/Grad%20software%202016/Java%20Tools/eclipse-jee-mars-2-win32-x86_64/eclipse/configuration/org.eclipse.wst.server.discovery/serverAdapterSitesDetails.xml
+
+!ENTRY org.eclipse.wst.server.discovery 1 0 2016-08-27 11:51:38.050
+!MESSAGE cacheFile=file:/C:/Grad%20software%202016/Java%20Tools/eclipse-jee-mars-2-win32-x86_64/eclipse/configuration/org.eclipse.wst.server.discovery/serverAdapterSitesDetails.xml
+
+!ENTRY org.eclipse.wst.server.discovery 1 0 2016-08-27 11:52:18.543
+!MESSAGE cacheFile=file:/C:/Grad%20software%202016/Java%20Tools/eclipse-jee-mars-2-win32-x86_64/eclipse/configuration/org.eclipse.wst.server.discovery/serverAdapterSitesDetails.xml
+
+!ENTRY org.eclipse.wst.server.discovery 1 0 2016-08-27 11:53:52.854
+!MESSAGE cacheFile=file:/C:/Grad%20software%202016/Java%20Tools/eclipse-jee-mars-2-win32-x86_64/eclipse/configuration/org.eclipse.wst.server.discovery/serverAdapterSitesDetails.xml
+
+!ENTRY org.eclipse.core.jobs 2 2 2016-08-27 11:56:03.940
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerProblemsHistory$UpdateIndexJob
+!SESSION 2016-08-27 12:00:09.237 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_91
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Framework arguments:  -product org.eclipse.epp.package.jee.product -product org.eclipse.epp.package.jee.product -product org.eclipse.epp.package.jee.product -product org.eclipse.epp.package.jee.product -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product -product org.eclipse.epp.package.jee.product -product org.eclipse.epp.package.jee.product -product org.eclipse.epp.package.jee.product -data C:\Users\Grad80\Desktop\EpsilonData\Project\JAVA -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.jboss.tools.openshift.cdk.server 4 0 2016-08-27 12:00:12.009
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.jboss.tools.openshift.cdk.server [1155]
+  Unresolved requirement: Require-Bundle: org.jboss.tools.openshift.common.ui; bundle-version="3.1.0"
+    -> Bundle-SymbolicName: org.jboss.tools.openshift.common.ui; bundle-version="3.1.0.Final-v20160414-0041-B272"; singleton:="true"
+       org.jboss.tools.openshift.common.ui [1158]
+         Unresolved requirement: Require-Bundle: org.jboss.tools.openshift.egit.ui; bundle-version="[3.0.0,4.0.0)"
+           -> Bundle-SymbolicName: org.jboss.tools.openshift.egit.ui; bundle-version="3.1.0.Final-v20160414-0041-B272"; singleton:="true"
+              org.jboss.tools.openshift.egit.ui [1161]
+                Unresolved requirement: Require-Bundle: org.eclipse.egit.ui; bundle-version="2.0.0"
+                  -> Bundle-SymbolicName: org.eclipse.egit.ui; bundle-version="4.4.1.201607150455-r"; singleton:="true"
+                     org.eclipse.egit.ui [1228]
+                       No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.jboss.tools.openshift.ui; bundle-version="3.1.0"
+    -> Bundle-SymbolicName: org.jboss.tools.openshift.ui; bundle-version="3.1.0.Final-v20160414-0041-B272"; singleton:="true"
+       org.jboss.tools.openshift.ui [1165]
+         Unresolved requirement: Require-Bundle: org.jboss.tools.openshift.egit.ui; bundle-version="3.0.0"
+           -> Bundle-SymbolicName: org.jboss.tools.openshift.egit.ui; bundle-version="3.1.0.Final-v20160414-0041-B272"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.jboss.tools.openshift.common.ui; bundle-version="[3.0.0,4.0.0)"
+           -> Bundle-SymbolicName: org.jboss.tools.openshift.common.ui; bundle-version="3.1.0.Final-v20160414-0041-B272"; singleton:="true"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"] because it is exposed to package 'org.eclipse.jgit.transport' from resources org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"] and org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.3.1.201605051710-r"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"]
+    import: (&(osgi.wiring.package=org.eclipse.jgit.transport)(&(version>=4.4.1)(!(version>=4.5.0))))
+     |
+    export: osgi.wiring.package: org.eclipse.jgit.transport
+  org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"]
+
+Chain 2:
+  org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.jgit)(&(bundle-version>=4.3.0)(!(bundle-version>=4.4.0))))
+     |
+    provide: osgi.wiring.bundle: org.eclipse.jgit
+  org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.3.1.201605051710-r"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.jboss.tools.openshift.common.ui 4 0 2016-08-27 12:00:12.037
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.jboss.tools.openshift.common.ui [1158]
+  Unresolved requirement: Require-Bundle: org.jboss.tools.openshift.egit.ui; bundle-version="[3.0.0,4.0.0)"
+    -> Bundle-SymbolicName: org.jboss.tools.openshift.egit.ui; bundle-version="3.1.0.Final-v20160414-0041-B272"; singleton:="true"
+       org.jboss.tools.openshift.egit.ui [1161]
+         Unresolved requirement: Require-Bundle: org.eclipse.egit.ui; bundle-version="2.0.0"
+           -> Bundle-SymbolicName: org.eclipse.egit.ui; bundle-version="4.4.1.201607150455-r"; singleton:="true"
+              org.eclipse.egit.ui [1228]
+                No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"] because it is exposed to package 'org.eclipse.jgit.transport' from resources org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"] and org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.3.1.201605051710-r"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"]
+    import: (&(osgi.wiring.package=org.eclipse.jgit.transport)(&(version>=4.4.1)(!(version>=4.5.0))))
+     |
+    export: osgi.wiring.package: org.eclipse.jgit.transport
+  org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"]
+
+Chain 2:
+  org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.jgit)(&(bundle-version>=4.3.0)(!(bundle-version>=4.4.0))))
+     |
+    provide: osgi.wiring.bundle: org.eclipse.jgit
+  org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.3.1.201605051710-r"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.jboss.tools.openshift.egit.ui 4 0 2016-08-27 12:00:12.062
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.jboss.tools.openshift.egit.ui [1161]
+  Unresolved requirement: Require-Bundle: org.eclipse.egit.ui; bundle-version="2.0.0"
+    -> Bundle-SymbolicName: org.eclipse.egit.ui; bundle-version="4.4.1.201607150455-r"; singleton:="true"
+       org.eclipse.egit.ui [1228]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"] because it is exposed to package 'org.eclipse.jgit.transport' from resources org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"] and org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.3.1.201605051710-r"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"]
+    import: (&(osgi.wiring.package=org.eclipse.jgit.transport)(&(version>=4.4.1)(!(version>=4.5.0))))
+     |
+    export: osgi.wiring.package: org.eclipse.jgit.transport
+  org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"]
+
+Chain 2:
+  org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.jgit)(&(bundle-version>=4.3.0)(!(bundle-version>=4.4.0))))
+     |
+    provide: osgi.wiring.bundle: org.eclipse.jgit
+  org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.3.1.201605051710-r"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.jboss.tools.openshift.express.ui 4 0 2016-08-27 12:00:12.185
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.jboss.tools.openshift.express.ui [1164]
+  Unresolved requirement: Require-Bundle: org.jboss.tools.openshift.egit.ui; bundle-version="[3.0.0,4.0.0)"
+    -> Bundle-SymbolicName: org.jboss.tools.openshift.egit.ui; bundle-version="3.1.0.Final-v20160414-0041-B272"; singleton:="true"
+       org.jboss.tools.openshift.egit.ui [1161]
+         Unresolved requirement: Require-Bundle: org.eclipse.egit.ui; bundle-version="2.0.0"
+           -> Bundle-SymbolicName: org.eclipse.egit.ui; bundle-version="4.4.1.201607150455-r"; singleton:="true"
+              org.eclipse.egit.ui [1228]
+                No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.jboss.tools.openshift.common.ui; bundle-version="[3.0.0,4.0.0)"
+    -> Bundle-SymbolicName: org.jboss.tools.openshift.common.ui; bundle-version="3.1.0.Final-v20160414-0041-B272"; singleton:="true"
+       org.jboss.tools.openshift.common.ui [1158]
+         Unresolved requirement: Require-Bundle: org.jboss.tools.openshift.egit.ui; bundle-version="[3.0.0,4.0.0)"
+           -> Bundle-SymbolicName: org.jboss.tools.openshift.egit.ui; bundle-version="3.1.0.Final-v20160414-0041-B272"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.egit.ui; bundle-version="3.0.0"
+    -> Bundle-SymbolicName: org.eclipse.egit.ui; bundle-version="4.4.1.201607150455-r"; singleton:="true"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"] because it is exposed to package 'org.eclipse.jgit.transport' from resources org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"] and org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.3.1.201605051710-r"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"]
+    import: (&(osgi.wiring.package=org.eclipse.jgit.transport)(&(version>=4.4.1)(!(version>=4.5.0))))
+     |
+    export: osgi.wiring.package: org.eclipse.jgit.transport
+  org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"]
+
+Chain 2:
+  org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.jgit)(&(bundle-version>=4.3.0)(!(bundle-version>=4.4.0))))
+     |
+    provide: osgi.wiring.bundle: org.eclipse.jgit
+  org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.3.1.201605051710-r"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.jboss.tools.openshift.ui 4 0 2016-08-27 12:00:12.372
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.jboss.tools.openshift.ui [1165]
+  Unresolved requirement: Require-Bundle: org.jboss.tools.openshift.egit.ui; bundle-version="3.0.0"
+    -> Bundle-SymbolicName: org.jboss.tools.openshift.egit.ui; bundle-version="3.1.0.Final-v20160414-0041-B272"; singleton:="true"
+       org.jboss.tools.openshift.egit.ui [1161]
+         Unresolved requirement: Require-Bundle: org.eclipse.egit.ui; bundle-version="2.0.0"
+           -> Bundle-SymbolicName: org.eclipse.egit.ui; bundle-version="4.4.1.201607150455-r"; singleton:="true"
+              org.eclipse.egit.ui [1228]
+                No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.jboss.tools.openshift.common.ui; bundle-version="[3.0.0,4.0.0)"
+    -> Bundle-SymbolicName: org.jboss.tools.openshift.common.ui; bundle-version="3.1.0.Final-v20160414-0041-B272"; singleton:="true"
+       org.jboss.tools.openshift.common.ui [1158]
+         Unresolved requirement: Require-Bundle: org.jboss.tools.openshift.egit.ui; bundle-version="[3.0.0,4.0.0)"
+           -> Bundle-SymbolicName: org.jboss.tools.openshift.egit.ui; bundle-version="3.1.0.Final-v20160414-0041-B272"; singleton:="true"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"] because it is exposed to package 'org.eclipse.jgit.transport' from resources org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"] and org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.3.1.201605051710-r"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"]
+    import: (&(osgi.wiring.package=org.eclipse.jgit.transport)(&(version>=4.4.1)(!(version>=4.5.0))))
+     |
+    export: osgi.wiring.package: org.eclipse.jgit.transport
+  org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"]
+
+Chain 2:
+  org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.jgit)(&(bundle-version>=4.3.0)(!(bundle-version>=4.4.0))))
+     |
+    provide: osgi.wiring.bundle: org.eclipse.jgit
+  org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.3.1.201605051710-r"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.egit.gitflow.ui 4 0 2016-08-27 12:00:12.379
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.egit.gitflow.ui [1226]
+  Unresolved requirement: Import-Package: org.eclipse.egit.ui.internal.rebase; version="[4.4.1,4.5.0)"
+    -> Export-Package: org.eclipse.egit.ui.internal.rebase; bundle-symbolic-name="org.eclipse.egit.ui"; bundle-version="4.4.1.201607150455-r"; version="4.4.1"; x-friends:="org.eclipse.egit.gitflow.ui"
+       org.eclipse.egit.ui [1228]
+         No resolution report for the bundle.  Unresolved requirement: Import-Package: org.eclipse.egit.ui.internal.selection; version="[4.4.1,4.5.0)"
+    -> Export-Package: org.eclipse.egit.ui.internal.selection; bundle-symbolic-name="org.eclipse.egit.ui"; bundle-version="4.4.1.201607150455-r"; version="4.4.1"; x-friends:="org.eclipse.egit.gitflow.ui"
+  Unresolved requirement: Import-Package: org.eclipse.egit.ui.internal.operations; version="[4.4.1,4.5.0)"
+    -> Export-Package: org.eclipse.egit.ui.internal.operations; bundle-symbolic-name="org.eclipse.egit.ui"; bundle-version="4.4.1.201607150455-r"; version="4.4.1"; x-friends:="org.eclipse.egit.gitflow.ui"
+  Unresolved requirement: Import-Package: org.eclipse.egit.ui; version="[4.4.1,4.5.0)"
+    -> Export-Package: org.eclipse.egit.ui; bundle-symbolic-name="org.eclipse.egit.ui"; bundle-version="4.4.1.201607150455-r"; version="4.4.1"; x-friends:="org.eclipse.egit.mylyn.ui,org.eclipse.egit.gitflow.ui"
+  Unresolved requirement: Import-Package: org.eclipse.egit.ui.internal; version="[4.4.1,4.5.0)"
+    -> Export-Package: org.eclipse.egit.ui.internal; bundle-symbolic-name="org.eclipse.egit.ui"; bundle-version="4.4.1.201607150455-r"; version="4.4.1"; x-friends:="org.eclipse.egit.import,org.eclipse.egit.gitflow.ui"
+  Unresolved requirement: Import-Package: org.eclipse.egit.ui.internal.branch; version="[4.4.1,4.5.0)"
+    -> Export-Package: org.eclipse.egit.ui.internal.branch; bundle-symbolic-name="org.eclipse.egit.ui"; bundle-version="4.4.1.201607150455-r"; version="4.4.1"; x-friends:="org.eclipse.egit.gitflow.ui"
+  Unresolved requirement: Import-Package: org.eclipse.egit.ui.internal.commit; version="[4.4.1,4.5.0)"
+    -> Export-Package: org.eclipse.egit.ui.internal.commit; bundle-symbolic-name="org.eclipse.egit.ui"; bundle-version="4.4.1.201607150455-r"; version="4.4.1"; x-friends:="org.eclipse.egit.mylyn.ui,org.eclipse.egit.gitflow.ui"
+  Unresolved requirement: Import-Package: org.eclipse.egit.ui.internal.history; version="[4.4.1,4.5.0)"
+    -> Export-Package: org.eclipse.egit.ui.internal.history; bundle-symbolic-name="org.eclipse.egit.ui"; bundle-version="4.4.1.201607150455-r"; version="4.4.1"; x-internal:="true"
+  Unresolved requirement: Import-Package: org.eclipse.egit.ui.internal.repository.tree; version="[4.4.1,4.5.0)"
+    -> Export-Package: org.eclipse.egit.ui.internal.repository.tree; bundle-symbolic-name="org.eclipse.egit.ui"; bundle-version="4.4.1.201607150455-r"; version="4.4.1"; x-friends:="org.eclipse.egit.gitflow.ui"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"] because it is exposed to package 'org.eclipse.jgit.transport' from resources org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"] and org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.3.1.201605051710-r"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"]
+    import: (&(osgi.wiring.package=org.eclipse.jgit.transport)(&(version>=4.4.1)(!(version>=4.5.0))))
+     |
+    export: osgi.wiring.package: org.eclipse.jgit.transport
+  org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"]
+
+Chain 2:
+  org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.jgit)(&(bundle-version>=4.3.0)(!(bundle-version>=4.4.0))))
+     |
+    provide: osgi.wiring.bundle: org.eclipse.jgit
+  org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.3.1.201605051710-r"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.egit.mylyn.ui 4 0 2016-08-27 12:00:12.427
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.egit.mylyn.ui [1227]
+  Unresolved requirement: Import-Package: org.eclipse.egit.ui; version="[4.4.1,4.5.0)"
+    -> Export-Package: org.eclipse.egit.ui; bundle-symbolic-name="org.eclipse.egit.ui"; bundle-version="4.4.1.201607150455-r"; version="4.4.1"; x-friends:="org.eclipse.egit.mylyn.ui,org.eclipse.egit.gitflow.ui"
+       org.eclipse.egit.ui [1228]
+         No resolution report for the bundle.  Unresolved requirement: Import-Package: org.eclipse.egit.ui.internal.commit; version="[4.4.1,4.5.0)"
+    -> Export-Package: org.eclipse.egit.ui.internal.commit; bundle-symbolic-name="org.eclipse.egit.ui"; bundle-version="4.4.1.201607150455-r"; version="4.4.1"; x-friends:="org.eclipse.egit.mylyn.ui,org.eclipse.egit.gitflow.ui"
+  Unresolved requirement: Import-Package: org.eclipse.egit.ui.internal.synchronize.model; version="[4.4.1,4.5.0)"
+    -> Export-Package: org.eclipse.egit.ui.internal.synchronize.model; bundle-symbolic-name="org.eclipse.egit.ui"; bundle-version="4.4.1.201607150455-r"; version="4.4.1"; x-friends:="org.eclipse.egit.mylyn.ui"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"] because it is exposed to package 'org.eclipse.jgit.transport' from resources org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"] and org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.3.1.201605051710-r"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"]
+    import: (&(osgi.wiring.package=org.eclipse.jgit.transport)(&(version>=4.4.1)(!(version>=4.5.0))))
+     |
+    export: osgi.wiring.package: org.eclipse.jgit.transport
+  org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"]
+
+Chain 2:
+  org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.jgit)(&(bundle-version>=4.3.0)(!(bundle-version>=4.4.0))))
+     |
+    provide: osgi.wiring.bundle: org.eclipse.jgit
+  org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.3.1.201605051710-r"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.egit.ui 4 0 2016-08-27 12:00:12.498
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.egit.ui [1228]
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"] because it is exposed to package 'org.eclipse.jgit.transport' from resources org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"] and org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.3.1.201605051710-r"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"]
+    import: (&(osgi.wiring.package=org.eclipse.jgit.transport)(&(version>=4.4.1)(!(version>=4.5.0))))
+     |
+    export: osgi.wiring.package: org.eclipse.jgit.transport
+  org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"]
+
+Chain 2:
+  org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.jgit)(&(bundle-version>=4.3.0)(!(bundle-version>=4.4.0))))
+     |
+    provide: osgi.wiring.bundle: org.eclipse.jgit
+  org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.3.1.201605051710-r"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+!SESSION 2016-08-27 12:02:25.765 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_91
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.jboss.tools.openshift.cdk.server 4 0 2016-08-27 12:02:27.948
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.jboss.tools.openshift.cdk.server [1155]
+  Unresolved requirement: Require-Bundle: org.jboss.tools.openshift.ui; bundle-version="3.1.0"
+    -> Bundle-SymbolicName: org.jboss.tools.openshift.ui; bundle-version="3.1.0.Final-v20160414-0041-B272"; singleton:="true"
+       org.jboss.tools.openshift.ui [1165]
+         Unresolved requirement: Require-Bundle: org.jboss.tools.openshift.common.ui; bundle-version="[3.0.0,4.0.0)"
+           -> Bundle-SymbolicName: org.jboss.tools.openshift.common.ui; bundle-version="3.1.0.Final-v20160414-0041-B272"; singleton:="true"
+              org.jboss.tools.openshift.common.ui [1158]
+                Unresolved requirement: Require-Bundle: org.jboss.tools.openshift.egit.ui; bundle-version="[3.0.0,4.0.0)"
+                  -> Bundle-SymbolicName: org.jboss.tools.openshift.egit.ui; bundle-version="3.1.0.Final-v20160414-0041-B272"; singleton:="true"
+                     org.jboss.tools.openshift.egit.ui [1161]
+                       Unresolved requirement: Require-Bundle: org.eclipse.egit.ui; bundle-version="2.0.0"
+                         -> Bundle-SymbolicName: org.eclipse.egit.ui; bundle-version="4.4.1.201607150455-r"; singleton:="true"
+                            org.eclipse.egit.ui [1228]
+                              No resolution report for the bundle.         Unresolved requirement: Require-Bundle: org.jboss.tools.openshift.egit.ui; bundle-version="3.0.0"
+           -> Bundle-SymbolicName: org.jboss.tools.openshift.egit.ui; bundle-version="3.1.0.Final-v20160414-0041-B272"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.jboss.tools.openshift.common.ui; bundle-version="3.1.0"
+    -> Bundle-SymbolicName: org.jboss.tools.openshift.common.ui; bundle-version="3.1.0.Final-v20160414-0041-B272"; singleton:="true"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"] because it is exposed to package 'org.eclipse.jgit.transport' from resources org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"] and org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.3.1.201605051710-r"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"]
+    import: (&(osgi.wiring.package=org.eclipse.jgit.transport)(&(version>=4.4.1)(!(version>=4.5.0))))
+     |
+    export: osgi.wiring.package: org.eclipse.jgit.transport
+  org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"]
+
+Chain 2:
+  org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.jgit)(&(bundle-version>=4.3.0)(!(bundle-version>=4.4.0))))
+     |
+    provide: osgi.wiring.bundle: org.eclipse.jgit
+  org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.3.1.201605051710-r"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.jboss.tools.openshift.common.ui 4 0 2016-08-27 12:02:28.015
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.jboss.tools.openshift.common.ui [1158]
+  Unresolved requirement: Require-Bundle: org.jboss.tools.openshift.egit.ui; bundle-version="[3.0.0,4.0.0)"
+    -> Bundle-SymbolicName: org.jboss.tools.openshift.egit.ui; bundle-version="3.1.0.Final-v20160414-0041-B272"; singleton:="true"
+       org.jboss.tools.openshift.egit.ui [1161]
+         Unresolved requirement: Require-Bundle: org.eclipse.egit.ui; bundle-version="2.0.0"
+           -> Bundle-SymbolicName: org.eclipse.egit.ui; bundle-version="4.4.1.201607150455-r"; singleton:="true"
+              org.eclipse.egit.ui [1228]
+                No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"] because it is exposed to package 'org.eclipse.jgit.transport' from resources org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"] and org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.3.1.201605051710-r"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"]
+    import: (&(osgi.wiring.package=org.eclipse.jgit.transport)(&(version>=4.4.1)(!(version>=4.5.0))))
+     |
+    export: osgi.wiring.package: org.eclipse.jgit.transport
+  org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"]
+
+Chain 2:
+  org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.jgit)(&(bundle-version>=4.3.0)(!(bundle-version>=4.4.0))))
+     |
+    provide: osgi.wiring.bundle: org.eclipse.jgit
+  org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.3.1.201605051710-r"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.jboss.tools.openshift.egit.ui 4 0 2016-08-27 12:02:28.061
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.jboss.tools.openshift.egit.ui [1161]
+  Unresolved requirement: Require-Bundle: org.eclipse.egit.ui; bundle-version="2.0.0"
+    -> Bundle-SymbolicName: org.eclipse.egit.ui; bundle-version="4.4.1.201607150455-r"; singleton:="true"
+       org.eclipse.egit.ui [1228]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"] because it is exposed to package 'org.eclipse.jgit.transport' from resources org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"] and org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.3.1.201605051710-r"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"]
+    import: (&(osgi.wiring.package=org.eclipse.jgit.transport)(&(version>=4.4.1)(!(version>=4.5.0))))
+     |
+    export: osgi.wiring.package: org.eclipse.jgit.transport
+  org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"]
+
+Chain 2:
+  org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.jgit)(&(bundle-version>=4.3.0)(!(bundle-version>=4.4.0))))
+     |
+    provide: osgi.wiring.bundle: org.eclipse.jgit
+  org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.3.1.201605051710-r"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.jboss.tools.openshift.express.ui 4 0 2016-08-27 12:02:28.143
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.jboss.tools.openshift.express.ui [1164]
+  Unresolved requirement: Require-Bundle: org.jboss.tools.openshift.common.ui; bundle-version="[3.0.0,4.0.0)"
+    -> Bundle-SymbolicName: org.jboss.tools.openshift.common.ui; bundle-version="3.1.0.Final-v20160414-0041-B272"; singleton:="true"
+       org.jboss.tools.openshift.common.ui [1158]
+         Unresolved requirement: Require-Bundle: org.jboss.tools.openshift.egit.ui; bundle-version="[3.0.0,4.0.0)"
+           -> Bundle-SymbolicName: org.jboss.tools.openshift.egit.ui; bundle-version="3.1.0.Final-v20160414-0041-B272"; singleton:="true"
+              org.jboss.tools.openshift.egit.ui [1161]
+                Unresolved requirement: Require-Bundle: org.eclipse.egit.ui; bundle-version="2.0.0"
+                  -> Bundle-SymbolicName: org.eclipse.egit.ui; bundle-version="4.4.1.201607150455-r"; singleton:="true"
+                     org.eclipse.egit.ui [1228]
+                       No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.jboss.tools.openshift.egit.ui; bundle-version="[3.0.0,4.0.0)"
+    -> Bundle-SymbolicName: org.jboss.tools.openshift.egit.ui; bundle-version="3.1.0.Final-v20160414-0041-B272"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.egit.ui; bundle-version="3.0.0"
+    -> Bundle-SymbolicName: org.eclipse.egit.ui; bundle-version="4.4.1.201607150455-r"; singleton:="true"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"] because it is exposed to package 'org.eclipse.jgit.transport' from resources org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"] and org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.3.1.201605051710-r"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"]
+    import: (&(osgi.wiring.package=org.eclipse.jgit.transport)(&(version>=4.4.1)(!(version>=4.5.0))))
+     |
+    export: osgi.wiring.package: org.eclipse.jgit.transport
+  org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"]
+
+Chain 2:
+  org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.jgit)(&(bundle-version>=4.3.0)(!(bundle-version>=4.4.0))))
+     |
+    provide: osgi.wiring.bundle: org.eclipse.jgit
+  org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.3.1.201605051710-r"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.jboss.tools.openshift.ui 4 0 2016-08-27 12:02:28.270
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.jboss.tools.openshift.ui [1165]
+  Unresolved requirement: Require-Bundle: org.jboss.tools.openshift.common.ui; bundle-version="[3.0.0,4.0.0)"
+    -> Bundle-SymbolicName: org.jboss.tools.openshift.common.ui; bundle-version="3.1.0.Final-v20160414-0041-B272"; singleton:="true"
+       org.jboss.tools.openshift.common.ui [1158]
+         Unresolved requirement: Require-Bundle: org.jboss.tools.openshift.egit.ui; bundle-version="[3.0.0,4.0.0)"
+           -> Bundle-SymbolicName: org.jboss.tools.openshift.egit.ui; bundle-version="3.1.0.Final-v20160414-0041-B272"; singleton:="true"
+              org.jboss.tools.openshift.egit.ui [1161]
+                Unresolved requirement: Require-Bundle: org.eclipse.egit.ui; bundle-version="2.0.0"
+                  -> Bundle-SymbolicName: org.eclipse.egit.ui; bundle-version="4.4.1.201607150455-r"; singleton:="true"
+                     org.eclipse.egit.ui [1228]
+                       No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.jboss.tools.openshift.egit.ui; bundle-version="3.0.0"
+    -> Bundle-SymbolicName: org.jboss.tools.openshift.egit.ui; bundle-version="3.1.0.Final-v20160414-0041-B272"; singleton:="true"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"] because it is exposed to package 'org.eclipse.jgit.transport' from resources org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"] and org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.3.1.201605051710-r"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"]
+    import: (&(osgi.wiring.package=org.eclipse.jgit.transport)(&(version>=4.4.1)(!(version>=4.5.0))))
+     |
+    export: osgi.wiring.package: org.eclipse.jgit.transport
+  org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"]
+
+Chain 2:
+  org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.jgit)(&(bundle-version>=4.3.0)(!(bundle-version>=4.4.0))))
+     |
+    provide: osgi.wiring.bundle: org.eclipse.jgit
+  org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.3.1.201605051710-r"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.egit.gitflow.ui 4 0 2016-08-27 12:02:28.328
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.egit.gitflow.ui [1226]
+  Unresolved requirement: Import-Package: org.eclipse.egit.ui; version="[4.4.1,4.5.0)"
+    -> Export-Package: org.eclipse.egit.ui; bundle-symbolic-name="org.eclipse.egit.ui"; bundle-version="4.4.1.201607150455-r"; version="4.4.1"; x-friends:="org.eclipse.egit.mylyn.ui,org.eclipse.egit.gitflow.ui"
+       org.eclipse.egit.ui [1228]
+         No resolution report for the bundle.  Unresolved requirement: Import-Package: org.eclipse.egit.ui.internal.history; version="[4.4.1,4.5.0)"
+    -> Export-Package: org.eclipse.egit.ui.internal.history; bundle-symbolic-name="org.eclipse.egit.ui"; bundle-version="4.4.1.201607150455-r"; version="4.4.1"; x-internal:="true"
+  Unresolved requirement: Import-Package: org.eclipse.egit.ui.internal.operations; version="[4.4.1,4.5.0)"
+    -> Export-Package: org.eclipse.egit.ui.internal.operations; bundle-symbolic-name="org.eclipse.egit.ui"; bundle-version="4.4.1.201607150455-r"; version="4.4.1"; x-friends:="org.eclipse.egit.gitflow.ui"
+  Unresolved requirement: Import-Package: org.eclipse.egit.ui.internal.branch; version="[4.4.1,4.5.0)"
+    -> Export-Package: org.eclipse.egit.ui.internal.branch; bundle-symbolic-name="org.eclipse.egit.ui"; bundle-version="4.4.1.201607150455-r"; version="4.4.1"; x-friends:="org.eclipse.egit.gitflow.ui"
+  Unresolved requirement: Import-Package: org.eclipse.egit.ui.internal; version="[4.4.1,4.5.0)"
+    -> Export-Package: org.eclipse.egit.ui.internal; bundle-symbolic-name="org.eclipse.egit.ui"; bundle-version="4.4.1.201607150455-r"; version="4.4.1"; x-friends:="org.eclipse.egit.import,org.eclipse.egit.gitflow.ui"
+  Unresolved requirement: Import-Package: org.eclipse.egit.ui.internal.rebase; version="[4.4.1,4.5.0)"
+    -> Export-Package: org.eclipse.egit.ui.internal.rebase; bundle-symbolic-name="org.eclipse.egit.ui"; bundle-version="4.4.1.201607150455-r"; version="4.4.1"; x-friends:="org.eclipse.egit.gitflow.ui"
+  Unresolved requirement: Import-Package: org.eclipse.egit.ui.internal.selection; version="[4.4.1,4.5.0)"
+    -> Export-Package: org.eclipse.egit.ui.internal.selection; bundle-symbolic-name="org.eclipse.egit.ui"; bundle-version="4.4.1.201607150455-r"; version="4.4.1"; x-friends:="org.eclipse.egit.gitflow.ui"
+  Unresolved requirement: Import-Package: org.eclipse.egit.ui.internal.commit; version="[4.4.1,4.5.0)"
+    -> Export-Package: org.eclipse.egit.ui.internal.commit; bundle-symbolic-name="org.eclipse.egit.ui"; bundle-version="4.4.1.201607150455-r"; version="4.4.1"; x-friends:="org.eclipse.egit.mylyn.ui,org.eclipse.egit.gitflow.ui"
+  Unresolved requirement: Import-Package: org.eclipse.egit.ui.internal.repository.tree; version="[4.4.1,4.5.0)"
+    -> Export-Package: org.eclipse.egit.ui.internal.repository.tree; bundle-symbolic-name="org.eclipse.egit.ui"; bundle-version="4.4.1.201607150455-r"; version="4.4.1"; x-friends:="org.eclipse.egit.gitflow.ui"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"] because it is exposed to package 'org.eclipse.jgit.transport' from resources org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"] and org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.3.1.201605051710-r"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"]
+    import: (&(osgi.wiring.package=org.eclipse.jgit.transport)(&(version>=4.4.1)(!(version>=4.5.0))))
+     |
+    export: osgi.wiring.package: org.eclipse.jgit.transport
+  org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"]
+
+Chain 2:
+  org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.jgit)(&(bundle-version>=4.3.0)(!(bundle-version>=4.4.0))))
+     |
+    provide: osgi.wiring.bundle: org.eclipse.jgit
+  org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.3.1.201605051710-r"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.egit.mylyn.ui 4 0 2016-08-27 12:02:28.446
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.egit.mylyn.ui [1227]
+  Unresolved requirement: Import-Package: org.eclipse.egit.ui.internal.synchronize.model; version="[4.4.1,4.5.0)"
+    -> Export-Package: org.eclipse.egit.ui.internal.synchronize.model; bundle-symbolic-name="org.eclipse.egit.ui"; bundle-version="4.4.1.201607150455-r"; version="4.4.1"; x-friends:="org.eclipse.egit.mylyn.ui"
+       org.eclipse.egit.ui [1228]
+         No resolution report for the bundle.  Unresolved requirement: Import-Package: org.eclipse.egit.ui; version="[4.4.1,4.5.0)"
+    -> Export-Package: org.eclipse.egit.ui; bundle-symbolic-name="org.eclipse.egit.ui"; bundle-version="4.4.1.201607150455-r"; version="4.4.1"; x-friends:="org.eclipse.egit.mylyn.ui,org.eclipse.egit.gitflow.ui"
+  Unresolved requirement: Import-Package: org.eclipse.egit.ui.internal.commit; version="[4.4.1,4.5.0)"
+    -> Export-Package: org.eclipse.egit.ui.internal.commit; bundle-symbolic-name="org.eclipse.egit.ui"; bundle-version="4.4.1.201607150455-r"; version="4.4.1"; x-friends:="org.eclipse.egit.mylyn.ui,org.eclipse.egit.gitflow.ui"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"] because it is exposed to package 'org.eclipse.jgit.transport' from resources org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"] and org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.3.1.201605051710-r"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"]
+    import: (&(osgi.wiring.package=org.eclipse.jgit.transport)(&(version>=4.4.1)(!(version>=4.5.0))))
+     |
+    export: osgi.wiring.package: org.eclipse.jgit.transport
+  org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"]
+
+Chain 2:
+  org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.jgit)(&(bundle-version>=4.3.0)(!(bundle-version>=4.4.0))))
+     |
+    provide: osgi.wiring.bundle: org.eclipse.jgit
+  org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.3.1.201605051710-r"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.egit.ui 4 0 2016-08-27 12:02:28.492
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.egit.ui [1228]
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"] because it is exposed to package 'org.eclipse.jgit.transport' from resources org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"] and org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.3.1.201605051710-r"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"]
+    import: (&(osgi.wiring.package=org.eclipse.jgit.transport)(&(version>=4.4.1)(!(version>=4.5.0))))
+     |
+    export: osgi.wiring.package: org.eclipse.jgit.transport
+  org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"]
+
+Chain 2:
+  org.eclipse.egit.ui [osgi.identity; osgi.identity="org.eclipse.egit.ui"; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.jgit)(&(bundle-version>=4.3.0)(!(bundle-version>=4.4.0))))
+     |
+    provide: osgi.wiring.bundle: org.eclipse.jgit
+  org.eclipse.jgit [osgi.identity; osgi.identity="org.eclipse.jgit"; type="osgi.bundle"; version:Version="4.3.1.201605051710-r"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.core.resources 4 2 2016-08-27 12:09:04.943
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 0
+java.lang.NullPointerException
+	at org.jboss.tools.cdi.core.CDICoreNature.dispose(CDICoreNature.java:721)
+	at org.jboss.tools.cdi.core.CDICorePlugin$RCL.resourceChanged(CDICorePlugin.java:96)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:289)
+	at org.eclipse.core.internal.events.NotificationManager.handleEvent(NotificationManager.java:265)
+	at org.eclipse.core.internal.resources.Workspace.broadcastEvent(Workspace.java:368)
+	at org.eclipse.core.internal.resources.Resource.broadcastPreDeleteEvent(Resource.java:1884)
+	at org.eclipse.core.internal.resources.Resource.delete(Resource.java:766)
+	at org.eclipse.core.internal.resources.Project.delete(Project.java:323)
+	at org.eclipse.ltk.core.refactoring.resource.DeleteResourceChange.perform(DeleteResourceChange.java:160)
+	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:278)
+	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:278)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation$1.run(PerformChangeOperation.java:258)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2241)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.executeChange(PerformChangeOperation.java:306)
+	at org.eclipse.ltk.internal.ui.refactoring.UIPerformChangeOperation.executeChange(UIPerformChangeOperation.java:92)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.run(PerformChangeOperation.java:218)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2241)
+	at org.eclipse.ltk.internal.ui.refactoring.WorkbenchRunnableAdapter.run(WorkbenchRunnableAdapter.java:87)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:119)
+
+!ENTRY org.eclipse.core.resources 4 2 2016-08-27 12:09:05.150
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 0
+java.lang.NullPointerException
+	at org.jboss.tools.cdi.core.CDICoreNature.dispose(CDICoreNature.java:721)
+	at org.jboss.tools.cdi.core.CDICorePlugin$RCL.resourceChanged(CDICorePlugin.java:96)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:289)
+	at org.eclipse.core.internal.events.NotificationManager.handleEvent(NotificationManager.java:265)
+	at org.eclipse.core.internal.resources.Workspace.broadcastEvent(Workspace.java:368)
+	at org.eclipse.core.internal.resources.Resource.broadcastPreDeleteEvent(Resource.java:1884)
+	at org.eclipse.core.internal.resources.Resource.delete(Resource.java:766)
+	at org.eclipse.core.internal.resources.Project.delete(Project.java:323)
+	at org.eclipse.ltk.core.refactoring.resource.DeleteResourceChange.perform(DeleteResourceChange.java:160)
+	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:278)
+	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:278)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation$1.run(PerformChangeOperation.java:258)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2241)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.executeChange(PerformChangeOperation.java:306)
+	at org.eclipse.ltk.internal.ui.refactoring.UIPerformChangeOperation.executeChange(UIPerformChangeOperation.java:92)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.run(PerformChangeOperation.java:218)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2241)
+	at org.eclipse.ltk.internal.ui.refactoring.WorkbenchRunnableAdapter.run(WorkbenchRunnableAdapter.java:87)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:119)
+
+!ENTRY org.eclipse.core.resources 4 2 2016-08-27 12:09:05.210
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 0
+java.lang.NullPointerException
+	at org.jboss.tools.cdi.core.CDICoreNature.dispose(CDICoreNature.java:721)
+	at org.jboss.tools.cdi.core.CDICorePlugin$RCL.resourceChanged(CDICorePlugin.java:96)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:289)
+	at org.eclipse.core.internal.events.NotificationManager.handleEvent(NotificationManager.java:265)
+	at org.eclipse.core.internal.resources.Workspace.broadcastEvent(Workspace.java:368)
+	at org.eclipse.core.internal.resources.Resource.broadcastPreDeleteEvent(Resource.java:1884)
+	at org.eclipse.core.internal.resources.Resource.delete(Resource.java:766)
+	at org.eclipse.core.internal.resources.Project.delete(Project.java:323)
+	at org.eclipse.ltk.core.refactoring.resource.DeleteResourceChange.perform(DeleteResourceChange.java:160)
+	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:278)
+	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:278)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation$1.run(PerformChangeOperation.java:258)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2241)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.executeChange(PerformChangeOperation.java:306)
+	at org.eclipse.ltk.internal.ui.refactoring.UIPerformChangeOperation.executeChange(UIPerformChangeOperation.java:92)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.run(PerformChangeOperation.java:218)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2241)
+	at org.eclipse.ltk.internal.ui.refactoring.WorkbenchRunnableAdapter.run(WorkbenchRunnableAdapter.java:87)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:119)
+
+!ENTRY org.eclipse.core.resources 4 2 2016-08-27 12:19:14.438
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 0
+java.lang.NullPointerException
+	at org.jboss.tools.cdi.core.CDICoreNature.dispose(CDICoreNature.java:721)
+	at org.jboss.tools.cdi.core.CDICorePlugin$RCL.resourceChanged(CDICorePlugin.java:96)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:289)
+	at org.eclipse.core.internal.events.NotificationManager.handleEvent(NotificationManager.java:265)
+	at org.eclipse.core.internal.resources.Workspace.broadcastEvent(Workspace.java:368)
+	at org.eclipse.core.internal.resources.Resource.broadcastPreDeleteEvent(Resource.java:1884)
+	at org.eclipse.core.internal.resources.Resource.delete(Resource.java:766)
+	at org.eclipse.core.internal.resources.Project.delete(Project.java:323)
+	at org.eclipse.ltk.core.refactoring.resource.DeleteResourceChange.perform(DeleteResourceChange.java:160)
+	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:278)
+	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:278)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation$1.run(PerformChangeOperation.java:258)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2241)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.executeChange(PerformChangeOperation.java:306)
+	at org.eclipse.ltk.internal.ui.refactoring.UIPerformChangeOperation.executeChange(UIPerformChangeOperation.java:92)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.run(PerformChangeOperation.java:218)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2241)
+	at org.eclipse.ltk.internal.ui.refactoring.WorkbenchRunnableAdapter.run(WorkbenchRunnableAdapter.java:87)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:119)
+
+!ENTRY org.eclipse.core.resources 4 2 2016-08-27 12:19:14.471
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 0
+java.lang.NullPointerException
+	at org.jboss.tools.cdi.core.CDICoreNature.dispose(CDICoreNature.java:721)
+	at org.jboss.tools.cdi.core.CDICorePlugin$RCL.resourceChanged(CDICorePlugin.java:96)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:289)
+	at org.eclipse.core.internal.events.NotificationManager.handleEvent(NotificationManager.java:265)
+	at org.eclipse.core.internal.resources.Workspace.broadcastEvent(Workspace.java:368)
+	at org.eclipse.core.internal.resources.Resource.broadcastPreDeleteEvent(Resource.java:1884)
+	at org.eclipse.core.internal.resources.Resource.delete(Resource.java:766)
+	at org.eclipse.core.internal.resources.Project.delete(Project.java:323)
+	at org.eclipse.ltk.core.refactoring.resource.DeleteResourceChange.perform(DeleteResourceChange.java:160)
+	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:278)
+	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:278)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation$1.run(PerformChangeOperation.java:258)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2241)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.executeChange(PerformChangeOperation.java:306)
+	at org.eclipse.ltk.internal.ui.refactoring.UIPerformChangeOperation.executeChange(UIPerformChangeOperation.java:92)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.run(PerformChangeOperation.java:218)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2241)
+	at org.eclipse.ltk.internal.ui.refactoring.WorkbenchRunnableAdapter.run(WorkbenchRunnableAdapter.java:87)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:119)
+
+!ENTRY org.eclipse.core.resources 4 2 2016-08-27 12:19:14.501
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 0
+java.lang.NullPointerException
+	at org.jboss.tools.cdi.core.CDICoreNature.dispose(CDICoreNature.java:721)
+	at org.jboss.tools.cdi.core.CDICorePlugin$RCL.resourceChanged(CDICorePlugin.java:96)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:289)
+	at org.eclipse.core.internal.events.NotificationManager.handleEvent(NotificationManager.java:265)
+	at org.eclipse.core.internal.resources.Workspace.broadcastEvent(Workspace.java:368)
+	at org.eclipse.core.internal.resources.Resource.broadcastPreDeleteEvent(Resource.java:1884)
+	at org.eclipse.core.internal.resources.Resource.delete(Resource.java:766)
+	at org.eclipse.core.internal.resources.Project.delete(Project.java:323)
+	at org.eclipse.ltk.core.refactoring.resource.DeleteResourceChange.perform(DeleteResourceChange.java:160)
+	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:278)
+	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:278)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation$1.run(PerformChangeOperation.java:258)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2241)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.executeChange(PerformChangeOperation.java:306)
+	at org.eclipse.ltk.internal.ui.refactoring.UIPerformChangeOperation.executeChange(UIPerformChangeOperation.java:92)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.run(PerformChangeOperation.java:218)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2241)
+	at org.eclipse.ltk.internal.ui.refactoring.WorkbenchRunnableAdapter.run(WorkbenchRunnableAdapter.java:87)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:119)
+
+!ENTRY org.eclipse.core.resources 4 2 2016-08-27 12:19:14.552
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 0
+java.lang.NullPointerException
+	at org.jboss.tools.cdi.core.CDICoreNature.dispose(CDICoreNature.java:721)
+	at org.jboss.tools.cdi.core.CDICorePlugin$RCL.resourceChanged(CDICorePlugin.java:96)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:289)
+	at org.eclipse.core.internal.events.NotificationManager.handleEvent(NotificationManager.java:265)
+	at org.eclipse.core.internal.resources.Workspace.broadcastEvent(Workspace.java:368)
+	at org.eclipse.core.internal.resources.Resource.broadcastPreDeleteEvent(Resource.java:1884)
+	at org.eclipse.core.internal.resources.Resource.delete(Resource.java:766)
+	at org.eclipse.core.internal.resources.Project.delete(Project.java:323)
+	at org.eclipse.ltk.core.refactoring.resource.DeleteResourceChange.perform(DeleteResourceChange.java:160)
+	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:278)
+	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:278)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation$1.run(PerformChangeOperation.java:258)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2241)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.executeChange(PerformChangeOperation.java:306)
+	at org.eclipse.ltk.internal.ui.refactoring.UIPerformChangeOperation.executeChange(UIPerformChangeOperation.java:92)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.run(PerformChangeOperation.java:218)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2241)
+	at org.eclipse.ltk.internal.ui.refactoring.WorkbenchRunnableAdapter.run(WorkbenchRunnableAdapter.java:87)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:119)
+
+!ENTRY org.eclipse.core.resources 4 2 2016-08-27 12:20:01.632
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 0
+java.lang.NullPointerException
+	at org.jboss.tools.cdi.core.CDICoreNature.dispose(CDICoreNature.java:721)
+	at org.jboss.tools.cdi.core.CDICorePlugin$RCL.resourceChanged(CDICorePlugin.java:96)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:289)
+	at org.eclipse.core.internal.events.NotificationManager.handleEvent(NotificationManager.java:265)
+	at org.eclipse.core.internal.resources.Workspace.broadcastEvent(Workspace.java:368)
+	at org.eclipse.core.internal.resources.Resource.broadcastPreDeleteEvent(Resource.java:1884)
+	at org.eclipse.core.internal.resources.Resource.delete(Resource.java:766)
+	at org.eclipse.core.internal.resources.Project.delete(Project.java:323)
+	at org.eclipse.ltk.core.refactoring.resource.DeleteResourceChange.perform(DeleteResourceChange.java:160)
+	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:278)
+	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:278)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation$1.run(PerformChangeOperation.java:258)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2241)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.executeChange(PerformChangeOperation.java:306)
+	at org.eclipse.ltk.internal.ui.refactoring.UIPerformChangeOperation.executeChange(UIPerformChangeOperation.java:92)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.run(PerformChangeOperation.java:218)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2241)
+	at org.eclipse.ltk.internal.ui.refactoring.WorkbenchRunnableAdapter.run(WorkbenchRunnableAdapter.java:87)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:119)
+
+!ENTRY org.eclipse.core.resources 4 2 2016-08-27 12:20:01.659
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 0
+java.lang.NullPointerException
+	at org.jboss.tools.cdi.core.CDICoreNature.dispose(CDICoreNature.java:721)
+	at org.jboss.tools.cdi.core.CDICorePlugin$RCL.resourceChanged(CDICorePlugin.java:96)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:289)
+	at org.eclipse.core.internal.events.NotificationManager.handleEvent(NotificationManager.java:265)
+	at org.eclipse.core.internal.resources.Workspace.broadcastEvent(Workspace.java:368)
+	at org.eclipse.core.internal.resources.Resource.broadcastPreDeleteEvent(Resource.java:1884)
+	at org.eclipse.core.internal.resources.Resource.delete(Resource.java:766)
+	at org.eclipse.core.internal.resources.Project.delete(Project.java:323)
+	at org.eclipse.ltk.core.refactoring.resource.DeleteResourceChange.perform(DeleteResourceChange.java:160)
+	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:278)
+	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:278)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation$1.run(PerformChangeOperation.java:258)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2241)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.executeChange(PerformChangeOperation.java:306)
+	at org.eclipse.ltk.internal.ui.refactoring.UIPerformChangeOperation.executeChange(UIPerformChangeOperation.java:92)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.run(PerformChangeOperation.java:218)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2241)
+	at org.eclipse.ltk.internal.ui.refactoring.WorkbenchRunnableAdapter.run(WorkbenchRunnableAdapter.java:87)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:119)
+
+!ENTRY org.eclipse.core.resources 4 2 2016-08-27 12:20:01.687
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 0
+java.lang.NullPointerException
+	at org.jboss.tools.cdi.core.CDICoreNature.dispose(CDICoreNature.java:721)
+	at org.jboss.tools.cdi.core.CDICorePlugin$RCL.resourceChanged(CDICorePlugin.java:96)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:289)
+	at org.eclipse.core.internal.events.NotificationManager.handleEvent(NotificationManager.java:265)
+	at org.eclipse.core.internal.resources.Workspace.broadcastEvent(Workspace.java:368)
+	at org.eclipse.core.internal.resources.Resource.broadcastPreDeleteEvent(Resource.java:1884)
+	at org.eclipse.core.internal.resources.Resource.delete(Resource.java:766)
+	at org.eclipse.core.internal.resources.Project.delete(Project.java:323)
+	at org.eclipse.ltk.core.refactoring.resource.DeleteResourceChange.perform(DeleteResourceChange.java:160)
+	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:278)
+	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:278)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation$1.run(PerformChangeOperation.java:258)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2241)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.executeChange(PerformChangeOperation.java:306)
+	at org.eclipse.ltk.internal.ui.refactoring.UIPerformChangeOperation.executeChange(UIPerformChangeOperation.java:92)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.run(PerformChangeOperation.java:218)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2241)
+	at org.eclipse.ltk.internal.ui.refactoring.WorkbenchRunnableAdapter.run(WorkbenchRunnableAdapter.java:87)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:119)
+
+!ENTRY org.eclipse.core.resources 4 2 2016-08-27 12:20:01.724
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 0
+java.lang.NullPointerException
+	at org.jboss.tools.cdi.core.CDICoreNature.dispose(CDICoreNature.java:721)
+	at org.jboss.tools.cdi.core.CDICorePlugin$RCL.resourceChanged(CDICorePlugin.java:96)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:289)
+	at org.eclipse.core.internal.events.NotificationManager.handleEvent(NotificationManager.java:265)
+	at org.eclipse.core.internal.resources.Workspace.broadcastEvent(Workspace.java:368)
+	at org.eclipse.core.internal.resources.Resource.broadcastPreDeleteEvent(Resource.java:1884)
+	at org.eclipse.core.internal.resources.Resource.delete(Resource.java:766)
+	at org.eclipse.core.internal.resources.Project.delete(Project.java:323)
+	at org.eclipse.ltk.core.refactoring.resource.DeleteResourceChange.perform(DeleteResourceChange.java:160)
+	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:278)
+	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:278)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation$1.run(PerformChangeOperation.java:258)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2241)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.executeChange(PerformChangeOperation.java:306)
+	at org.eclipse.ltk.internal.ui.refactoring.UIPerformChangeOperation.executeChange(UIPerformChangeOperation.java:92)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.run(PerformChangeOperation.java:218)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2241)
+	at org.eclipse.ltk.internal.ui.refactoring.WorkbenchRunnableAdapter.run(WorkbenchRunnableAdapter.java:87)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:119)

@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package student.onlineretailer.jpa;
+
+/**
+ * @author Grad80
+ *
+ */
+public class Category {
+
+}

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="true" key="J2EE_EXPORT_OVERWRITE"/>
+	<item value="false" key="J2EE_EXPORT_SOURCE"/>
+	<item value="MarketDataAnalysisTool" key="LASTEARNAME_"/>
+	<list key="J2EE_EXPORT_JST_EAR">
+		<item value="C:\Grad software 2016\Java Tools\wildfly-10.0.0.Final\wildfly-10.0.0.Final\standalone\deployments\MarketDataAnalysisTool.ear"/>
+		<item value="C:\Grad software 2016\Java Tools\wildfly-10.0.0.Final\wildfly-10.0.0.Final\standalone\deployments\StudentOnlineRetailer.ear\StudentOnlineRetailer.ear"/>
+	</list>
+	<list key="MRU_RUNTIME_STORE">
+		<item value="WildFly 10.0 Runtime"/>
+	</list>
+	<list key="J2EE_EXPORT_JST_WEB">
+		<item value="C:\Grad software 2016\Java Tools\wildfly-10.0.0.Final\wildfly-10.0.0.Final\standalone\deployments\testWebProject.war"/>
+	</list>
+</section>

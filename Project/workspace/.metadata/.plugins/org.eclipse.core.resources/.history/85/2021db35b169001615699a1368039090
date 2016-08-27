@@ -1,0 +1,17 @@
+package student.takeawayordering.ejb;
+
+import java.util.Map;
+
+import javax.ejb.Local;
+
+import solutions.takeaway.jpa.Orders;
+
+@Local
+public interface MenuForOrderLocal {
+	public void init();
+	public void addToCart(Orders order,int number);
+	public void removeFromCart(Orders order,int number);
+	public Map<String,Integer> displayCart();
+	public Integer isInCart(Orders order);
+	public String[] displayMenu();
+}

@@ -1,0 +1,34 @@
+package market.dataanalysistool.ejb;
+
+import javax.ejb.Local;
+import javax.ejb.Remote;
+import javax.ejb.Stateless;
+
+/**
+ * Session Bean implementation class StockData
+ */
+@Stateless
+@Remote(StockDataRemote.class)
+@Local(StockDataLocal.class)
+public class StockData implements StockDataRemote, StockDataLocal {
+
+    /**
+     * Default constructor. 
+     */
+    public StockData() {
+        // TODO Auto-generated constructor stub
+    }
+
+	@Override
+	public String getSample() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setSample(String sample) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

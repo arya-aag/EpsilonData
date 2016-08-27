@@ -1,0 +1,9 @@
+package market.dataanalysistool.ejb;
+
+import javax.ejb.Remote;
+
+@Remote
+public interface StockDataRemote {
+	public Sample getSample();
+	public void setSample(Sample sample);
+}

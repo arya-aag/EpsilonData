@@ -1,0 +1,21 @@
+package student.onlineretailer.ejb;
+
+import java.util.List;
+
+import javax.ejb.Local;
+
+import student.onlineretailer.jpa.Product;
+
+@Local
+public interface OnlineRetailerBeanLocal {
+	public boolean addCategoriesAndProducts();
+
+	public List<Product> getAllProducts();
+
+	public List<Product> getProductsByName(String name);
+
+	public List<Product> getProductsInCategory(long categoryID);
+
+	public boolean increaseAllPrices(double amount);
+
+}

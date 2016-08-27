@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="DemosSessionBeans">
+        <wb-resource deploy-path="/" source-path="/EarContent" tag="defaultRootSource"/>
+        <dependent-module archiveName="DemosSessionBeansEJB.jar" deploy-path="/" handle="module:/resource/DemosSessionBeansEJB/DemosSessionBeansEJB">
+            <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="DemosSessionBeansEJBClient.jar" deploy-path="/" handle="module:/resource/DemosSessionBeansEJBClient/DemosSessionBeansEJBClient">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="DemosSessionBeansAppClient.jar" deploy-path="/" handle="module:/resource/DemosSessionBeansAppClient/DemosSessionBeansAppClient">
+            <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="DemosSessionBeansWeb.war" deploy-path="/" handle="module:/resource/DemosSessionBeansWeb/DemosSessionBeansWeb">
+            <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="StudentOnlineRetailerJPA.jar" deploy-path="/lib" handle="module:/resource/StudentOnlineRetailerJPA/StudentOnlineRetailerJPA">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+    </wb-module>
+</project-modules>

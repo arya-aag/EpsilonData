@@ -1,0 +1,175 @@
+package student.onlineretailer.ejb;
+
+import java.util.List;
+
+import javax.ejb.Local;
+import javax.ejb.Remote;
+import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+import javax.persistence.TypedQuery;
+
+import student.onlineretailer.jpa.Category;
+import student.onlineretailer.jpa.Product;
+
+/**
+ * Session Bean implementation class OnlineRetailerBean
+ */
+@Stateless
+@Remote(OnlineRetailerBeanRemote.class)
+@Local(OnlineRetailerBeanLocal.class)
+public class OnlineRetailerBean implements OnlineRetailerBeanRemote, OnlineRetailerBeanLocal {
+
+	/**
+     * Default constructor. 
+     */
+	@PersistenceContext(name="StudentOnlineRetailerJPA-PU")
+	EntityManager em;
+	
+    public OnlineRetailerBean() {
+        // TODO Auto-generated constructor stub
+    }
+
+	@Override
+	public boolean addCategoriesAndProducts() {
+		// TODO Auto-generated method stub
+		
+		//hard coding the categories
+		Category c1 = new Category();
+		Category c2 = new Category();
+		//c1.setCategoryID(1);
+		c1.setCategoryName("Edibles");
+		c1.setDescription("Things to eat");
+		//c2.setCategoryID(2);
+		c2.setCategoryName("Beverages");
+		c2.setDescription("Things to drink");
+		em.persist(c1);
+		em.persist(c2);
+		
+		//food items to push
+		Product f1 = new Product();
+		Product f2 = new Product();
+		Product f3 = new Product();
+		Product f4 = new Product();
+		f1.setProductParameters(c1, 1, "Rice", 20, 1, 5);
+		f2.setProductParameters(c1, 2, "Dal", 15, 2, 4);
+		f3.setProductParameters(c1, 3, "Sabzi", 18, 3, 6);
+		f4.setProductParameters(c1, 4, "Roti", 5, 4, 10);
+		em.persist(f1);
+		em.persist(f2);
+		em.persist(f3);
+		em.persist(f4);
+		
+		//beverages to push
+		Product b1 = new Product();
+		Product b2 = new Product();
+		Product b3 = new Product();
+		Product b4 = new Product();
+		b1.setProductParameters(c2, 5, "Tea", 5, 1, 5);
+		b2.setProductParameters(c2, 6, "Coffee", 8, 2, 4);
+		b3.setProductParameters(c2, 7, "Mineral Water", 10, 3, 6);
+		b4.setProductParameters(c2, 8, "Black Tea", 5, 4, 10);
+		em.persist(b1);
+		em.persist(b2);
+		em.persist(b3);
+		em.persist(b4);
+		
+		return false;
+	}
+
+	@Override
+	public List<Product> getAllProducts() {
+		// TODO Auto-generated method stub
+//		int i = 1;
+//		List<Products> pList = new ArrayList<Products>();
+//		Products p;
+//		do{
+//			p = em.getReference(Products.class, i);
+//			pList.add(p);
+//			i++;
+//		}while(p!=null);
+		TypedQuery<Product> query = em.createQuery("SELECT p FROM Product AS p", Product.class);
+
+        // Execute the query, and get a collection of entities back.
+        List<Product> products = query.getResultList();
+
+//        for (Product product: products) {
+//            displayProductOnServerConsole("Got product in getAllProducts()", product);
+//        }
+
+        return products;
+	}
+
+	@Override
+	public List<Product> getProductsByName(String name) {
+		// TODO Auto-generated method stub
+//		int i = 1;
+//		List<Products> pList = new ArrayList<Products>();
+//		Products p;
+//		do{
+//			p = em.getReference(Products.class, i);
+//			if (p.getProductName().equalsIgnoreCase(name)){
+//				pList.add(p);
+//			}
+//			i++;
+//		}while(p!=null);
+		String sql = "SELECT p FROM Product AS p WHERE p.productName LIKE '%" + name + "%'";
+        System.out.println(sql);
+        TypedQuery<Product> query = em.createQuery(sql, Product.class);
+
+        // Execute the query, and get a collection of products back.
+        List<Product> products = query.getResultList();
+
+//        for (Product product: products) {
+//            displayProductOnServerConsole("Got product in getProductsByName()", product);
+//        }
+
+        return products;
+		
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Product> getProductsInCategory(String categoryname) {
+		// TODO Auto-generated method stub
+//		int i = 1;
+//		List<Products> pList = new ArrayList<Products>();
+//		Products p;
+//		do{
+//			p = em.getReference(Products.class, i);
+//			if (p.getCategoryID() == categoryID){
+//				pList.add(p);
+//			}
+//			i++;
+//		}while(p!=null);
+//		return pList;
+		Query q = em.createQuery("SELECT p FROM Product AS p" + " WHERE p.category.CategoryName LIKE " + categoryname,Product.class);
+		return (List<Product>)q.getResultList();
+	}
+
+	@Override
+	public boolean increaseAllPrices(double amount) {
+		// TODO Auto-generated method stub
+		// Get all products from the database.
+        List<Product> products = getAllProducts();
+
+        for (Product product: products) {
+            double currentPrice = product.getUnitPrice();
+            double newPrice = currentPrice + amount;
+            product.setUnitPrice(newPrice);
+        }
+        return true;
+	}
+	
+	@SuppressWarnings("unused")
+	private void displayProductOnServerConsole(String message, Product product) {
+
+        System.out.println(message);
+        if (product == null) {
+            System.out.print("Product is null");
+        } else {
+            System.out.println(product);
+        }
+    }
+}

@@ -1,0 +1,4 @@
+@Path(/product)
+public class ProductResource {
+
+}

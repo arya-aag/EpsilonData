@@ -1,0 +1,69 @@
+/**
+ * 
+ */
+package student.onlineretailer.jpa;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OrderBy;
+import javax.persistence.Table;
+
+/**
+ * @author Grad80
+ *
+ */
+@Entity
+@Table(name = "Categories")
+public class Category {
+	
+	private long CategoryID;
+	private String CategoryName;
+	private String Description;
+	private List<Product> products= new ArrayList<Product>();
+	
+	public Category() {
+		
+	}
+	
+	@Id
+	@GeneratedValue(GenerationType.IDENTITY)
+	public long getCategoryID() {
+		return CategoryID;
+	}
+	public void setCategoryID(long categoryID) {
+		CategoryID = categoryID;
+	}
+	
+	public String getCategoryName() {
+		return CategoryName;
+	}
+	public void setCategoryName(String categoryName) {
+		CategoryName = categoryName;
+	}
+	
+	
+	public String getDescription() {
+		return Description;
+	}
+	public void setDescription(String description) {
+		Description = description;
+	}
+
+	@OneToMany(mappedBy="category")
+	@OrderBy("number ASC")
+	public List<Product> getProducts() {
+		return products;
+	}
+
+	public void setProducts(List<Product> products) {
+		this.products = products;
+	}
+	
+	
+}

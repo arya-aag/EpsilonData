@@ -1,0 +1,2 @@
+2016-08-26 16:01:05,899 [Worker-210] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/hibernate/hibernate-core/4.3.9.Final/hibernate-core-4.3.9.Final-sources.jar
+2016-08-26 16:01:36,532 [Worker-210] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/hibernate/hibernate-core/4.3.9.Final/hibernate-core-4.3.9.Final-sources.jar

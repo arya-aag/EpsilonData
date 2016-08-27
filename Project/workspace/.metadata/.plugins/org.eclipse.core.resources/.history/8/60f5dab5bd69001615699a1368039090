@@ -1,0 +1,19 @@
+import java.util.List;
+
+import javax.ejb.Remote;
+
+import student.onlineretailer.jpa.Product;
+
+@Remote
+public interface OnlineRetailerBeanRemote {
+	public boolean addCategoriesAndProducts();
+
+	public List<Product> getAllProducts();
+
+	public List<Product> getProductsByName(String name);
+
+	public List<Product> getProductsInCategory(long categoryID);
+
+	public boolean increaseAllPrices(double amount);
+
+}

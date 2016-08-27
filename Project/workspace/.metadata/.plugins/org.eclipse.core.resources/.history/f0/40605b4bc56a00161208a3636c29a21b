@@ -1,0 +1,9 @@
+package market.dataanalysistool.ejb;
+
+import javax.ejb.Local;
+
+@Local
+public interface StockDataLocal {
+	public Sample getSample();
+	public void setSample(String sample);
+}
