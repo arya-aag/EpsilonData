@@ -1,0 +1,7 @@
+package market.dataanalysistool.ejb;
+
+import javax.ejb.Local;
+
+@Local
+public interface StockStdAndPoorSessionBeanLocal {
+}

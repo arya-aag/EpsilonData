@@ -1,0 +1,18 @@
+package market.dataanalysistool.ejb;
+
+import java.util.List;
+
+import javax.ejb.Local;
+
+import market.dataanalysistool.jpa.Market;
+import market.dataanalysistool.jpa.MarketPK;
+/*
+ * This interface details the list of methods that can be implemented on the database of the S&P 500
+ */
+@Local
+public interface StockStdAndPoorSessionBeanLocal {
+	public List<Market> getSimpleMovingAverages(MarketPK stock, int timePeriod);
+	public List<Market> getExponentialMovingAverages(MarketPK stock, int timePeriod);
+	public List<Market> getTimeBasedPriceTrendOfStock(MarketPK stock, PeriodOfTime timePeriod);
+	public List<Market> getTimeBasedVolumeTrendOfStock(MarketPK stock, PeriodOfTime timePeriod);
+}

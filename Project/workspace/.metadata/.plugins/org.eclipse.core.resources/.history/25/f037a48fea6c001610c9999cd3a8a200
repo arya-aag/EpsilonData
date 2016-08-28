@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package market.dataanalysistool.ejb;
+
+/**
+ * @author Grad80
+ *
+ */
+public enum PeriodOfTime {
+
+}

@@ -3,6 +3,8 @@
 
     <persistence-unit name="MarketDataAnalysisToolJPA" transaction-type="JTA">
         <jta-data-source>java:jboss/datasources/marketdata</jta-data-source>
+        <class>market.dataanalysistool.jpa.Market</class>
+        <class>market.dataanalysistool.jpa.MarketPK</class>
     </persistence-unit>
 
 </persistence>

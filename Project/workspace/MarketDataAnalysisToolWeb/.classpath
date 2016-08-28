@@ -16,5 +16,6 @@
 	<classpathentry kind="src" path="/MarketDataAnalysisToolEJBClient"/>
 	<classpathentry kind="lib" path="C:/Grad software 2016/Java Tools/wildfly-10.0.0.Final/wildfly-10.0.0.Final/bin/client/jboss-client.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Grad80/Downloads/java-json.jar"/>
+	<classpathentry kind="lib" path="C:/JavaEEJBossDev/Snippets/jackson-annotations-2.5.4.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

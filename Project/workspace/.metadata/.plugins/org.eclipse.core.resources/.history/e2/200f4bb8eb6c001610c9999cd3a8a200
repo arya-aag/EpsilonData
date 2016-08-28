@@ -1,0 +1,8 @@
+package market.dataanalysistool.ejb;
+
+import java.util.Date;
+
+public class Point {
+	public Date date;
+	public double yCoordinate;
+}

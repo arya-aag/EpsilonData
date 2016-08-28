@@ -17,6 +17,8 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import org.json.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import market.dataanalysistool.ejb.StockDataLocal;
 import market.dataanalysistool.jpa.Sample;
 
@@ -61,29 +63,26 @@ public class StockResource {
     //@Path("/post")
     @Consumes("text/plain")
     public Response postStrMsg(String msg) {
-		JSONObject ob = new JSONObject(msg);
-		//String output = "POST:Jersey say : " + msg;
-        System.out.println(ob);
+		JSONObject ob;
+		try {
+			ob = new JSONObject(msg);
+			System.out.println(ob.get("name"));
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
         return Response.status(200).entity("").build();
     }
 	
 	@POST
     @Path("/post")
     @Consumes(MediaType.APPLICATION_JSON)
+	@JsonIgnoreProperties(ignoreUnknown = true)
     public Response postJsonMsg(JSONObject msg) throws JSONException{
         //bean.setSample(msg);
-		//System.out.println(msg.getString("name"));
+		System.out.println(msg.get("name"));
 		
 		
         return Response.status(200).entity(msg.toString()).build();
     }
-	
-//	@POST
-//    @Path("/postjson")
-//    @Consumes("application/json")
-//    public Response postJsonMsg(JSONObject msg) {
-//        String output = "POST:Jersey say : " + msg;
-//        //bean.setSample(msg);
-//        return Response.status(200).entity(output).build();
-//    }
 }

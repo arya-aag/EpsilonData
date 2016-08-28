@@ -1,0 +1,14 @@
+/**
+ * 
+ */
+package market.dataanalysistool.ejb;
+
+/**
+ * @author Grad80
+ * This enum details the periods of time that the trends will be plotted for
+ */
+public enum PeriodOfTime {
+	//public static final int YEAR = 365;
+	public static final int SIXMONTHS = 365;
+	
+}

@@ -1,0 +1,16 @@
+package market.dataanalysistool.ejb;
+
+import java.util.List;
+
+import javax.ejb.Local;
+
+import market.dataanalysistool.jpa.Market;
+import market.dataanalysistool.jpa.MarketPK;
+
+@Local
+public interface StockStdAndPoorSessionBeanLocal {
+	public List<Market> getSimpleMovingAverages(MarketPK stock);
+	public List<Market> getExponentialMovingAverages(MarketPK stock);
+	public List<Market> getTimeBasedPriceTrendOfStock(MarketPK stock);
+	public List<Market> getTimeBasedVolumeTrendOfStock(MarketPK stock);
+}
