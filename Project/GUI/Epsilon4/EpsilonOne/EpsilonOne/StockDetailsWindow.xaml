@@ -1,0 +1,33 @@
+﻿<Window x:Class="EpsilonOne.StockDetailsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EpsilonOne"
+        mc:Ignorable="d"
+        Title="Epsilon Data Analysis" FontFamily="Montserrat" Height="480" Width="640" WindowStartupLocation="CenterScreen" Loaded="PopulateTasks" Background="White" ResizeMode="NoResize">
+    <Canvas Margin="20">
+        <Label x:Name="label1_Copy" Content="List of Stocks" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="200" Background="#FFDEDEDE" Canvas.Left="10" Canvas.Top="10"/>
+        <ListBox x:Name="lstTickers" HorizontalAlignment="Left" Height="352" VerticalAlignment="Top" Width="200" Background="White" Canvas.Left="10" Canvas.Top="70" SelectionChanged="ShowStockDetails"/>
+        <TextBox x:Name="txtSearch" HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="200" Canvas.Left="10" Canvas.Top="40" TextChanged="SearchTickers" VerticalContentAlignment="Center"/>
+        <!--<ComboBox x:Name="cmbTimePeriod" VerticalContentAlignment="Center" Canvas.Left="650" Canvas.Top="6" Width="159" Height="28" SelectedIndex="0"/>-->
+        <!--<Label x:Name="lblTimePeriod" Content="Select Time Period:" Canvas.Left="517" Canvas.Top="6" Height="28" Width="128"/>-->
+        <!--<Button x:Name="btnPlot" Content="PLOT!" Canvas.Left="1087" Canvas.Top="5" Width="75" Height="28" Background="#FF5FE289" Click="DrawGraphs"/>-->
+        <GroupBox x:Name="grpDetails" Header="Stock Details" Canvas.Left="228" Canvas.Top="10" Width="366" Height="371">
+            <StackPanel Margin="0,0,0,0">
+                <Label HorizontalContentAlignment="Left" x:Name="lblTickerName" Content="[TICKER]" Canvas.Left="517" Canvas.Top="6" Height="36" Margin="10,10,10,0" FontSize="21.333"/>
+                <Label HorizontalContentAlignment="Left" x:Name="lblOpen" Content="Open Value:" Canvas.Left="517" Canvas.Top="6" Height="28" Margin="10,12,10,0"/>
+                <Label HorizontalContentAlignment="Left" x:Name="lblClose" Content="Close Value:" Canvas.Left="517" Canvas.Top="6" Height="28" Margin="10,0"/>
+                <Label HorizontalContentAlignment="Left" x:Name="lblDayHigh" Content="Day High:" Canvas.Left="517" Canvas.Top="6" Height="28" Margin="10,12,10,0"/>
+                <Label HorizontalContentAlignment="Left" x:Name="lblDayLow" Content="Day Low:" Canvas.Left="517" Canvas.Top="6" Height="28" Margin="10,0"/>
+                <Label HorizontalContentAlignment="Left" x:Name="lblVolume" Content="Volume:" Canvas.Left="517" Canvas.Top="6" Height="28" Margin="10,0"/>
+                <Label HorizontalContentAlignment="Left" x:Name="lbl52High" Content="52 Week High:" Canvas.Left="517" Canvas.Top="6" Height="28" Margin="10,12,10,0"/>
+                <Label HorizontalContentAlignment="Left" x:Name="lbl52Low" Content="52 Week Low:" Height="28" Margin="10,0"/>
+            </StackPanel>
+        </GroupBox>
+        <Image x:Name="image" Height="24" Canvas.Left="183" Canvas.Top="43" Width="24" Source="images/icon_search.png" Stretch="Fill"/>
+        <Button x:Name="btnPlot" Content="View Trends For This Stock" Canvas.Left="228" Canvas.Top="386" Width="376" Height="36" Click="ShowGraphWindow"/>
+        <!--<Button x:Name="button" Content="Choose Graph Parameters" Canvas.Left="814" Canvas.Top="6" Width="188" Height="28" Click="ChooseGraphParameters"/>-->
+
+    </Canvas>
+</Window>
