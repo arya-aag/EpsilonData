@@ -17,7 +17,6 @@ using System.IO;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Json;
 using System.Windows.Controls.DataVisualization.Charting;
-//using System.Text.RegularExpressions;
 
 namespace EpsilonOne
 {
@@ -43,16 +42,28 @@ namespace EpsilonOne
         private void PopulateOnWindowsLoaded(object sender, RoutedEventArgs e)
         {
             PopulateStockIndicatorDropdown();
+            PopulateMovingAverageDropdown();
             SetTimeWindow();
             DrawGraphs();
         }
 
         private void PopulateStockIndicatorDropdown()
         {
-            List<string> stockIndiList = new List<string>() { "Close", "Open", "High", "Low" };
+            List<string> stockIndiList = new List<string>()
+            { "Open Value", "Close Value", "Day High", "Day Low", "Volume Traded"};
             foreach (string str in stockIndiList)
             {
                 cmbStockIndicator.Items.Add(str);
+            }
+        }
+
+        private void PopulateMovingAverageDropdown()
+        {
+            List<string> movingAvgList = new List<string>() {"None",
+                "Simple Moving Average", "Exponential Moving Average", "Deviation from Simple Moving Avg." };
+            foreach (string str in movingAvgList)
+            {
+                cmbMovingAvg.Items.Add(str);
             }
         }
 
@@ -62,35 +73,7 @@ namespace EpsilonOne
             datEndDate.SelectedDate = new DateTime(2009, 11, 5);
         }
 
-        private void DrawGraphs()
-        {
-            string getURL = appXaml.ipRest + "FirstFunction/" + appXaml.ticker1 + "/close/21-08-2009/05-11-2010";
-            WebClient getWC = new WebClient();
-            Stream getStream = getWC.OpenRead(getURL);
-            DataContractJsonSerializer DCJS = new DataContractJsonSerializer(typeof(AllPoints));
-            AllPoints allPoints = (AllPoints)DCJS.ReadObject(getStream);
-
-            appXaml.pointsToPlot = CreateKeyValuePairsFromPoints(allPoints);
-
-            //LineSeries lineSeries = new LineSeries();
-            lineSeries1.Title = appXaml.ticker1;
-            lineSeries1.ItemsSource = appXaml.pointsToPlot;
-            lineSeries1.DependentValuePath = "Value";
-            lineSeries1.IndependentValuePath = "Key";
-            chtWindow.Series.Add(lineSeries1);
-            //chtWindow.Series.Remove(lineSeries);
-        }
-
-        private List<KeyValuePair<int, double>> CreateKeyValuePairsFromPoints(AllPoints allPoints)
-        {
-            appXaml.pointsToPlot = new List<KeyValuePair<int, double>>();
-            foreach (Point point in allPoints.stockCloseValueList)
-            {
-                appXaml.pointsToPlot.Add(new KeyValuePair<int, double>
-                    (point.date, point.yCoordinate));
-            }
-            return appXaml.pointsToPlot;
-        }
+        
 
         //private void Test(object sender, RoutedEventArgs e)
         //{
@@ -179,22 +162,98 @@ namespace EpsilonOne
             }
         }
 
+        private void DrawGraphs()
+        {
+            string getURL =  SetURL();
+
+            WebClient getWC = new WebClient();
+            Stream getStream = getWC.OpenRead(getURL);
+            DataContractJsonSerializer DCJS = new DataContractJsonSerializer(typeof(AllPoints));
+            AllPoints allPoints = (AllPoints)DCJS.ReadObject(getStream);
+
+            CreateKeyValuePairsFromPoints(allPoints);
+
+            lineSeries1.Title = appXaml.ticker1;
+            lineSeries1.ItemsSource = appXaml.pointsToPlot1;
+            lineSeries1.DependentValuePath = "Value";
+            lineSeries1.IndependentValuePath = "Key";
+            chtWindow.Title =appXaml.ticker1;
+            chtWindow.Series.Add(lineSeries1);
+        }
+
+        private string SetURL()
+        {
+            string URL = appXaml.ipFF;
+
+            if (cmbMovingAvg.SelectedIndex == 1) { URL += "simpleAvg/"; }
+            else if (cmbMovingAvg.SelectedIndex == 2) { URL += "expAvg/"; }
+            else if (cmbMovingAvg.SelectedIndex == 3) { URL += "devFromAvg/"; }
+            else { }
+
+            URL += appXaml.ticker1+"/";
+
+            switch (cmbStockIndicator.SelectedIndex)
+            {
+                case 0:
+                    URL += "open/";
+                    break;
+                case 1:
+                    URL += "close/";
+                    break;
+                case 2:
+                    URL += "high/";
+                    break;
+                case 3:
+                    URL += "low/";
+                    break;
+                case 4:
+                    URL += "volume/";
+                    break;
+            }
+
+            URL += appendDate((DateTime)datStartDate.SelectedDate);
+            URL += "/";
+            URL += appendDate((DateTime)datEndDate.SelectedDate);
+
+            return URL;
+        }
+
+        private string appendDate(DateTime date)
+        {
+            return ""+date.Day.ToString()+"-"+ date.Month.ToString()+"-"+ date.Year.ToString();
+        }
+
+        private void CreateKeyValuePairsFromPoints(AllPoints allPoints)
+        {
+            //appXaml.pointsToPlot1 = new List<KeyValuePair<int, double>>();
+            foreach (Point point in allPoints.stockCloseValueList)
+            {
+                appXaml.pointsToPlot1.Add(new KeyValuePair<int, double>
+                    (point.date, point.yCoordinate));
+            }
+            //return appXaml.pointsToPlot1;
+        }
         private void UpdatePlot(object sender, RoutedEventArgs e)
         {
-            Boolean negativeTime = CheckNegativeTime((DateTime)datStartDate.SelectedDate,(DateTime)datEndDate.SelectedDate);
+            Boolean negativeTime = 
+                CheckNegativeTime((DateTime)datStartDate.SelectedDate,(DateTime)datEndDate.SelectedDate);
+
             if (!negativeTime)
             {
-                string getURL = appXaml.ipRest + "FirstFunction/" + appXaml.ticker1 + "/close/21-08-2009/05-11-2010";
+                chtWindow.Series.Clear();
+                DrawGraphs();
+                /*
+                string getURL = appXaml.ipFF + appXaml.ticker1 + "/close/21-08-2009/05-11-2010";
                 WebClient getWC = new WebClient();
                 Stream getStream = getWC.OpenRead(getURL);
                 DataContractJsonSerializer DCJS = new DataContractJsonSerializer(typeof(AllPoints));
                 AllPoints allPoints = (AllPoints)DCJS.ReadObject(getStream);
 
-                appXaml.pointsToPlot = CreateKeyValuePairsFromPoints(allPoints);
+                CreateKeyValuePairsFromPoints(allPoints);
 
                 //LineSeries lineSeries = new LineSeries();
                 lineSeries1.Title = appXaml.ticker1;
-                lineSeries1.ItemsSource = appXaml.pointsToPlot;
+                lineSeries1.ItemsSource = appXaml.pointsToPlot1;
                 lineSeries1.DependentValuePath = "Value";
                 lineSeries1.IndependentValuePath = "Key";
                 chtWindow.Series.Add(lineSeries1);
@@ -203,15 +262,12 @@ namespace EpsilonOne
 
                 //chtWindow.Series.Remove(lineSeries1);
                 //try { chtWindow.Series.Remove(lineSeries2); } catch { }
-            } else
+                */
+            }
+            else
             {
                 MessageBox.Show("The Start Date lies after the End Date. Please choose again.");
             }
-            
-
-
         }
-
-        
     }
 }

@@ -5,34 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EpsilonOne"
         mc:Ignorable="d"
-        Title="Epsilon Data Analysis" FontFamily="Montserrat" Height="480" Width="640" WindowStartupLocation="CenterScreen" Loaded="PopulateTasks" Background="White" ResizeMode="NoResize">
+        Title="Epsilon Data Analysis" FontFamily="Montserrat" Height="480" Width="540" WindowStartupLocation="CenterScreen" Loaded="PopulateTasks" Background="White" ResizeMode="NoResize">
     <Canvas Margin="20">
         <Label x:Name="label1_Copy" Content="List of Stocks" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="200" Background="#FFDEDEDE" Canvas.Left="10" Canvas.Top="10"/>
-        <ListBox x:Name="lstTickers" HorizontalAlignment="Left" Height="291" VerticalAlignment="Top" Width="200" Background="White" Canvas.Left="10" Canvas.Top="70" SelectionChanged="ShowStockDetails"/>
+        <ListBox x:Name="lstTickers" HorizontalAlignment="Left" Height="291" VerticalAlignment="Top" Width="200" Background="White" Canvas.Left="10" Canvas.Top="70" SelectionChanged="ShowStockDetails" SelectedIndex="0"/>
         <TextBox x:Name="txtSearch" HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Canvas.Left="10" Canvas.Top="40" TextChanged="SearchTickers" VerticalContentAlignment="Center" Panel.ZIndex="1" Background="{x:Null}"/>
         <!--<Label x:Name="lblTextSearch" Content="Search" Canvas.Left="10" Canvas.Top="40" Height="30" Width="200" Background="White" VerticalContentAlignment="Center" Foreground="#BF000000" HorizontalContentAlignment="Right"/>-->
-        <Image x:Name="image" Height="24" Canvas.Left="183" Canvas.Top="43" Width="24" Source="C:\Users\Grad114\Desktop\EpsilonData\Project\GUI\Epsilon4\EpsilonOne\images\iconSearch.png" Stretch="Fill" Panel.ZIndex="10"/>
+        <Image x:Name="image" Height="24" Canvas.Left="183" Canvas.Top="43" Width="24" Source="images/iconSearch.png" Stretch="Fill" Panel.ZIndex="5"/>
 
         <!--<ComboBox x:Name="cmbTimePeriod" VerticalContentAlignment="Center" Canvas.Left="650" Canvas.Top="6" Width="159" Height="28" SelectedIndex="0"/>-->
         <!--<Label x:Name="lblTimePeriod" Content="Select Time Period:" Canvas.Left="517" Canvas.Top="6" Height="28" Width="128"/>-->
         <!--<Button x:Name="btnPlot" Content="PLOT!" Canvas.Left="1087" Canvas.Top="5" Width="75" Height="28" Background="#FF5FE289" Click="DrawGraphs"/>-->
-        <GroupBox x:Name="grpDetails" Header="Stock Details" Canvas.Left="228" Canvas.Top="10" Width="366" Height="351">
+        <GroupBox x:Name="grpDetails" Header="Stock Details" Canvas.Left="228" Canvas.Top="10" Width="256" Height="351">
             <StackPanel Margin="0,0,0,0">
-                <Label HorizontalContentAlignment="Left" x:Name="lblTickerName" Content="[TICKER]" Canvas.Left="517" Canvas.Top="6" Height="36" Margin="10,10,10,0" FontSize="21.333"/>
-                <Label HorizontalContentAlignment="Left" x:Name="lblOpen" Content="Open Value:" Canvas.Left="517" Canvas.Top="6" Height="28" Margin="10,12,10,0"/>
-                <Label HorizontalContentAlignment="Left" x:Name="lblClose" Content="Close Value:" Canvas.Left="517" Canvas.Top="6" Height="28" Margin="10,0"/>
-                <Label HorizontalContentAlignment="Left" x:Name="lblDayHigh" Content="Day High:" Canvas.Left="517" Canvas.Top="6" Height="28" Margin="10,12,10,0"/>
-                <Label HorizontalContentAlignment="Left" x:Name="lblDayLow" Content="Day Low:" Canvas.Left="517" Canvas.Top="6" Height="28" Margin="10,0"/>
-                <Label HorizontalContentAlignment="Left" x:Name="lblVolume" Content="Volume:" Canvas.Left="517" Canvas.Top="6" Height="28" Margin="10,0"/>
-                <Label HorizontalContentAlignment="Left" x:Name="lbl52High" Content="52 Week High:" Canvas.Left="517" Canvas.Top="6" Height="28" Margin="10,12,10,0"/>
-                <Label HorizontalContentAlignment="Left" x:Name="lbl52Low" Content="52 Week Low:" Height="28" Margin="10,0"/>
-                <Label HorizontalContentAlignment="Left" x:Name="lblRiskName" Content="Risk Meter:" Height="28" Margin="10,0"/>
+                <Label HorizontalContentAlignment="Right" x:Name="lblTickerName" Content="[TICKER]" Canvas.Left="517" Canvas.Top="6" Height="36" Margin="10,10,118,0" FontSize="21.333"/>
+                <Label HorizontalContentAlignment="Left" x:Name="lblOpen" Content="            Open Value:" Canvas.Left="517" Canvas.Top="6" Height="28" Margin="10,12,10,0"/>
+                <Label HorizontalContentAlignment="Left" x:Name="lblClose" Content="            Close Value:" Canvas.Left="517" Canvas.Top="6" Height="28" Margin="10,0"/>
+                <Label HorizontalContentAlignment="Left" x:Name="lblDayHigh" Content="                Day High:" Canvas.Left="517" Canvas.Top="6" Height="28" Margin="10,12,10,0"/>
+                <Label HorizontalContentAlignment="Left" x:Name="lblDayLow" Content="                 Day Low:" Canvas.Left="517" Canvas.Top="6" Height="28" Margin="10,0"/>
+                <Label HorizontalContentAlignment="Left" x:Name="lblVolume" Content="                  Volume:" Canvas.Left="517" Canvas.Top="6" Height="28" Margin="10,0"/>
+                <Label HorizontalContentAlignment="Left" x:Name="lbl52High" Content="        52 Week High:" Canvas.Left="517" Canvas.Top="6" Height="28" Margin="10,12,10,0"/>
+                <Label HorizontalContentAlignment="Left" x:Name="lbl52Low" Content="         52 Week Low:" Height="28" Margin="10,0"/>
+                <Label HorizontalContentAlignment="Left" x:Name="lblRiskName" Content="              Risk Meter:" Height="28" Margin="10,0"/>
                 <Label HorizontalContentAlignment="Left" x:Name="lblRisk" Height="28" Margin="10,0">
-                    <Rectangle x:Name="rectRisk" Width="200" Height="18" Fill="White" Margin="0,-10,0,0" />
+                    <Rectangle x:Name="rectRisk" Width="115" Height="18" Fill="White" Margin="105,-10,0,0" MaxWidth="115" />
                 </Label>
             </StackPanel>
         </GroupBox>
-        <Button x:Name="btnPlot" Content="View Trends For This Stock" Canvas.Left="228" Canvas.Top="366" Width="356" Height="36" Click="ShowGraphWindow"/>
+        <Button x:Name="btnPlot" Content="View Trends For This Stock" Canvas.Left="228" Canvas.Top="366" Width="256" Height="36" Click="ShowGraphWindow"/>
         <Button x:Name="btnPiePlot" Content="Sectoral Performance by Vol." Canvas.Left="10" Canvas.Top="366" Width="200" Height="36" Click="ShowPiePlot"/>
 
     </Canvas>

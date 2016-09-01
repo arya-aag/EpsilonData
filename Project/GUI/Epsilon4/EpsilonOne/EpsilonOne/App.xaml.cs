@@ -13,12 +13,20 @@ namespace EpsilonOne
     /// </summary>
     public partial class App : Application
     {
-        public List<KeyValuePair<int, double>> pointsToPlot = new List<KeyValuePair<int, double>>();
-        public List<KeyValuePair<string, long>> pointsToPiePlot = new List<KeyValuePair<string, long>>();
-
+        //global
         public string ipRest = "http://10.87.238.241:8080/MarketDataAnalysisToolWeb/rest/";
-        public string ticker1 = "";
+        public string ipFF = "http://10.87.238.241:8080/MarketDataAnalysisToolWeb/rest/FirstFunction/";
 
+        //graph window
+        public List<KeyValuePair<int, double>> pointsToPlot1 = new List<KeyValuePair<int, double>>();
+        public List<KeyValuePair<int, double>> pointsToPlot2 = new List<KeyValuePair<int, double>>();
+        public string ticker1 = "";
+        public string ticker2 = "";
+        public int numOfGraphs = 0;
+
+        //pie plot
+        public List<KeyValuePair<string, long>> pointsToPiePlot = new List<KeyValuePair<string, long>>();
         public string pieQuarter = "Q2";
+
     }
 }

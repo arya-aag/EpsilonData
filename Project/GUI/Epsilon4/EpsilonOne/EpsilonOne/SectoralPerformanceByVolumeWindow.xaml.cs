@@ -64,7 +64,7 @@ namespace EpsilonOne
 
         private void CreateKeyValuePairsFromVolumes(List<VolumeShare> listOfVolShares)
         {
-            appXaml.pointsToPiePlot = new List<KeyValuePair<string, long>>();
+            //appXaml.pointsToPiePlot = new List<KeyValuePair<string, long>>();
             foreach (VolumeShare volShare in listOfVolShares)
             {
                 appXaml.pointsToPiePlot.Add(new KeyValuePair<string, long>

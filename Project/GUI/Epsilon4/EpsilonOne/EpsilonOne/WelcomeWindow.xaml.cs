@@ -27,7 +27,7 @@ namespace EpsilonOne
         private void ShowStockDetailsWindow(object sender, RoutedEventArgs e)
         {
             StockDetailsWindow stockDetailsWindow = new StockDetailsWindow();
-            stockDetailsWindow.Show();
+            Boolean? result = stockDetailsWindow.ShowDialog();
         }
     }
 }
