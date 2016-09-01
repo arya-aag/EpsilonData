@@ -1,0 +1,5 @@
+package market.dataanalysistool.ejb;
+
+public class Point {
+
+}

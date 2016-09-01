@@ -12,7 +12,8 @@ public class RestApplication extends Application {
 	private Set<Class<?>> empty = new HashSet<Class<?>>();
 	
 	public RestApplication(){
-		singletons.add(new StockResource());
+	//	singletons.add(new StockResource());
+		singletons.add(new firstfunction());
 	}
 	
 	@Override

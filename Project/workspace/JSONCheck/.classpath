@@ -2,6 +2,10 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+<<<<<<< Updated upstream
 	<classpathentry exported="true" kind="lib" path="C:/Users/Grad80/Downloads/json-20140107.jar"/>
+=======
+	<classpathentry kind="lib" path="C:/Users/Grad44/Desktop/EpsilonData/Project/json-20140107.jar"/>
+>>>>>>> Stashed changes
 	<classpathentry kind="output" path="bin"/>
 </classpath>

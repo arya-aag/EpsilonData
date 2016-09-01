@@ -13,5 +13,10 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="lib" path="C:/Grad software 2016/Java Tools/wildfly-10.0.0.Final/wildfly-10.0.0.Final/bin/client/jboss-client.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/MarketDataAnalysisToolAppClient"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/MarketDataAnalysisToolEJBClient"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/MarketDataAnalysisToolJPA"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/MarketDataAnalysisToolWeb"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/JSONCheck"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

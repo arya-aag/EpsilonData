@@ -1,6 +1,15 @@
+<<<<<<< Updated upstream
 INDEX VERSION 1.3+C:\Users\Grad80\Desktop\EpsilonData\Project\workspace\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
 3282125583.index
 2497547009.index
+=======
+INDEX VERSION 1.3+C:\Users\Grad44\Desktop\EpsilonData\Project\workspace\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+2979941438.index
+3029097735.index
+2120799040.index
+20572206.index
+851202165.index
+>>>>>>> Stashed changes
 1385435405.index
 3809617248.index
 2768365328.index

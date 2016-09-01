@@ -13,5 +13,9 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="src" path="/MarketDataAnalysisToolJPA"/>
+<<<<<<< Updated upstream
+=======
+	<classpathentry kind="src" path="/MarketDataAnalysisToolEJB"/>
+>>>>>>> Stashed changes
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

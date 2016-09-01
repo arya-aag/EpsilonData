@@ -6,8 +6,8 @@
 		<project>MarketDataAnalysisToolEJB</project>
 		<project>MarketDataAnalysisToolEJBClient</project>
 		<project>MarketDataAnalysisToolJPA</project>
-		<project>MarketDataAnalysisToolAppClient</project>
 		<project>MarketDataAnalysisToolWeb</project>
+		<project>MarketDataAnalysisToolAppClient</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

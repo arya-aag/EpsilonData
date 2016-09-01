@@ -11,11 +11,14 @@
         <dependent-module archiveName="MarketDataAnalysisToolJPA.jar" deploy-path="/lib" handle="module:/resource/MarketDataAnalysisToolJPA/MarketDataAnalysisToolJPA">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="MarketDataAnalysisToolAppClient.jar" deploy-path="/" handle="module:/resource/MarketDataAnalysisToolAppClient/MarketDataAnalysisToolAppClient">
+        <dependent-module archiveName="MarketDataAnalysisToolWeb.war" deploy-path="/" handle="module:/resource/MarketDataAnalysisToolWeb/MarketDataAnalysisToolWeb">
             <dependent-object/>
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="MarketDataAnalysisToolWeb.war" deploy-path="/" handle="module:/resource/MarketDataAnalysisToolWeb/MarketDataAnalysisToolWeb">
+        <dependent-module archiveName="json-20140107.jar" deploy-path="/lib" handle="module:/classpath/lib/C:/Users/Grad44/Desktop/EpsilonData/Project/json-20140107.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="MarketDataAnalysisToolAppClient.jar" deploy-path="/" handle="module:/resource/MarketDataAnalysisToolAppClient/MarketDataAnalysisToolAppClient">
             <dependent-object/>
             <dependency-type>uses</dependency-type>
         </dependent-module>

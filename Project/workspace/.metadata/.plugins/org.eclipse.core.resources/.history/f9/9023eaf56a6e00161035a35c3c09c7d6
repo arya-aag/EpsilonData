@@ -1,0 +1,82 @@
+package market.dataanalysistool.jpa;
+
+import java.io.Serializable;
+import javax.persistence.*;
+import java.math.BigDecimal;
+
+
+/**
+ * The persistent class for the final_data database table.
+ * 
+ */
+@Entity
+@Table(name="final_data")
+@NamedQuery(name="Market.findAll", query="SELECT m FROM Market m")
+public class Market implements Serializable {
+	private static final long serialVersionUID = 1L;
+
+	@EmbeddedId
+	private MarketPK id;
+
+	private BigDecimal close_;
+
+	private BigDecimal high_;
+
+	private BigDecimal low_;
+
+	private BigDecimal open_;
+
+	private int volume;
+
+	public Market() {
+	}
+
+	public MarketPK getId() {
+		return this.id;
+	}
+
+	public void setId(MarketPK id) {
+		this.id = id;
+	}
+
+	public BigDecimal getClose_() {
+		return this.close_;
+	}
+
+	public void setClose_(BigDecimal close_) {
+		this.close_ = close_;
+	}
+
+	public BigDecimal getHigh_() {
+		return this.high_;
+	}
+
+	public void setHigh_(BigDecimal high_) {
+		this.high_ = high_;
+	}
+
+	public BigDecimal getLow_() {
+		return this.low_;
+	}
+
+	public void setLow_(BigDecimal low_) {
+		this.low_ = low_;
+	}
+
+	public BigDecimal getOpen_() {
+		return this.open_;
+	}
+
+	public void setOpen_(BigDecimal open_) {
+		this.open_ = open_;
+	}
+
+	public int getVolume() {
+		return this.volume;
+	}
+
+	public void setVolume(int volume) {
+		this.volume = volume;
+	}
+
+}

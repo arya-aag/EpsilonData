@@ -1,7 +1,11 @@
 {
   "version": "v1",
   "title": "JBoss Tools Automated Error Reporting Service",
+<<<<<<< Updated upstream
   "timestamp": 1472302907722,
+=======
+  "timestamp": 1472538570818,
+>>>>>>> Stashed changes
   "ttl": 0,
   "helpUrl": "https://redhat.ctrlflow.com/help",
   "feedbackUrl": "http://ctrlflow.com/automated-error-reporting",
@@ -63,5 +67,9 @@
     ":java.net.*:",
     ":org.eclipse.core.runtime.OperationCanceledException:"
   ],
+<<<<<<< Updated upstream
   "problemsZipLastDownloadTimestamp": 1472303210212
+=======
+  "problemsZipLastDownloadTimestamp": 0
+>>>>>>> Stashed changes
 }

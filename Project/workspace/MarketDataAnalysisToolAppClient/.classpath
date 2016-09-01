@@ -15,5 +15,7 @@
 	<classpathentry kind="lib" path="C:/Grad software 2016/Java Tools/wildfly-10.0.0.Final/wildfly-10.0.0.Final/bin/client/jboss-client.jar"/>
 	<classpathentry kind="src" path="/MarketDataAnalysisToolEJBClient"/>
 	<classpathentry kind="src" path="/MarketDataAnalysisToolJPA"/>
+	<classpathentry kind="lib" path="C:/JavaEEJBossDev/Databases/hibernate-core-4.3.9.Final.jar"/>
+	<classpathentry kind="lib" path="C:/JavaEEJBossDev/Databases/mysql-connector-java-5.1.39/mysql-connector-java-5.1.39-bin.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

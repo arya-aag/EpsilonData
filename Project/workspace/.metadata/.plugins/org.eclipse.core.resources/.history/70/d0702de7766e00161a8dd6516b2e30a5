@@ -1,0 +1,16 @@
+package market.dataanalysistool.ejb;
+
+import java.util.List;
+
+import javax.ejb.Remote;
+
+import market.dataanalysistool.jpa.Market;
+
+@Remote
+public interface StockStdAndPoorSessionBeanRemote {
+//	public List<Point> getSimpleMovingAverages(String ticker, int timePeriod, PeriodOfTime t);
+	//public List<Point> getExponentialMovingAverages(String ticker, int timePeriod, PeriodOfTime t);
+	public List<Market> getPriceTrendByTime(String ticker, PeriodOfTime timePeriod);
+	public List<Market> getVolumeTrendByTime(String ticker, PeriodOfTime timePeriod);
+	public List<Market> getAllStocks();
+}

@@ -6,10 +6,18 @@ import java.math.BigDecimal;
 
 
 /**
+<<<<<<< Updated upstream
  * The persistent class for the market database table.
  * 
  */
 @Entity
+=======
+ * The persistent class for the final_data database table.
+ * 
+ */
+@Entity
+@Table(name="final_data")
+>>>>>>> Stashed changes
 @NamedQuery(name="Market.findAll", query="SELECT m FROM Market m")
 public class Market implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -17,6 +25,7 @@ public class Market implements Serializable {
 	@EmbeddedId
 	private MarketPK id;
 
+<<<<<<< Updated upstream
 	private BigDecimal close;
 
 	private BigDecimal high;
@@ -24,6 +33,15 @@ public class Market implements Serializable {
 	private BigDecimal low;
 
 	private BigDecimal open;
+=======
+	private BigDecimal close_;
+
+	private BigDecimal high_;
+
+	private BigDecimal low_;
+
+	private BigDecimal open_;
+>>>>>>> Stashed changes
 
 	private int volume;
 
@@ -38,6 +56,7 @@ public class Market implements Serializable {
 		this.id = id;
 	}
 
+<<<<<<< Updated upstream
 	public BigDecimal getClose() {
 		return this.close;
 	}
@@ -68,6 +87,38 @@ public class Market implements Serializable {
 
 	public void setOpen(BigDecimal open) {
 		this.open = open;
+=======
+	public BigDecimal getClose_() {
+		return this.close_;
+	}
+
+	public void setClose_(BigDecimal close_) {
+		this.close_ = close_;
+	}
+
+	public BigDecimal getHigh_() {
+		return this.high_;
+	}
+
+	public void setHigh_(BigDecimal high_) {
+		this.high_ = high_;
+	}
+
+	public BigDecimal getLow_() {
+		return this.low_;
+	}
+
+	public void setLow_(BigDecimal low_) {
+		this.low_ = low_;
+	}
+
+	public BigDecimal getOpen_() {
+		return this.open_;
+	}
+
+	public void setOpen_(BigDecimal open_) {
+		this.open_ = open_;
+>>>>>>> Stashed changes
 	}
 
 	public int getVolume() {

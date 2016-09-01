@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="javax.sql.DataSource"/>
-<fullyQualifiedTypeName name="javax.annotation.Resource"/>
-<fullyQualifiedTypeName name="java.sql.Connection"/>
 <fullyQualifiedTypeName name="java.util.NavigableMap"/>
 <fullyQualifiedTypeName name="java.util.Calendar"/>
 <fullyQualifiedTypeName name="student.sessionbeans.ejb.DiaryRemote"/>
@@ -60,4 +57,10 @@
 <fullyQualifiedTypeName name="java.util.Date"/>
 <fullyQualifiedTypeName name="javax.ws.rs.core.MediaType"/>
 <fullyQualifiedTypeName name="com.fasterxml.jackson.annotation.JsonIgnoreProperties"/>
+<<<<<<< Updated upstream
+=======
+<fullyQualifiedTypeName name="java.math.BigDecimal"/>
+<fullyQualifiedTypeName name="market.dataanalysistool.ejb.StockStdAndPoorSessionBeanLocal"/>
+<fullyQualifiedTypeName name="market.dataanalysistool.jpa.TickerCloseValues"/>
+>>>>>>> Stashed changes
 </qualifiedTypeNameHistroy>

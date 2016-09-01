@@ -1,0 +1,5 @@
+package market.dataanalysistool.jpa;
+
+public class StockCloseValue {
+
+}

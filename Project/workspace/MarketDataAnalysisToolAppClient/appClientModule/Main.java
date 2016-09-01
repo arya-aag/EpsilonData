@@ -32,7 +32,8 @@ public class Main {
 		// Lookup the bean using the full JNDI name.
 		String fullJndiName = String.format("%s/%s/%s!%s.%s", appName, moduleName, beanName, packageName, className);
 		StockDataRemote bean = (StockDataRemote) context.lookup(fullJndiName);
-		List<Sample> ob = bean.getSample();
+//		List<Sample> ob = bean.getSample();
+		Sample ob=bean.getSample();
 		System.out.println(ob);
 	}
 

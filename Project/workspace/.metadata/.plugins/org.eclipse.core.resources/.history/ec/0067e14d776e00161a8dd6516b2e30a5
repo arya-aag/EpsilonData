@@ -1,0 +1,19 @@
+package market.dataanalysistool.ejb;
+
+import java.util.List;
+import javax.ejb.Local;
+
+import market.dataanalysistool.jpa.Market;
+import market.dataanalysistool.jpa.TickerCloseValues;
+/*
+ * This interface details the list of methods that can be implemented on the database of the S&P 500
+ */
+@Local
+public interface StockStdAndPoorSessionBeanLocal {
+	public List<Point> getSimpleMovingAverages(String ticker, int timePeriod, PeriodOfTime t);
+    public List<Point> getExponentialMovingAverages(String ticker, int timePeriod, PeriodOfTime t);
+	public TickerCloseValues getPriceTrendByTime(String ticker, PeriodOfTime timePeriod);
+	public List<Market> getVolumeTrendByTime(String ticker, PeriodOfTime timePeriod);
+	public List<Market> getAllStocks();
+}
+

@@ -8,6 +8,9 @@ import market.dataanalysistool.jpa.Sample;
 
 @Remote
 public interface StockDataRemote {
-	public List<Sample> getSample();
+	public Sample getSample();
 	public void setSample(String sample);
+	public void getObject(Sample t);
+//	public Sample getParticularSample(long serialNo);
+//	public void setSample(Sample sample);
 }

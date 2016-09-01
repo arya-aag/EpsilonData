@@ -19,7 +19,12 @@ import org.json.*;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+<<<<<<< Updated upstream
+=======
+import market.dataanalysistool.ejb.PeriodOfTime;
+>>>>>>> Stashed changes
 import market.dataanalysistool.ejb.StockDataLocal;
+import market.dataanalysistool.jpa.Market;
 import market.dataanalysistool.jpa.Sample;
 
 @RequestScoped
@@ -39,38 +44,60 @@ public class StockResource {
 			e.printStackTrace();
 		}
 	}
-	
 	@GET
 	@Produces("application/json")
-	public List<Sample> getAllProducts(@QueryParam("filter") @DefaultValue("") String filter) {
-		if (filter.equals("")){
-			return bean.getSample();
+	public List<Market> getAllProducts() {
+		{
+			System.out.println("Hello!");
+			return bean.getPriceTrendByTime("A", PeriodOfTime.YEAR);
 		}
-		return null;
+		
 	}
 	
+//	@GET
+//	@Produces("application/json")
+//	public Sample getAllSamples(@QueryParam("filter") @DefaultValue("") String filter) {
+//		if (filter.equals("")){
+//			
+//			return bean.getSample();
+//		}
+//		return null;
+//	}
+	
 	@GET
-	@Path("/{categoryName}")
+	@Path("/{serialNo}")
 	@Produces("application/json")
-	public List<Sample> getProductsInCategory(@PathParam("categoryName") @DefaultValue("") String filter) {
-		if (filter.equals("")){
-			return bean.getSample();
-		}
-		return null;
+	public Sample getSamplesbySerialNo(@PathParam("serialNo") @DefaultValue("") long filter) {
+		System.out.println(filter);
+		return bean.getParticularSample(filter);
+//		if (filter==1){
+//			return bean.getSample();
+//		}
+		//return null;
 	}
 	
 	@POST
     //@Path("/post")
     @Consumes("text/plain")
     public Response postStrMsg(String msg) {
+<<<<<<< Updated upstream
 		JSONObject ob;
 		try {
 			ob = new JSONObject(msg);
 			System.out.println(ob.get("name"));
+=======
+	
+		System.out.println("Received:");
+		
+		bean.setSample(msg);
+		try {
+			
+>>>>>>> Stashed changes
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+<<<<<<< Updated upstream
         return Response.status(200).entity("").build();
     }
 	
@@ -85,4 +112,33 @@ public class StockResource {
 		
         return Response.status(200).entity(msg.toString()).build();
     }
+=======
+        return Response.status(200).entity(msg + " World").build();
+    }
+	
+	@POST
+	@Path("/postjson")
+	@Consumes("application/json")
+	@Produces("application/json")
+	public Response postJsonMsg(Sample msg) {
+		System.out.println("Received:"+msg.getSample());
+		System.out.println("Received:"+msg.getSerialNo());
+		
+		bean.setSample(msg.getSample());
+		bean.getObject(msg);
+		return Response.status(200).entity(msg).build();
+			
+	}
+//	@POST
+//    @Path("/post")
+//    @Consumes(MediaType.APPLICATION_JSON)
+//	@JsonIgnoreProperties(ignoreUnknown = true)
+//    public Response postJsonMsg(JSONObject msg) throws JSONException{
+//        //bean.setSample(msg);
+//		System.out.println(msg.get("name"));
+//		
+//		
+//        return Response.status(200).entity(msg.toString()).build();
+//    }
+>>>>>>> Stashed changes
 }
